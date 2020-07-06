@@ -24,12 +24,11 @@
 
         public void Guardar(Membresias membresia, bool esModificacion)
         {
-            if (esModificacion)
-                this.OperacionesMembresias.ModificarMembresia(membresia);
-            else
-                this.OperacionesMembresias.AgregarMembresia(membresia);
+            if (esModificacion) this.OperacionesMembresias.Modificar(membresia);
+
+            else this.OperacionesMembresias.Alta(membresia);
         }
 
-        public void Eliminar(int idMembresia) => this.OperacionesMembresias.EliminarMembresia(idMembresia);
+        public void Eliminar(int idMembresia) => this.OperacionesMembresias.Eliminar(idMembresia);
     }
 }

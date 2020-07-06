@@ -37,5 +37,7 @@
             this.ObjectSet.Attach(entity);
             this.Context.Entry(entity).State = EntityState.Modified;
         }
+
+        public virtual bool ExistId(object id) => this.ObjectSet.Find(id) != null;
     }
 }

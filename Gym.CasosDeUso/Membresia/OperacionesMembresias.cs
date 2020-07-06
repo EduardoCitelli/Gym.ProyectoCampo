@@ -4,66 +4,14 @@
     using Gym.Domain;
     using System;
     
-    public class OperacionesMembresias
+    public partial class OperacionesMembresias : Operable<Membresias>
     {
-        private UnitOfWork uow;
-
-        public void AgregarMembresia(Membresias membresia)
+        protected override void LogicaAlta(Membresias entity, IRepository<Membresias> repository)
         {
-            this.uow = new UnitOfWork();
-            var repository = this.uow.GetRepository<Membresias>();
+            if (repository.ExistId(entity.mem_Codigo))
+                throw new Exception("El Codigo Elegido ya existe");
 
-            try
-            {
-                repository.Add(membresia);
-
-                this.uow.Save();
-                this.uow.Dispose();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public void EliminarMembresia(int idMembresia)
-        {
-            this.uow = new UnitOfWork();
-
-            var repository = this.uow.GetRepository<Membresias>();
-
-            var membresia = repository.GetById(idMembresia);
-
-            try
-            {
-                repository.Remove(membresia);
-
-                this.uow.Save();
-                this.uow.Dispose();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public void ModificarMembresia(Membresias membresia)
-        {
-            this.uow = new UnitOfWork();
-
-            var repository = this.uow.GetRepository<Membresias>();
-
-            try
-            {
-                repository.Edit(membresia);
-
-                this.uow.Save();
-                this.uow.Dispose();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            repository.Add(entity);
         }
     }
 }

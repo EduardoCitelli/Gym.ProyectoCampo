@@ -2,6 +2,7 @@
 {
     using Gym.Controladora;
     using Gym.Domain;
+    using System;
     using System.Windows.Forms;
 
     public partial class ActividadFrm : FormABMBase
@@ -54,7 +55,15 @@
                 };
             }
 
-            this.controller.Guardar(this.Actividad, this.EsModificacion);
+            try
+            {
+                this.controller.Guardar(this.Actividad, this.EsModificacion);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             this.DialogResult = DialogResult.OK;
         }

@@ -62,7 +62,15 @@
                 };
             }
 
-            this.Controller.Guardar(this.Membresia, this.EsModificacion);
+            try
+            {
+                this.Controller.Guardar(this.Membresia, this.EsModificacion);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             this.DialogResult = DialogResult.OK;
         }

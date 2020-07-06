@@ -67,7 +67,15 @@
                 };
             }
 
-            this.SalonesController.Guardar(this.Salon, this.EsModificacion);
+            try
+            {
+                this.SalonesController.Guardar(this.Salon, this.EsModificacion);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             this.DialogResult = DialogResult.OK;
         }

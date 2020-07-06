@@ -17,5 +17,7 @@
         T GetById(object id);
 
         IEnumerable<T> Query(Expression<Func<T, bool>> filter);
+
+        bool ExistId(object id);
     }
 }
