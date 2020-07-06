@@ -55,7 +55,7 @@
                     case nameof(Socios.soc_Codigo):
                         col.HeaderText = @"Cod. Socio";
                         col.Width = 150;
-                        col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                        col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         col.ReadOnly = true;
                         col.DisplayIndex = 1;
                         break;
