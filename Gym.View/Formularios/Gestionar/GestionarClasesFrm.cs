@@ -7,7 +7,7 @@
     using System.Data;
     using System.Linq;
     using System.Windows.Forms;
-
+    
     public partial class GestionarClasesFrm : FormGestionarBase
     {
         private readonly ClasesController clasesController;
@@ -19,17 +19,26 @@
 
             this.clasesController = new ClasesController();
 
+            this.source = this.clasesController.ListarCompleto().ToList();
+
             this.ArmarLista();
         }
 
         private void ArmarLista()
         {
-            this.source = this.clasesController.ListarCompleto().ToList();
+            this.Limpiar();            
 
             this.grd.DataSource = null;
             this.grd.DataSource = this.source;
 
             this.InicializarColumnas();
+        }
+
+        private void Limpiar()
+        {
+            this.txtFiltroNombre.Clear();
+            this.chkAlta.Completar();
+            this.chkPendiente.Completar();
         }
 
         private void InicializarColumnas()
@@ -192,7 +201,16 @@
         private void Filtrar()
         {
             this.grd.DataSource = null;
-            this.grd.DataSource = this.source.Where(x => x.cls_Descripcion.Contains(this.txtFiltroNombre.Text));
+
+            var filtro = this.source.Where(x => x.cls_Descripcion.Contains(this.txtFiltroNombre.Text)).ToList();
+
+            if (!this.chkPendiente.GetValor())
+                filtro = filtro.Where(x => x.cls_Estado != "P").ToList();
+
+            if (!this.chkAlta.GetValor())
+                filtro = filtro.Where(x => x.cls_Estado != "A").ToList();
+
+            this.grd.DataSource = filtro;
 
             this.InicializarColumnas();
         }
@@ -232,5 +250,9 @@
             if (result == DialogResult.OK)
                 this.ArmarLista();
         }
+
+        private void chkPendiente_ValueChanged(object sender, EventArgs e) => this.Filtrar();
+
+        private void chkAlta_ValueChanged(object sender, EventArgs e) => this.Filtrar();
     }
 }

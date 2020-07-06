@@ -1,8 +1,8 @@
 ﻿namespace Gym.View
 {
+    using System;
     using System.ComponentModel;
     using System.Drawing;
-    using System.Windows.Forms;
 
     public partial class MyGymChkBox : MyGymControl
     {
@@ -53,5 +53,11 @@
         public bool GetValor() => this.chk.Checked;
 
         public void SetValor(bool valor) => this.chk.Checked = valor;
+
+        public void Limpiar() => this.chk.Checked = false;
+
+        public void Completar() => this.chk.Checked = true;
+
+        private void Chk_CheckedChanged(object sender, EventArgs e) => this.OnValueChanged();
     }
 }

@@ -77,12 +77,13 @@
             this.chk.TabIndex = 0;
             this.chk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk.UseVisualStyleBackColor = true;
+            this.chk.CheckedChanged += new System.EventHandler(this.Chk_CheckedChanged);
             // 
-            // MyChkBox
+            // MyGymChkBox
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "MyChkBox";
+            this.Name = "MyGymChkBox";
             this.Size = new System.Drawing.Size(340, 26);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
