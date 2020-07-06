@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{405B8D91-5E8A-4E40-8649-04475F70B173}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Gym.View</RootNamespace>
+    <AssemblyName>Gym.View</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controles\Combos\ComboActividad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboActividad.Designer.cs">
+      <DependentUpon>ComboActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboProfesor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboProfesor.Designer.cs">
+      <DependentUpon>ComboProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboSalon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboSalon.Designer.cs">
+      <DependentUpon>ComboSalon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboSexo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboSexo.Designer.cs">
+      <DependentUpon>ComboSexo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboTipoMembresias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboTipoMembresias.Designer.cs">
+      <DependentUpon>ComboTipoMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\DecimalTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\DecimalTextBox.Designer.cs">
+      <DependentUpon>DecimalTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\GridColores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymChkBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymChkBox.Designer.cs">
+      <DependentUpon>MyGymChkBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymControl.Designer.cs">
+      <DependentUpon>MyGymControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymDate.Designer.cs">
+      <DependentUpon>MyGymDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymDateTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymDateTime.Designer.cs">
+      <DependentUpon>MyGymDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymDateTimeHora.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymDateTimeHora.Designer.cs">
+      <DependentUpon>MyGymDateTimeHora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymDateTimePicker.Designer.cs">
+      <DependentUpon>MyGymDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymDecimal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymDecimal.Designer.cs">
+      <DependentUpon>MyGymDecimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymRequerido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymRequerido.Designer.cs">
+      <DependentUpon>MyGymRequerido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymTextBox.Designer.cs">
+      <DependentUpon>MyGymTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\MyGymEntero.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymEntero.Designer.cs">
+      <DependentUpon>MyGymEntero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\PanelColores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboGrupoUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboGrupoUsuarios.Designer.cs">
+      <DependentUpon>ComboGrupoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TituloLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\TituloLabel.Designer.cs">
+      <DependentUpon>TituloLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboBase.Designer.cs">
+      <DependentUpon>ComboBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsBase\AgregarSociosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsBase\AgregarSociosFrm.Designer.cs">
+      <DependentUpon>AgregarSociosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsBase\FormABMBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsBase\FormABMBase.Designer.cs">
+      <DependentUpon>FormABMBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsBase\FormGestionarBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsBase\FormGestionarBase.Designer.cs">
+      <DependentUpon>FormGestionarBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combos\IComboBase.cs" />
+    <Compile Include="FormulariosManager.cs" />
+    <Compile Include="Formularios\ActividadFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ActividadFrm.Designer.cs">
+      <DependentUpon>ActividadFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ClaseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ClaseFrm.Designer.cs">
+      <DependentUpon>ClaseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarActividadesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarActividadesFrm.Designer.cs">
+      <DependentUpon>GestionarActividadesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarClasesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarClasesFrm.Designer.cs">
+      <DependentUpon>GestionarClasesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarGruposFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarGruposFrm.Designer.cs">
+      <DependentUpon>GestionarGruposFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarMembresiasFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarMembresiasFrm.Designer.cs">
+      <DependentUpon>GestionarMembresiasFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarProfesoresFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarProfesoresFrm.Designer.cs">
+      <DependentUpon>GestionarProfesoresFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarSalonesFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarSalonesFrm.Designer.cs">
+      <DependentUpon>GestionarSalonesFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarSociosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarSociosFrm.Designer.cs">
+      <DependentUpon>GestionarSociosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarTiposMembresiaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarTiposMembresiaFrm.Designer.cs">
+      <DependentUpon>GestionarTiposMembresiaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GrupoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GrupoFrm.Designer.cs">
+      <DependentUpon>GrupoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionarUsuariosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionarUsuariosFrm.Designer.cs">
+      <DependentUpon>GestionarUsuariosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MembresiaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MembresiaFrm.Designer.cs">
+      <DependentUpon>MembresiaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MenuFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MenuFrm.Designer.cs">
+      <DependentUpon>MenuFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ProfesorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ProfesorFrm.Designer.cs">
+      <DependentUpon>ProfesorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\SalonFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\SalonFrm.Designer.cs">
+      <DependentUpon>SalonFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\SocioFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\SocioFrm.Designer.cs">
+      <DependentUpon>SocioFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TipoMembresiasFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TipoMembresiasFrm.Designer.cs">
+      <DependentUpon>TipoMembresiasFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Formularios\UsuarioFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\UsuarioFrm.Designer.cs">
+      <DependentUpon>UsuarioFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SexoModel.cs" />
+    <EmbeddedResource Include="Controles\Combos\ComboGrupoUsuarios.resx">
+      <DependentUpon>ComboGrupoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Combos\ComboTipoMembresias.resx">
+      <DependentUpon>ComboTipoMembresias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\DecimalTextBox.resx">
+      <DependentUpon>DecimalTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MyGymChkBox.resx">
+      <DependentUpon>MyGymChkBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MyGymDate.resx">
+      <DependentUpon>MyGymDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MyGymDateTime.resx">
+      <DependentUpon>MyGymDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MyGymDateTimeHora.resx">
+      <DependentUpon>MyGymDateTimeHora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MyGymDecimal.resx">
+      <DependentUpon>MyGymDecimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MyGymRequerido.resx">
+      <DependentUpon>MyGymRequerido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MyGymTextBox.resx">
+      <DependentUpon>MyGymTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\MyGymEntero.resx">
+      <DependentUpon>MyGymEntero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\TituloLabel.resx">
+      <DependentUpon>TituloLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\Combos\ComboBase.resx">
+      <DependentUpon>ComboBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsBase\AgregarSociosFrm.resx">
+      <DependentUpon>AgregarSociosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsBase\FormABMBase.resx">
+      <DependentUpon>FormABMBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsBase\FormGestionarBase.resx">
+      <DependentUpon>FormGestionarBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ActividadFrm.resx">
+      <DependentUpon>ActividadFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ClaseFrm.resx">
+      <DependentUpon>ClaseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarActividadesFrm.resx">
+      <DependentUpon>GestionarActividadesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarClasesFrm.resx">
+      <DependentUpon>GestionarClasesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarGruposFrm.resx">
+      <DependentUpon>GestionarGruposFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarMembresiasFrm.resx">
+      <DependentUpon>GestionarMembresiasFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarProfesoresFrm.resx">
+      <DependentUpon>GestionarProfesoresFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarSalonesFrm.resx">
+      <DependentUpon>GestionarSalonesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarSociosFrm.resx">
+      <DependentUpon>GestionarSociosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarTiposMembresiaFrm.resx">
+      <DependentUpon>GestionarTiposMembresiaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GrupoFrm.resx">
+      <DependentUpon>GrupoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionarUsuariosFrm.resx">
+      <DependentUpon>GestionarUsuariosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MembresiaFrm.resx">
+      <DependentUpon>MembresiaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MenuFrm.es-AR.resx">
+      <DependentUpon>MenuFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MenuFrm.resx">
+      <DependentUpon>MenuFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ProfesorFrm.resx">
+      <DependentUpon>ProfesorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\SalonFrm.resx">
+      <DependentUpon>SalonFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\SocioFrm.resx">
+      <DependentUpon>SocioFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TipoMembresiasFrm.resx">
+      <DependentUpon>TipoMembresiasFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Formularios\UsuarioFrm.resx">
+      <DependentUpon>UsuarioFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{2ae48a72-7728-43a4-955b-4dd131c756af}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gym.Controladora\Gym.Controladora.csproj">
+      <Project>{c32b9b2c-887b-4690-95f3-6ff9110dcf3b}</Project>
+      <Name>Gym.Controladora</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gym.Domain\Gym.Domain.csproj">
+      <Project>{af5e3f9c-80dd-4980-af0d-a605da8dc076}</Project>
+      <Name>Gym.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asterisk-yellow-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asterisk-yellow-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Math-multiply-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
