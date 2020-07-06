@@ -176,10 +176,10 @@
     <Compile Include="Controles\Combos\ComboBase.Designer.cs">
       <DependentUpon>ComboBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\AltaClasesFrm.cs">
+    <Compile Include="Formularios\Operaciones\AltaClasesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\AltaClasesFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\AltaClasesFrm.Designer.cs">
       <DependentUpon>AltaClasesFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsBase\FormABMBase.cs">
@@ -196,70 +196,70 @@
     </Compile>
     <Compile Include="Controles\Combos\IComboBase.cs" />
     <Compile Include="FormulariosManager.cs" />
-    <Compile Include="Formularios\ActividadFrm.cs">
+    <Compile Include="Formularios\Operaciones\ActividadFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ActividadFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\ActividadFrm.Designer.cs">
       <DependentUpon>ActividadFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ClaseFrm.cs">
+    <Compile Include="Formularios\Operaciones\ClaseFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ClaseFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\ClaseFrm.Designer.cs">
       <DependentUpon>ClaseFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarActividadesFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarActividadesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarActividadesFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarActividadesFrm.Designer.cs">
       <DependentUpon>GestionarActividadesFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarClasesFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarClasesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarClasesFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarClasesFrm.Designer.cs">
       <DependentUpon>GestionarClasesFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarGruposFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarGruposFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarGruposFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarGruposFrm.Designer.cs">
       <DependentUpon>GestionarGruposFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarMembresiasFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarMembresiasFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarMembresiasFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarMembresiasFrm.Designer.cs">
       <DependentUpon>GestionarMembresiasFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarProfesoresFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarProfesoresFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarProfesoresFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarProfesoresFrm.Designer.cs">
       <DependentUpon>GestionarProfesoresFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarSalonesFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarSalonesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarSalonesFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarSalonesFrm.Designer.cs">
       <DependentUpon>GestionarSalonesFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarSociosFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarSociosFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarSociosFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarSociosFrm.Designer.cs">
       <DependentUpon>GestionarSociosFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarTiposMembresiaFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarTiposMembresiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarTiposMembresiaFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarTiposMembresiaFrm.Designer.cs">
       <DependentUpon>GestionarTiposMembresiaFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GrupoFrm.cs">
+    <Compile Include="Formularios\Operaciones\GrupoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GrupoFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\GrupoFrm.Designer.cs">
       <DependentUpon>GrupoFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\LoginFrm.cs">
@@ -268,16 +268,16 @@
     <Compile Include="Formularios\LoginFrm.Designer.cs">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\GestionarUsuariosFrm.cs">
+    <Compile Include="Formularios\Gestionar\GestionarUsuariosFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionarUsuariosFrm.Designer.cs">
+    <Compile Include="Formularios\Gestionar\GestionarUsuariosFrm.Designer.cs">
       <DependentUpon>GestionarUsuariosFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\MembresiaFrm.cs">
+    <Compile Include="Formularios\Operaciones\MembresiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\MembresiaFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\MembresiaFrm.Designer.cs">
       <DependentUpon>MembresiaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\MenuFrm.cs">
@@ -286,36 +286,36 @@
     <Compile Include="Formularios\MenuFrm.Designer.cs">
       <DependentUpon>MenuFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ProfesorFrm.cs">
+    <Compile Include="Formularios\Operaciones\ProfesorFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ProfesorFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\ProfesorFrm.Designer.cs">
       <DependentUpon>ProfesorFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\SalonFrm.cs">
+    <Compile Include="Formularios\Operaciones\SalonFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\SalonFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\SalonFrm.Designer.cs">
       <DependentUpon>SalonFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\SocioFrm.cs">
+    <Compile Include="Formularios\Operaciones\SocioFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\SocioFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\SocioFrm.Designer.cs">
       <DependentUpon>SocioFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\TipoMembresiasFrm.cs">
+    <Compile Include="Formularios\Operaciones\TipoMembresiasFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\TipoMembresiasFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\TipoMembresiasFrm.Designer.cs">
       <DependentUpon>TipoMembresiasFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Formularios\UsuarioFrm.cs">
+    <Compile Include="Formularios\Operaciones\UsuarioFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\UsuarioFrm.Designer.cs">
+    <Compile Include="Formularios\Operaciones\UsuarioFrm.Designer.cs">
       <DependentUpon>UsuarioFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\SexoModel.cs" />
@@ -358,7 +358,7 @@
     <EmbeddedResource Include="Controles\Combos\ComboBase.resx">
       <DependentUpon>ComboBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\AltaClasesFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\AltaClasesFrm.resx">
       <DependentUpon>AltaClasesFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsBase\FormABMBase.resx">
@@ -367,46 +367,46 @@
     <EmbeddedResource Include="FormsBase\FormGestionarBase.resx">
       <DependentUpon>FormGestionarBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ActividadFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\ActividadFrm.resx">
       <DependentUpon>ActividadFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ClaseFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\ClaseFrm.resx">
       <DependentUpon>ClaseFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarActividadesFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarActividadesFrm.resx">
       <DependentUpon>GestionarActividadesFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarClasesFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarClasesFrm.resx">
       <DependentUpon>GestionarClasesFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarGruposFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarGruposFrm.resx">
       <DependentUpon>GestionarGruposFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarMembresiasFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarMembresiasFrm.resx">
       <DependentUpon>GestionarMembresiasFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarProfesoresFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarProfesoresFrm.resx">
       <DependentUpon>GestionarProfesoresFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarSalonesFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarSalonesFrm.resx">
       <DependentUpon>GestionarSalonesFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarSociosFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarSociosFrm.resx">
       <DependentUpon>GestionarSociosFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarTiposMembresiaFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarTiposMembresiaFrm.resx">
       <DependentUpon>GestionarTiposMembresiaFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GrupoFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\GrupoFrm.resx">
       <DependentUpon>GrupoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\LoginFrm.resx">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\GestionarUsuariosFrm.resx">
+    <EmbeddedResource Include="Formularios\Gestionar\GestionarUsuariosFrm.resx">
       <DependentUpon>GestionarUsuariosFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\MembresiaFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\MembresiaFrm.resx">
       <DependentUpon>MembresiaFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MenuFrm.es-AR.resx">
@@ -415,16 +415,16 @@
     <EmbeddedResource Include="Formularios\MenuFrm.resx">
       <DependentUpon>MenuFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ProfesorFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\ProfesorFrm.resx">
       <DependentUpon>ProfesorFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\SalonFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\SalonFrm.resx">
       <DependentUpon>SalonFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\SocioFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\SocioFrm.resx">
       <DependentUpon>SocioFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\TipoMembresiasFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\TipoMembresiasFrm.resx">
       <DependentUpon>TipoMembresiasFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -437,7 +437,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Formularios\UsuarioFrm.resx">
+    <EmbeddedResource Include="Formularios\Operaciones\UsuarioFrm.resx">
       <DependentUpon>UsuarioFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
