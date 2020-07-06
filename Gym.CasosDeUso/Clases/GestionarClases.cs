@@ -4,9 +4,16 @@
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
-
+    
     public partial class GestionarClases : Gestionable<Clases>
     {
+        private readonly IClasesQueryBuilder queryBuilder;
+
+        public GestionarClases()
+        {
+            this.queryBuilder = new ClasesQueryBuilder();
+        }
+
         public ICollection<Clases> ListarCompleto()
         {
             var repository = this.CrearRepository();
@@ -47,24 +54,22 @@
         {
             var repository = this.CrearRepository();
 
-            var listaClases = repository.Query(x => x.cls_sal_Codigo == clase.cls_sal_Codigo && x.cls_Estado == "A" && x.cls_Id != clase.cls_Id &&
-                                                   (x.cls_FechaInicio <= clase.cls_FechaInicio && x.cls_FechaFinal >= x.cls_FechaInicio ||
-                                                    x.cls_FechaInicio <= clase.cls_FechaFinal && x.cls_FechaFinal >= clase.cls_FechaFinal))
-                                                    .ToList();
+            var query = this.queryBuilder.ObtenerQuerySalonOcupado(clase);
+
+            var listaClases = repository.Query(query).ToList();
 
             this.CerrarRepository();
 
             return listaClases.Any();
-        }
+        }        
 
         public bool ProfesorOcupado(Clases clase)
         {
             var repository = this.CrearRepository();
 
-            var listaClases = repository.Query(x => x.cls_pro_Titular == clase.cls_pro_Titular && x.cls_Estado == "A" && x.cls_Id != clase.cls_Id &&
-                                                   (x.cls_FechaInicio <= clase.cls_FechaInicio && x.cls_FechaFinal >= x.cls_FechaInicio ||
-                                                    x.cls_FechaInicio <= clase.cls_FechaFinal && x.cls_FechaFinal >= clase.cls_FechaFinal))
-                                                    .ToList();
+            var query = this.queryBuilder.ObtenerQueryProfesorOcupado(clase);
+
+            var listaClases = repository.Query(query).ToList();
 
             this.CerrarRepository();
 

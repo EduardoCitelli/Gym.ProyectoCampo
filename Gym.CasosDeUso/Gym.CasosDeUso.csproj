@@ -69,6 +69,8 @@
     <Compile Include="Profesores\GestionarProfesores.cs" />
     <Compile Include="Profesores\OperacionesProfesores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryBuilders\ClasesQueryBuilder.cs" />
+    <Compile Include="QueryBuilders\IClasesQueryBuilder.cs" />
     <Compile Include="Salones\GestionarSalones.cs" />
     <Compile Include="Salones\OperacionesSalones.cs" />
     <Compile Include="Socios\GestionarSocios.cs" />

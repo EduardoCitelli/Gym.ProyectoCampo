@@ -3,13 +3,6 @@
     using Gym.Controladora;
     using Gym.Domain;
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Data;
-    using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows.Forms;
 
     public partial class ClaseFrm : FormABMBase
@@ -44,6 +37,7 @@
             this.lblTitulo.Text = @"Modificar Clase";
 
             this.Clase = clase;
+            this.EliminarAdicional();
 
             this.txtDescripcion.SetValor(this.Clase.cls_Descripcion);
 
@@ -59,6 +53,14 @@
 
             if (this.Clase.cls_pro_Auxiliar.HasValue)
                 this.comboAuxiliar.SetValor(this.Clase.cls_pro_Auxiliar.Value);
+        }
+
+        private void EliminarAdicional()
+        {
+            this.Clase.Titular = null;
+            this.Clase.Salon = null;
+            this.Clase.Auxiliar = null;
+            this.Clase.Actividad = null;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

@@ -130,7 +130,6 @@
 
                 this.ArmarLista();
             }
-
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -171,6 +170,19 @@
             return true;
         }
 
+        private bool ValidarClasePendienteDarAlta()
+        {
+            var objeto = this.ObtenerClase();
+
+            if (objeto.cls_Estado != "A")
+            {
+                MessageBox.Show("La Clase no está dada de Alta, No puede Agregar Alumnos", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnActualizar_Click(object sender, EventArgs e) => this.ArmarLista();
 
         private void btnCerrar_Click(object sender, EventArgs e) => this.Close();
@@ -189,24 +201,11 @@
         {
             if (!base.ValidarModificar()) return;
 
+            if (!this.ValidarClasePendienteDarAlta()) return;
+
             var objeto = this.ObtenerClase();
 
             this.AbrirFormularioClasesSocios(objeto);
-        }
-
-        private void AbrirFormularioClasesSocios(Clases objeto)
-        {
-            var frm = new AltaClasesFrm(objeto);
-
-            var result = frm.ShowDialog();
-
-            if (result == DialogResult.OK)
-                this.ArmarLista();
-        }
-
-        private void btnDropAlumnos_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -222,6 +221,16 @@
             }
 
             this.AbrirFormularioClasesSocios(objeto);
+        }
+
+        private void AbrirFormularioClasesSocios(Clases objeto)
+        {
+            var frm = new AltaClasesFrm(objeto);
+
+            var result = frm.ShowDialog();
+
+            if (result == DialogResult.OK)
+                this.ArmarLista();
         }
     }
 }

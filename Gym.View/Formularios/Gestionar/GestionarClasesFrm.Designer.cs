@@ -121,7 +121,6 @@
             this.btnDropAlumnos.TabIndex = 6;
             this.btnDropAlumnos.Text = "Sacar Alumnos";
             this.btnDropAlumnos.UseVisualStyleBackColor = false;
-            this.btnDropAlumnos.Click += new System.EventHandler(this.btnDropAlumnos_Click);
             // 
             // btnAlta
             // 
