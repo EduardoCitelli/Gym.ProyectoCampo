@@ -32,6 +32,7 @@
             this.btnAlta = new System.Windows.Forms.Button();
             this.chkAlta = new Gym.View.MyGymChkBox();
             this.chkPendiente = new Gym.View.MyGymChkBox();
+            this.btnBajaClase = new System.Windows.Forms.Button();
             this.pnlBotones.SuspendLayout();
             this.pnlActualizar.SuspendLayout();
             this.pnlContenedor.SuspendLayout();
@@ -41,6 +42,7 @@
             // 
             // pnlBotones
             // 
+            this.pnlBotones.Controls.Add(this.btnBajaClase);
             this.pnlBotones.Controls.Add(this.btnAlta);
             this.pnlBotones.Controls.Add(this.btnAddAlumno);
             this.pnlBotones.Controls.SetChildIndex(this.pnlActualizar, 0);
@@ -49,17 +51,19 @@
             this.pnlBotones.Controls.SetChildIndex(this.btnModificar, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnAddAlumno, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnAlta, 0);
+            this.pnlBotones.Controls.SetChildIndex(this.btnBajaClase, 0);
             // 
             // btnModificar
             // 
             this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.Location = new System.Drawing.Point(192, 18);
+            this.btnModificar.Location = new System.Drawing.Point(192, 15);
             this.btnModificar.Size = new System.Drawing.Size(84, 39);
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBorrar
             // 
             this.btnBorrar.FlatAppearance.BorderSize = 0;
+            this.btnBorrar.Location = new System.Drawing.Point(102, 15);
             this.btnBorrar.Size = new System.Drawing.Size(84, 39);
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
@@ -73,14 +77,14 @@
             // btnCerrar
             // 
             this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.Location = new System.Drawing.Point(93, 11);
+            this.btnCerrar.Location = new System.Drawing.Point(93, 10);
             this.btnCerrar.Size = new System.Drawing.Size(84, 39);
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnActualizar
             // 
             this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.Location = new System.Drawing.Point(3, 11);
+            this.btnActualizar.Location = new System.Drawing.Point(3, 10);
             this.btnActualizar.Size = new System.Drawing.Size(84, 39);
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
@@ -111,7 +115,7 @@
             this.btnAddAlumno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddAlumno.FlatAppearance.BorderSize = 0;
             this.btnAddAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAlumno.Location = new System.Drawing.Point(408, 16);
+            this.btnAddAlumno.Location = new System.Drawing.Point(477, 15);
             this.btnAddAlumno.Name = "btnAddAlumno";
             this.btnAddAlumno.Size = new System.Drawing.Size(96, 39);
             this.btnAddAlumno.TabIndex = 5;
@@ -125,7 +129,7 @@
             this.btnAlta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlta.FlatAppearance.BorderSize = 0;
             this.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlta.Location = new System.Drawing.Point(297, 16);
+            this.btnAlta.Location = new System.Drawing.Point(297, 15);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(84, 39);
             this.btnAlta.TabIndex = 7;
@@ -157,6 +161,20 @@
             this.chkPendiente.Titulo = "Pendiente:";
             this.chkPendiente.ValueChanged += new System.EventHandler(this.chkPendiente_ValueChanged);
             // 
+            // btnBajaClase
+            // 
+            this.btnBajaClase.BackColor = System.Drawing.Color.Transparent;
+            this.btnBajaClase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBajaClase.FlatAppearance.BorderSize = 0;
+            this.btnBajaClase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaClase.Location = new System.Drawing.Point(387, 15);
+            this.btnBajaClase.Name = "btnBajaClase";
+            this.btnBajaClase.Size = new System.Drawing.Size(84, 39);
+            this.btnBajaClase.TabIndex = 8;
+            this.btnBajaClase.Text = "Baja Clase";
+            this.btnBajaClase.UseVisualStyleBackColor = false;
+            this.btnBajaClase.Click += new System.EventHandler(this.btnBajaClase_Click);
+            // 
             // GestionarClasesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,5 +197,6 @@
         private System.Windows.Forms.Button btnAlta;
         private MyGymChkBox chkPendiente;
         private MyGymChkBox chkAlta;
+        private System.Windows.Forms.Button btnBajaClase;
     }
 }

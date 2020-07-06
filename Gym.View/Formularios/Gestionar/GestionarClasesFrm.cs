@@ -6,6 +6,7 @@
     using System.Collections.Generic;
     using System.Data;
     using System.Linq;
+    using System.Linq.Expressions;
     using System.Windows.Forms;
     
     public partial class GestionarClasesFrm : FormGestionarBase
@@ -125,7 +126,7 @@
 
             var result = MessageBox.Show("Está Seguro de Eliminar la Clase " + descripcion + "?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if (result == DialogResult.OK)
+            if (result == DialogResult.Yes)
             {
                 try
                 {
@@ -179,13 +180,13 @@
             return true;
         }
 
-        private bool ValidarClasePendienteDarAlta()
+        private bool ValidarClasePendienteDarAlta(string accion)
         {
             var objeto = this.ObtenerClase();
 
             if (objeto.cls_Estado != "A")
             {
-                MessageBox.Show("La Clase no está dada de Alta, No puede Agregar Alumnos", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La Clase no está dada de Alta, No puede "+ accion, "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -219,7 +220,7 @@
         {
             if (!base.ValidarModificar()) return;
 
-            if (!this.ValidarClasePendienteDarAlta()) return;
+            if (!this.ValidarClasePendienteDarAlta("Agregar Alumnos")) return;
 
             var objeto = this.ObtenerClase();
 
@@ -254,5 +255,31 @@
         private void chkPendiente_ValueChanged(object sender, EventArgs e) => this.Filtrar();
 
         private void chkAlta_ValueChanged(object sender, EventArgs e) => this.Filtrar();
+
+        private void btnBajaClase_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidarEliminar()) return;
+
+            if (!this.ValidarClasePendienteDarAlta("Dar de baja la clase")) return;
+
+            var result = MessageBox.Show("Desea dar de Baja la Clase?", "Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            var objeto = this.ObtenerClase();
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    this.clasesController.DarDeBajaClase(objeto);                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Baja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                this.ArmarLista();
+            }
+        }
     }
 }

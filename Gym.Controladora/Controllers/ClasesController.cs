@@ -9,10 +9,13 @@
         private readonly GestionarClases gestionarClases;
         private readonly OperacionesClases operacionesClases;
 
+        private readonly OperacionesClases_Socios operacionesClases_Socios;
+
         public ClasesController()
         {
             this.gestionarClases = new GestionarClases();
             this.operacionesClases = new OperacionesClases();
+            this.operacionesClases_Socios = new OperacionesClases_Socios();
         }
 
         public void Eliminar(int idEntity) => this.operacionesClases.Eliminar(idEntity);
@@ -31,5 +34,14 @@
         public Clases ObtenerCompleto(int idEntity) => this.gestionarClases.ObtenerCompleto(idEntity);
 
         public ICollection<Clases> ListarCompleto() => this.gestionarClases.ListarCompleto();
+
+        public void DarDeBajaClase(Clases clase)
+        {
+            this.operacionesClases_Socios.EliminarPorClase(clase.cls_Id);
+
+            clase.cls_Estado = "P";
+
+            this.operacionesClases.Modificar(clase);
+        }
     }
 }
