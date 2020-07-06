@@ -1,6 +1,6 @@
 ﻿namespace Gym.View
 {
-    partial class AgregarSociosFrm
+    partial class AltaClasesFrm
     {
         /// <summary>
         /// Required designer variable.

@@ -7,15 +7,17 @@
     using System.Linq;
     using System.Windows.Forms;
 
-    public partial class AgregarSociosFrm : FormABMBase
+    public partial class AltaClasesFrm : FormABMBase
     {
         private readonly Clases_SociosController Clases_SociosController;
 
         private readonly Clases clase;
-        private List<Socios> source;
+
         private readonly List<Clases_Socios> ListaArmada;
 
-        public AgregarSociosFrm(Clases clase)
+        private List<Socios> source;
+
+        public AltaClasesFrm(Clases clase)
         {
             this.InitializeComponent();
 

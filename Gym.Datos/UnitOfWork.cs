@@ -5,13 +5,13 @@
 
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
-        private readonly MyDbContext Context = new MyDbContext();
+        private readonly MyDbContext context = new MyDbContext();
 
         private readonly NombreRepositoryGenerator nombreRepositoryGenerator;
 
         private readonly Dictionary<string, object> repositories;
 
-        private bool disposed = false;
+        private bool Disposed = false;
 
         public UnitOfWork()
         {
@@ -32,9 +32,9 @@
             return this.repositories[nombre] as IRepository<T>;
         }
 
-        protected virtual IRepository<T> CreateRepository<T>(string nombre) where T : class => new Repository<T>(this.Context);            
+        protected virtual IRepository<T> CreateRepository<T>(string nombre) where T : class => new Repository<T>(this.context);
 
-        public void Save() => this.Context.SaveChanges();
+        public void Save() => this.context.SaveChanges();
 
         public void Dispose()
         {
@@ -45,11 +45,11 @@
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!this.Disposed)
                 if (disposing)
-                    this.Context.Dispose();
+                    this.context.Dispose();
 
-            this.disposed = true;
+            this.Disposed = true;
         }        
     }
 }

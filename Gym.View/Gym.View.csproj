@@ -176,11 +176,11 @@
     <Compile Include="Controles\Combos\ComboBase.Designer.cs">
       <DependentUpon>ComboBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsBase\AgregarSociosFrm.cs">
+    <Compile Include="FormsBase\AltaClasesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsBase\AgregarSociosFrm.Designer.cs">
-      <DependentUpon>AgregarSociosFrm.cs</DependentUpon>
+    <Compile Include="FormsBase\AltaClasesFrm.Designer.cs">
+      <DependentUpon>AltaClasesFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsBase\FormABMBase.cs">
       <SubType>Form</SubType>
@@ -358,8 +358,8 @@
     <EmbeddedResource Include="Controles\Combos\ComboBase.resx">
       <DependentUpon>ComboBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsBase\AgregarSociosFrm.resx">
-      <DependentUpon>AgregarSociosFrm.cs</DependentUpon>
+    <EmbeddedResource Include="FormsBase\AltaClasesFrm.resx">
+      <DependentUpon>AltaClasesFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsBase\FormABMBase.resx">
       <DependentUpon>FormABMBase.cs</DependentUpon>

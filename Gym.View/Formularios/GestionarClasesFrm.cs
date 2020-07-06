@@ -173,7 +173,7 @@
 
             var objeto = this.clasesController.ObtenerCompleto(codigo);
 
-            var frm = new AgregarSociosFrm(objeto);
+            var frm = new AltaClasesFrm(objeto);
 
             var result = frm.ShowDialog();
 
