@@ -17,6 +17,7 @@
                                   .Include(x => x.Auxiliar)
                                   .Include(x => x.Actividad)
                                   .Include(x => x.Salon)
+                                  .Include(x => x.SociosInscriptos)
                                   .ToList();
 
             this.CerrarRepository();
@@ -34,6 +35,7 @@
                                   .Include(x => x.Auxiliar)
                                   .Include(x => x.Actividad)
                                   .Include(x => x.Salon)
+                                  .Include(x => x.SociosInscriptos)
                                   .FirstOrDefault();
 
             this.CerrarRepository();
@@ -45,7 +47,7 @@
         {
             var repository = this.CrearRepository();
 
-            var listaClases = repository.Query(x => x.cls_sal_Codigo == clase.cls_sal_Codigo && clase.cls_Estado == "A" &&
+            var listaClases = repository.Query(x => x.cls_sal_Codigo == clase.cls_sal_Codigo && x.cls_Estado == "A" && x.cls_Id != clase.cls_Id &&
                                                    (x.cls_FechaInicio <= clase.cls_FechaInicio && x.cls_FechaFinal >= x.cls_FechaInicio ||
                                                     x.cls_FechaInicio <= clase.cls_FechaFinal && x.cls_FechaFinal >= clase.cls_FechaFinal))
                                                     .ToList();
@@ -59,7 +61,7 @@
         {
             var repository = this.CrearRepository();
 
-            var listaClases = repository.Query(x => x.cls_pro_Titular == clase.cls_pro_Titular && clase.cls_Estado == "A" &&
+            var listaClases = repository.Query(x => x.cls_pro_Titular == clase.cls_pro_Titular && x.cls_Estado == "A" && x.cls_Id != clase.cls_Id &&
                                                    (x.cls_FechaInicio <= clase.cls_FechaInicio && x.cls_FechaFinal >= x.cls_FechaInicio ||
                                                     x.cls_FechaInicio <= clase.cls_FechaFinal && x.cls_FechaFinal >= clase.cls_FechaFinal))
                                                     .ToList();

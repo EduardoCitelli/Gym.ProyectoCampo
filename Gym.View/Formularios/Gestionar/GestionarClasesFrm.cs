@@ -82,6 +82,14 @@
                         col.DisplayIndex = 6;
                         break;
 
+                    case nameof(Clases.CantidadAlumnosInscriptos):
+                        col.HeaderText = @"Cant. Alumnos";
+                        col.Width = 80;
+                        col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                        col.DisplayIndex = 7;
+                        break;
+
+
                     default:
                         col.Visible = false;
                         break;
@@ -129,9 +137,7 @@
         {
             if (!this.ValidarModificar()) return;
 
-            var codigo = this.ObtenerCodigo(nameof(Clases.cls_Id));
-
-            var objeto = this.clasesController.Obtener(codigo);
+            var objeto = this.ObtenerClase();
 
             var frm = new ClaseFrm(this.clasesController, objeto, true);
 
@@ -139,6 +145,30 @@
 
             if (result == DialogResult.OK)
                 this.ArmarLista();
+        }
+
+        private Clases ObtenerClase()
+        {
+            var codigo = this.ObtenerCodigo(nameof(Clases.cls_Id));
+
+            var objeto = this.clasesController.ObtenerCompleto(codigo);
+
+            return objeto;
+        }
+
+        protected override bool ValidarModificar() => !base.ValidarModificar() ? false : this.ValidarClaseDadaDeAlta();
+
+        private bool ValidarClaseDadaDeAlta()
+        {
+            var objeto = this.ObtenerClase();
+
+            if (objeto.cls_Estado != "P")
+            {
+                MessageBox.Show("La clase ya está dada de Alta, darla de baja para poder Modificarla", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e) => this.ArmarLista();
@@ -157,7 +187,21 @@
 
         private void btnAddAlumno_Click(object sender, EventArgs e)
         {
+            if (!base.ValidarModificar()) return;
 
+            var objeto = this.ObtenerClase();
+
+            this.AbrirFormularioClasesSocios(objeto);
+        }
+
+        private void AbrirFormularioClasesSocios(Clases objeto)
+        {
+            var frm = new AltaClasesFrm(objeto);
+
+            var result = frm.ShowDialog();
+
+            if (result == DialogResult.OK)
+                this.ArmarLista();
         }
 
         private void btnDropAlumnos_Click(object sender, EventArgs e)
@@ -167,18 +211,17 @@
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            if (!this.ValidarModificar()) return;
+            if (!base.ValidarModificar()) return;
+            
+            var objeto = this.ObtenerClase();
 
-            var codigo = this.ObtenerCodigo(nameof(Clases.cls_Id));
+            if (objeto.cls_Estado != "P")
+            {
+                MessageBox.Show("La clase ya está dada de Alta, usar el boton Agregar/Eliminar Alumnos para Modificar la cantidad", "Alta Clase", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            var objeto = this.clasesController.ObtenerCompleto(codigo);
-
-            var frm = new AltaClasesFrm(objeto);
-
-            var result = frm.ShowDialog();
-
-            if (result == DialogResult.OK)
-                this.ArmarLista();
+            this.AbrirFormularioClasesSocios(objeto);
         }
     }
 }

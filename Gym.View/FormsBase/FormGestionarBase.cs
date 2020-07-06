@@ -25,7 +25,7 @@
             return true;
         }
 
-        protected bool ValidarModificar()
+        protected virtual bool ValidarModificar()
         {
             if (this.NoSelecciono())
             {

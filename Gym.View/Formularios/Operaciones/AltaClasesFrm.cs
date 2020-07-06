@@ -24,15 +24,19 @@
             this.Clases_SociosController = new Clases_SociosController();
 
             this.clase = clase;
+
             this.ListaArmada = this.Clases_SociosController.ListarPorClase(clase.cls_Id).ToList();
-            this.ArmarLista();
+
+            var esAlta = this.clase.cls_Estado == "P";
+
+            this.ArmarLista(esAlta);
         }
 
-        private void ArmarLista()
+        private void ArmarLista(bool esAlta)
         {
             this.source = this.Clases_SociosController.ListarSocios().ToList();
 
-            this.AgregarCheck();
+            if (!esAlta) this.AgregarCheck();
 
             this.grd.DataSource = null;
             this.grd.DataSource = this.source;
