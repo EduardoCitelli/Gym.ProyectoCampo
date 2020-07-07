@@ -133,7 +133,7 @@
             // 
             // lblGrupo
             // 
-            this.lblGrupo.AlinearTexto = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGrupo.AlinearTexto = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGrupo.BackColor = System.Drawing.Color.Transparent;
             this.lblGrupo.ColorTexto = System.Drawing.SystemColors.ControlText;
             resources.ApplyResources(this.lblGrupo, "lblGrupo");
@@ -144,7 +144,7 @@
             // 
             // lblUsuario
             // 
-            this.lblUsuario.AlinearTexto = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUsuario.AlinearTexto = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.ColorTexto = System.Drawing.SystemColors.ControlText;
             resources.ApplyResources(this.lblUsuario, "lblUsuario");
