@@ -4,7 +4,7 @@
     using Gym.Controladora;
     using Gym.Domain;
 
-    public partial class ComboGrupoUsuarios : ComboBase, IComboBase
+    public partial class ComboGrupoUsuarios : ComboBase
     {
         private readonly GrupoUsuariosController controller;
 
@@ -16,11 +16,11 @@
 
         public GrupoUsuarios GetValor() => (GrupoUsuarios)this.combo.SelectedItem;
 
-        public void ObtenerObjetos() => this.combo.DataSource = this.controller.Listar().ToList();
+        protected override void ObtenerObjetos() => this.combo.DataSource = this.controller.Listar().ToList();
 
-        public void SetValor(int idGrupo) => this.combo.SelectedValue = idGrupo;
+        public override void SetValor(int idGrupo) => this.combo.SelectedValue = idGrupo;
 
-        public void Refrescar()
+        public override void Refrescar()
         {            
             this.combo.DataSource = null;
 

@@ -7,8 +7,6 @@
 
     public partial class OperacionesUsuarios : Operable<Users>
     {
-        private UnitOfWork uow;
-
         public override void Alta(Users usuario)
         {
             try

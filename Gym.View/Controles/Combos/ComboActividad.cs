@@ -4,7 +4,7 @@
     using Gym.Controladora;
     using Gym.Domain;
 
-    public partial class ComboActividad : ComboBase, IComboBase
+    public partial class ComboActividad : ComboBase
     {
         private readonly ActividadesController actividadesController;
 
@@ -16,13 +16,13 @@
 
         public Actividades GetValor() => (Actividades)this.combo.SelectedItem;
 
-        public void ObtenerObjetos() => this.combo.DataSource = this.actividadesController.Listar().ToList();
+        protected override void ObtenerObjetos() => this.combo.DataSource = this.actividadesController.Listar().ToList();
 
 
-        public void SetValor(int idEntity) => this.combo.SelectedValue = idEntity;
+        public override void SetValor(int idEntity) => this.combo.SelectedValue = idEntity;
 
 
-        public void Refrescar()
+        public override void Refrescar()
         {
             this.combo.DataSource = null;
 

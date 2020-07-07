@@ -7,8 +7,6 @@
     
     public class GestionarTipoMembresias : Gestionable<TipoMembresias>
     {
-        private UnitOfWork uow;
-
         public override ICollection<TipoMembresias> Listar()
         {
             this.uow = new UnitOfWork();

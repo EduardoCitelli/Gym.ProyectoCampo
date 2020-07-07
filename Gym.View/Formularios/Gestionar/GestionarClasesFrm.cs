@@ -6,7 +6,6 @@
     using System.Collections.Generic;
     using System.Data;
     using System.Linq;
-    using System.Linq.Expressions;
     using System.Windows.Forms;
     
     public partial class GestionarClasesFrm : FormGestionarBase
@@ -27,6 +26,8 @@
 
         private void ArmarLista()
         {
+            this.source = this.clasesController.ListarCompleto().ToList();
+
             this.Limpiar();            
 
             this.grd.DataSource = null;

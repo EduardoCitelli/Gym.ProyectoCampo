@@ -9,8 +9,6 @@
 
     public partial class GestionarUsuarios : Gestionable<Users>
     {
-        private UnitOfWork uow;
-
         public override ICollection<Users> Listar()
         {
             this.uow = new UnitOfWork();

@@ -6,7 +6,7 @@
     using System.ComponentModel;
     using System.Linq;
     
-    public partial class ComboProfesor : ComboBase, IComboBase
+    public partial class ComboProfesor : ComboBase
     {
         private readonly ProfesoresController profesoresController;
 
@@ -21,7 +21,7 @@
 
         public Profesores GetValor() => (Profesores)this.combo.SelectedItem;
 
-        public void ObtenerObjetos() => this.combo.DataSource = this.profesoresController.Listar().ToList();        
+        protected override void ObtenerObjetos() => this.combo.DataSource = this.profesoresController.Listar().ToList();        
 
         private void ObtenerObjetosConNulo()
         {
@@ -34,9 +34,9 @@
             this.combo.DataSource = lista.OrderBy(x => x.pro_Codigo).ToList();
         }
 
-        public void SetValor(int idEntity) => this.combo.SelectedValue = idEntity;
+        public override void SetValor(int idEntity) => this.combo.SelectedValue = idEntity;
 
-        public void Refrescar()
+        public override void Refrescar()
         {
             this.combo.DataSource = null;
 

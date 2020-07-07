@@ -7,8 +7,6 @@
 
     public partial class OperacionesGrupoUsuario : Operable<GrupoUsuarios>
     {
-        private UnitOfWork uow;
-
         public override void Alta(GrupoUsuarios grupo)
         {
             try

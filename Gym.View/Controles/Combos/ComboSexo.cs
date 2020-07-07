@@ -11,7 +11,7 @@
             this.InitializeComponent();
         }
 
-        public void ObtenerObjetos()
+        protected override void ObtenerObjetos()
         {            
             this.source.Add(new SexoModel() { Valor = "M", Descripcion= "Masculino" });
             this.source.Add(new SexoModel() { Valor = "F", Descripcion = "Femenino" });
@@ -19,7 +19,7 @@
             this.combo.DataSource = this.source;
         }
 
-        public void Refrescar()
+        public override void Refrescar()
         {
             this.combo.DataSource = null;
 
@@ -30,6 +30,8 @@
         }
 
         public void SetValor(string valor) => this.combo.SelectedValue = valor;
+
+        public override void SetValor(int idEntity) => throw new System.NotImplementedException();
 
         public string GetValor() => ((SexoModel)this.combo.SelectedItem).Valor;
     }

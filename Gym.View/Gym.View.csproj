@@ -95,6 +95,12 @@
     <Compile Include="Controles\GridColores.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\MyGymCalendario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MyGymCalendario.Designer.cs">
+      <DependentUpon>MyGymCalendario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\MyGymChkBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +181,12 @@
     </Compile>
     <Compile Include="Controles\Combos\ComboBase.Designer.cs">
       <DependentUpon>ComboBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\HorariosFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\HorariosFrm.Designer.cs">
+      <DependentUpon>HorariosFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Operaciones\AltaClasesFrm.cs">
       <SubType>Form</SubType>
@@ -357,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Combos\ComboBase.resx">
       <DependentUpon>ComboBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\HorariosFrm.resx">
+      <DependentUpon>HorariosFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Operaciones\AltaClasesFrm.resx">
       <DependentUpon>AltaClasesFrm.cs</DependentUpon>

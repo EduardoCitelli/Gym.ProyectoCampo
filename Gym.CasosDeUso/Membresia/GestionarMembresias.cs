@@ -8,8 +8,6 @@
 
     public class GestionarMembresias : Gestionable<Membresias>
     {
-        private UnitOfWork uow;
-
         public override ICollection<Membresias> Listar()
         {
             this.uow = new UnitOfWork();

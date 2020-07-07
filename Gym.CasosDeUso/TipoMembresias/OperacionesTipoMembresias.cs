@@ -7,8 +7,6 @@
     
     public class OperacionesTipoMembresias : Operable<TipoMembresias>
     {
-        private UnitOfWork uow;
-
         public override void Alta(TipoMembresias tipoMembresias)
         {
             this.uow = new UnitOfWork();

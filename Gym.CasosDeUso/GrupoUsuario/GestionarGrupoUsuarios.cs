@@ -8,8 +8,6 @@
 
     public partial class GestionarGrupoUsuarios : Gestionable<GrupoUsuarios>
     {
-        private UnitOfWork uow;
-
         public override ICollection<GrupoUsuarios> Listar()
         {
             this.uow = new UnitOfWork();

@@ -5,7 +5,7 @@
     using Gym.Controladora;
     using Gym.Domain;
 
-    public partial class ComboTipoMembresias : ComboBase, IComboBase
+    public partial class ComboTipoMembresias : ComboBase
     {
         private readonly TipoMembresiasController Controller;
 
@@ -17,17 +17,15 @@
 
         public TipoMembresias GetValor() => (TipoMembresias)this.combo.SelectedItem;
 
-        public void ObtenerObjetos() => this.combo.DataSource = this.Controller.Listar().ToList();
+        protected override void ObtenerObjetos() => this.combo.DataSource = this.Controller.Listar().ToList();
 
-        public void SetValor(int idEntity) => this.combo.SelectedValue = idEntity;
+        public override void SetValor(int idEntity) => this.combo.SelectedValue = idEntity;
 
-        public void Refrescar()
+        public override void Refrescar()
         {
             this.combo.DataSource = null;
 
-            var lista = this.Controller.Listar().ToList();
-
-            this.combo.DataSource = lista.OrderBy(x => x.tmm_Id).ToList();
+            this.ObtenerObjetos();
 
             this.combo.DisplayMember = nameof(TipoMembresias.tmm_Descripcion);
 

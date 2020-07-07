@@ -1,12 +1,9 @@
 ﻿namespace Gym.View
 {
-    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Drawing;
-    using System.Linq;
-    using System.Windows.Forms;
-
-    public abstract partial class ComboBase : MyGymControl
+    
+    public abstract partial class ComboBase : MyGymControl, IComboBase
     {
         public ComboBase()
         {
@@ -42,7 +39,17 @@
         }
 
         [Category("MyGym"), DefaultValue(false)]
-        public bool PermitirValorCero { get; set; }
+        public bool PermitirValorCero { get; set; }        
+
+        public void Focalizar() => this.combo.Focus();
+
+        public bool HasFocus() => this.combo.Focused;
+
+        protected abstract void ObtenerObjetos();
+
+        public abstract void Refrescar();
+
+        public abstract void SetValor(int idEntity);
 
         //public virtual T GetObjeto<T>() where T : class
         //{
@@ -68,9 +75,5 @@
         //    var cambiarPorNull = value is int && (int)value == 0 && !this.PermitirValorCero;
         //    this.combo.SelectedValue = cambiarPorNull ? null : value;
         //}
-
-        public void Focalizar() => this.combo.Focus();
-
-        public bool HasFocus() => this.combo.Focused;
     }
 }
