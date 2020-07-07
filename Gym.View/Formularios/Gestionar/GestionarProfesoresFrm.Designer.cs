@@ -64,12 +64,16 @@
             // 
             this.txtFiltroNombre.TextChanged += new System.EventHandler(this.txtFiltroNombre_TextChanged);
             // 
-            // GestionarProfesores
+            // lblTitulo
+            // 
+            this.lblTitulo.Titulo = "Profesores";
+            // 
+            // GestionarProfesoresFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "GestionarProfesores";
+            this.Name = "GestionarProfesoresFrm";
             this.Text = "GestionarProfesores";
             this.pnlBotones.ResumeLayout(false);
             this.pnlActualizar.ResumeLayout(false);

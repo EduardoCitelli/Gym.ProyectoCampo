@@ -70,6 +70,10 @@
             this.txtFiltroNombre.Location = new System.Drawing.Point(132, 32);
             this.txtFiltroNombre.TextChanged += new System.EventHandler(this.txtFiltroNombre_TextChanged);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Titulo = "Actividades";
+            // 
             // GestionarActividadesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

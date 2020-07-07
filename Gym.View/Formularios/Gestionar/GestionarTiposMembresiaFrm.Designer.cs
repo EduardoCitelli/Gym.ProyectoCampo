@@ -70,6 +70,10 @@
             this.txtFiltroNombre.Location = new System.Drawing.Point(129, 32);
             this.txtFiltroNombre.TextChanged += new System.EventHandler(this.txtFiltroNombre_TextChanged);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Titulo = "Tipos de Membresías";
+            // 
             // GestionarTiposMembresiaFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

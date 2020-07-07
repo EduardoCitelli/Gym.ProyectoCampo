@@ -46,6 +46,7 @@
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiltroNombre = new System.Windows.Forms.TextBox();
+            this.lblTitulo = new Gym.View.TituloLabel();
             this.pnlContenedor.SuspendLayout();
             this.pnlGrd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
@@ -90,6 +91,7 @@
             this.pnlContenedor.Controls.Add(this.pnlGrd);
             this.pnlContenedor.Controls.Add(this.pnlBotones);
             this.pnlContenedor.Controls.Add(this.gbFiltros);
+            this.pnlContenedor.Controls.Add(this.lblTitulo);
             this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenedor.Location = new System.Drawing.Point(0, 0);
             this.pnlContenedor.Name = "pnlContenedor";
@@ -104,9 +106,9 @@
             this.pnlGrd.Controls.Add(this.grd);
             this.pnlGrd.Controls.Add(this.pnlEspacio);
             this.pnlGrd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGrd.Location = new System.Drawing.Point(0, 65);
+            this.pnlGrd.Location = new System.Drawing.Point(0, 91);
             this.pnlGrd.Name = "pnlGrd";
-            this.pnlGrd.Size = new System.Drawing.Size(796, 315);
+            this.pnlGrd.Size = new System.Drawing.Size(796, 289);
             this.pnlGrd.TabIndex = 2;
             // 
             // grd
@@ -157,7 +159,7 @@
             this.grd.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grd.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Transparent;
             this.grd.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grd.Size = new System.Drawing.Size(796, 300);
+            this.grd.Size = new System.Drawing.Size(796, 274);
             this.grd.TabIndex = 0;
             // 
             // pnlEspacio
@@ -248,7 +250,7 @@
             this.gbFiltros.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.gbFiltros.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFiltros.Location = new System.Drawing.Point(0, 0);
+            this.gbFiltros.Location = new System.Drawing.Point(0, 26);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Size = new System.Drawing.Size(796, 65);
             this.gbFiltros.TabIndex = 3;
@@ -272,6 +274,21 @@
             this.txtFiltroNombre.Name = "txtFiltroNombre";
             this.txtFiltroNombre.Size = new System.Drawing.Size(100, 17);
             this.txtFiltroNombre.TabIndex = 0;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AlinearTexto = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo.ColorTexto = System.Drawing.SystemColors.ControlText;
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitulo.Enabled = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.FontLabel = new System.Drawing.Font("Berlin Sans FB Demi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.LabelBackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(796, 26);
+            this.lblTitulo.TabIndex = 3;
+            this.lblTitulo.TipoBorde = System.Windows.Forms.BorderStyle.FixedSingle;
             // 
             // FormGestionarBase
             // 
@@ -312,5 +329,6 @@
         protected PanelColores pnlEspacio;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.TextBox txtFiltroNombre;
+        protected TituloLabel lblTitulo;
     }
 }

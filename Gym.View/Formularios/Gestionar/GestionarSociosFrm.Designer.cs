@@ -64,6 +64,10 @@
             // 
             this.txtFiltroNombre.TextChanged += new System.EventHandler(this.txtFiltroNombre_TextChanged);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Titulo = "Socios";
+            // 
             // GestionarSociosFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

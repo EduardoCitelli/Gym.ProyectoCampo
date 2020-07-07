@@ -109,6 +109,10 @@
             this.txtFiltroNombre.Location = new System.Drawing.Point(129, 31);
             this.txtFiltroNombre.TextChanged += new System.EventHandler(this.txtFiltroNombre_TextChanged);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Titulo = "Clases";
+            // 
             // btnAddAlumno
             // 
             this.btnAddAlumno.BackColor = System.Drawing.Color.Transparent;

@@ -60,13 +60,13 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // pnlGrd
-            // 
-            this.pnlGrd.ColorArriba = System.Drawing.Color.SeaGreen;
-            // 
             // txtFiltroNombre
             // 
             this.txtFiltroNombre.TextChanged += new System.EventHandler(this.txtFiltroNombre_TextChanged);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Titulo = "Grupos Usuarios";
             // 
             // GestionarGruposFrm
             // 
