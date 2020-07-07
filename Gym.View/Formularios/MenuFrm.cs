@@ -3,6 +3,7 @@
     using System;
     using System.Drawing;
     using System.Windows.Forms;
+    using Common;
     using Common.Cache;
 
     public partial class MenuFrm : Form
@@ -86,10 +87,16 @@
 
         private void MenuFrm_Load(object sender, EventArgs e)
         {
-            if (UserLogeado.TipoUsuario == "Empleado Administrativo")
+            switch (UserLogeado.NumeroTipoUsuario)
             {
-                this.toolStrip.Visible = false;
-                this.btnProfesores.Visible = false;
+                case (int)EnumTipoUsuarios.EmpAdministrativo:
+                    this.toolConfiguracion.Visible = false;
+                    this.btnProfesores.Visible = false;
+                    break;
+
+                case (int)EnumTipoUsuarios.DueñoGimnasio:
+                    this.toolConfiguracion.Visible = false;
+                    break;
             }
         }        
     }

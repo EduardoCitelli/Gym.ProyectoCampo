@@ -119,6 +119,7 @@
             UserLogeado.Apellido = usuario.usu_Apellido;
             UserLogeado.Email = usuario.usu_Email;
             UserLogeado.TipoUsuario = usuario.Grupo != null ? usuario.Grupo.gus_Descripcion : string.Empty;
+            UserLogeado.NumeroTipoUsuario = usuario.Grupo.gus_Id;
         }
     }
 }

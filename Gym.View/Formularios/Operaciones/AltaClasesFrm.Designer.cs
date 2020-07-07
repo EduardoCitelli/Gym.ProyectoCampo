@@ -42,37 +42,38 @@
             // 
             // pnlContainer
             // 
-            this.pnlContainer.Size = new System.Drawing.Size(800, 450);
+            this.pnlContainer.Size = new System.Drawing.Size(578, 450);
             // 
             // pnlBotones
             // 
             this.pnlBotones.Location = new System.Drawing.Point(0, 399);
-            this.pnlBotones.Size = new System.Drawing.Size(796, 47);
+            this.pnlBotones.Size = new System.Drawing.Size(574, 47);
             // 
             // btnSalir
             // 
             this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.Location = new System.Drawing.Point(664, 6);
+            this.btnSalir.Location = new System.Drawing.Point(442, 4);
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.Location = new System.Drawing.Point(12, 6);
             this.btnGuardar.Text = "Procesar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // pnlContenido
             // 
             this.pnlContenido.Controls.Add(this.grd);
-            this.pnlContenido.Size = new System.Drawing.Size(796, 402);
+            this.pnlContenido.Size = new System.Drawing.Size(574, 402);
             // 
             // pnlTitulo
             // 
-            this.pnlTitulo.Size = new System.Drawing.Size(796, 44);
+            this.pnlTitulo.Size = new System.Drawing.Size(574, 44);
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Location = new System.Drawing.Point(327, 12);
+            this.lblTitulo.Location = new System.Drawing.Point(218, 11);
             this.lblTitulo.Size = new System.Drawing.Size(133, 18);
             this.lblTitulo.Text = "Agregar Alumnos";
             // 
@@ -122,14 +123,14 @@
             this.grd.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grd.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Transparent;
             this.grd.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grd.Size = new System.Drawing.Size(794, 400);
+            this.grd.Size = new System.Drawing.Size(572, 400);
             this.grd.TabIndex = 0;
             // 
             // AltaClasesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(578, 450);
             this.Name = "AltaClasesFrm";
             this.Text = "AgregarSociosFrm";
             this.pnlContainer.ResumeLayout(false);

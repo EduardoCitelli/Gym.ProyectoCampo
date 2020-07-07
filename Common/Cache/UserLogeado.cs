@@ -11,6 +11,8 @@
         public static string UserName { get; set; }
 
         public static string TipoUsuario { get; set; }
+
+        public static int NumeroTipoUsuario { get; set; }
         
         public static string Email { get; set; }
 

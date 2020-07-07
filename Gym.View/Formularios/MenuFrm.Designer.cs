@@ -44,7 +44,7 @@
             this.btnProfesores = new System.Windows.Forms.Button();
             this.btnSocios = new System.Windows.Forms.Button();
             this.pbPanel = new System.Windows.Forms.PictureBox();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolConfiguracion = new System.Windows.Forms.ToolStrip();
             this.dropDownMembresias = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnTipoMembresias = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMembresias = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanel)).BeginInit();
-            this.toolStrip.SuspendLayout();
+            this.toolConfiguracion.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlContenedor
@@ -66,7 +66,7 @@
             this.pnlContenedor.ColorArriba = System.Drawing.Color.Empty;
             this.pnlContenedor.Controls.Add(this.pnlFormularios);
             this.pnlContenedor.Controls.Add(this.panelMenu);
-            this.pnlContenedor.Controls.Add(this.toolStrip);
+            this.pnlContenedor.Controls.Add(this.toolConfiguracion);
             resources.ApplyResources(this.pnlContenedor, "pnlContenedor");
             this.pnlContenedor.Name = "pnlContenedor";
             // 
@@ -225,17 +225,17 @@
             this.pbPanel.Name = "pbPanel";
             this.pbPanel.TabStop = false;
             // 
-            // toolStrip
+            // toolConfiguracion
             // 
-            this.toolStrip.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.toolStrip, "toolStrip");
-            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolConfiguracion.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.toolConfiguracion, "toolConfiguracion");
+            this.toolConfiguracion.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolConfiguracion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dropDownMembresias,
             this.toolUsuarios});
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip.TabStop = true;
+            this.toolConfiguracion.Name = "toolConfiguracion";
+            this.toolConfiguracion.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolConfiguracion.TabStop = true;
             // 
             // dropDownMembresias
             // 
@@ -298,8 +298,8 @@
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPanel)).EndInit();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
+            this.toolConfiguracion.ResumeLayout(false);
+            this.toolConfiguracion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -317,7 +317,7 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStrip toolConfiguracion;
         private System.Windows.Forms.ToolStripDropDownButton dropDownMembresias;
         private System.Windows.Forms.ToolStripMenuItem btnTipoMembresias;
         private System.Windows.Forms.ToolStripMenuItem btnMembresias;
