@@ -30,7 +30,7 @@
 
         public int? soc_mem_Id { get; set; }
 
-        public DateTime? soc_FechaMembresia { get; set; }
+        public DateTime? soc_FechaVtoMembresia { get; set; }
 
         public int? soc_CantidadClasesDisponibles { get; set; }
 

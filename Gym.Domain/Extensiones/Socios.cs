@@ -15,8 +15,8 @@
                    ? false : this.MembresiaClasesVigente();
         }
 
-        private bool MembresiaMesVigente() => !this.soc_FechaMembresia.HasValue ? false :
-                                               this.soc_FechaMembresia.Value >= DateTime.Today;
+        private bool MembresiaMesVigente() => !this.soc_FechaVtoMembresia.HasValue ? false :
+                                               this.soc_FechaVtoMembresia.Value >= DateTime.Today;
 
         private bool MembresiaClasesVigente() => this.Membresia.Tipo.tmm_EsMensual ? true :
                                                  this.soc_CantidadClasesDisponibles.Value > 0;
