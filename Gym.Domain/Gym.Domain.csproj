@@ -59,6 +59,7 @@
     <Compile Include="Clases\Profesores.cs" />
     <Compile Include="Clases\Salones.cs" />
     <Compile Include="Clases\Socios.cs" />
+    <Compile Include="Clases\Socios_Membresias.cs" />
     <Compile Include="Clases\TipoMembresias.cs" />
     <Compile Include="Extensiones\Actividades.cs" />
     <Compile Include="Extensiones\Clases.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Extensiones\Profesores.cs" />
     <Compile Include="Extensiones\Salones.cs" />
     <Compile Include="Extensiones\Socios.cs" />
+    <Compile Include="Enums\EnumFormasPago.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\Users.cs" />
   </ItemGroup>

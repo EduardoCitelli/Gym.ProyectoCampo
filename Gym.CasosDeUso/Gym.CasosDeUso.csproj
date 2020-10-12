@@ -75,6 +75,8 @@
     <Compile Include="Salones\OperacionesSalones.cs" />
     <Compile Include="Socios\GestionarSocios.cs" />
     <Compile Include="Socios\OperacionesSocios.cs" />
+    <Compile Include="Socios_Membresia\GestionarSocios_Membresias.cs" />
+    <Compile Include="Socios_Membresia\OperacionesSocios_Membresias.cs" />
     <Compile Include="TipoMembresias\GestionarTipoMembresias.cs" />
     <Compile Include="TipoMembresias\OperacionesTipoMembresias.cs" />
     <Compile Include="Usuarios\GestionarUsuarios.cs" />

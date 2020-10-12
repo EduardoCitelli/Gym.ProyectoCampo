@@ -26,6 +26,7 @@
         public virtual DbSet<Socios> Socios { get; set; }
         public virtual DbSet<TipoMembresias> TipoMembresias { get; set; }
         public virtual DbSet<Clases> Clases { get; set; }
+        public virtual DbSet<Socios_Membresias> Socios_Membresias { get; set; }
 
         #endregion
 
