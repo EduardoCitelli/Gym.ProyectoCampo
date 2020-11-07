@@ -18,9 +18,7 @@
 
         protected override void ObtenerObjetos() => this.combo.DataSource = this.actividadesController.Listar().ToList();
 
-
         public override void SetValor(int idEntity) => this.combo.SelectedValue = idEntity;
-
 
         public override void Refrescar()
         {

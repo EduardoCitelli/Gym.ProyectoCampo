@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Clases_Socios
+    public partial class Clases_Socios
     {
         [Key]
         public int css_Id { get; set; }

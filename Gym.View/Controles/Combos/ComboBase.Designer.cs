@@ -44,6 +44,8 @@
             this.combo.Name = "combo";
             this.combo.Size = new System.Drawing.Size(157, 26);
             this.combo.TabIndex = 1;
+            this.combo.SelectedIndexChanged += new System.EventHandler(this.combo_SelectedIndexChanged);
+            this.combo.ValueMemberChanged += new System.EventHandler(this.combo_ValueMemberChanged);
             // 
             // lbl
             // 

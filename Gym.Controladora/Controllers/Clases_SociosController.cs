@@ -51,7 +51,11 @@
 
         public ICollection<Socios> ListarSocios() => this.gestionarSocios.ListarActivos();
 
+        public ICollection<Socios> ListarSociosParaActividad(int idActividad) => this.gestionarSocios.ListarParaClases(idActividad);
+
         public ICollection<Clases_Socios> ListarPorClase(int idClase) => this.gestionarClases_Socios.ListarPorClase(idClase);
+
+        public ICollection<Clases_Socios> ListarPorSocio(int codigoSocio) => this.gestionarClases_Socios.ListarPorSocio(codigoSocio);
 
         public bool SalonOcupado(Clases clase) => this.gestionarClases.SalonOcupado(clase);
 

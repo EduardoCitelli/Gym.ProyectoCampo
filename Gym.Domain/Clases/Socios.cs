@@ -7,6 +7,12 @@
 
     public partial class Socios
     {
+        public Socios()
+        {
+            this.ClasesInscriptas = new List<Clases_Socios>();
+            this.HistoricoMembresias = new List<Socios_Membresias>();
+        }
+
         [Key]
         public int soc_Codigo { get; set; }
 
@@ -28,15 +34,22 @@
 
         public string soc_Sexo { get; set; }
 
-        public int? soc_mem_Id { get; set; }
+        public int? soc_mem_Codigo { get; set; }
+
+        public int? soc_act_Codigo { get; set; }
 
         public DateTime? soc_FechaVtoMembresia { get; set; }
 
         public int? soc_CantidadClasesDisponibles { get; set; }
 
-        [ForeignKey(nameof(soc_mem_Id))]
+        [ForeignKey(nameof(soc_mem_Codigo))]
         public virtual Membresias Membresia { get; set; }
 
+        [ForeignKey(nameof(soc_act_Codigo))]
+        public virtual Actividades ActividadInscripta { get; set; }
+
         public virtual List<Clases_Socios> ClasesInscriptas { get; set; }
+
+        public virtual List<Socios_Membresias> HistoricoMembresias { get; set; }
     }
 }

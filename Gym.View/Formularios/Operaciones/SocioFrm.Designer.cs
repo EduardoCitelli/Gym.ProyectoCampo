@@ -129,8 +129,8 @@
             0});
             this.numTelefono.Location = new System.Drawing.Point(9, 224);
             this.numTelefono.Maximo = new decimal(new int[] {
+            -1,
             2147483647,
-            0,
             0,
             0});
             this.numTelefono.Minimo = new decimal(new int[] {

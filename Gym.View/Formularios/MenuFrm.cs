@@ -19,6 +19,17 @@
             this.lblGrupo.Titulo = UserLogeado.TipoUsuario;
 
             this.Manager = new FormulariosManager();
+
+            this.picLogo.SizeMode = PictureBoxSizeMode.AutoSize;
+            this.picLogo.Anchor = AnchorStyles.None;
+
+            this.AjustarImagen();
+        }
+
+        private void AjustarImagen()
+        {
+            this.picLogo.Location = new Point(this.picLogo.Parent.ClientSize.Width / 2 - this.picLogo.Width / 2, this.picLogo.Parent.ClientSize.Height / 2 - this.picLogo.Height / 2);
+            this.picLogo.Refresh();
         }
 
         public void CloseForms(object sender, FormClosedEventArgs e)
@@ -98,6 +109,6 @@
                     this.toolConfiguracion.Visible = false;
                     break;
             }
-        }        
+        }
     }
 }

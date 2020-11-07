@@ -27,6 +27,7 @@
         public virtual DbSet<TipoMembresias> TipoMembresias { get; set; }
         public virtual DbSet<Clases> Clases { get; set; }
         public virtual DbSet<Socios_Membresias> Socios_Membresias { get; set; }
+        public virtual DbSet<ComprobanteEmitido> ComprobanteEmitido { get; set; }
 
         #endregion
 
@@ -37,6 +38,8 @@
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Entity<Users>().HasKey(x => x.usu_Id);
+
+            modelBuilder.Entity<ComprobanteEmitido>().HasKey(x => x.cem_Id);
 
             modelBuilder.Entity<GrupoUsuarios>().HasKey(x => x.gus_Id);
 

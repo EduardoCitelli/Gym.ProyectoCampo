@@ -51,6 +51,10 @@
 
         public abstract void SetValor(int idEntity);
 
+        private void combo_ValueMemberChanged(object sender, System.EventArgs e) => this.OnValueChanged();
+
+        private void combo_SelectedIndexChanged(object sender, System.EventArgs e) => this.OnValueChanged();
+
         //public virtual T GetObjeto<T>() where T : class
         //{
         //    var ds = (IEnumerable<T>)this.combo.DataSource;
@@ -67,7 +71,7 @@
 
         //protected abstract object ObtenerDatos();
 
-        //public virtual object GetValor() => this.combo.IsDisposed ? null : this.combo.SelectedValue;
+        //public virtual T GetValor<T>() where T : class => this.combo.IsDisposed ? null : (T)this.combo.SelectedValue;
 
         //public virtual void SetValor(object value)
         //{

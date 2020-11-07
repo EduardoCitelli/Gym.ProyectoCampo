@@ -34,7 +34,7 @@
 
         private void ArmarLista(bool esAlta)
         {
-            this.source = this.Clases_SociosController.ListarSocios().ToList();
+            this.source = this.Clases_SociosController.ListarSociosParaActividad(this.clase.Actividad.act_Codigo).ToList();
 
             if (!esAlta) this.AgregarCheck();
 

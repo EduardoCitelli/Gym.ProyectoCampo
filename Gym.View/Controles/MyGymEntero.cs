@@ -93,7 +93,7 @@
         {
             if (!this.esObligatorio) return true;
 
-            if (this.GetValor() == 0)
+            if (this.GetLongValor() == 0)
             {
                 MessageBox.Show("El campo " + this.lblDescripcion.Text + " está en 0, por favor completar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -111,6 +111,8 @@
         }
 
         public int GetValor() => Convert.ToInt32(this.num.Value);
+
+        public long GetLongValor() => Convert.ToInt64(this.num.Value);
                 
         public void Focalizar() => this.num.Focus();
 
@@ -125,15 +127,24 @@
             }
         }
 
-        public bool HasValue() => this.GetValor() != 0;
+        public void SetValor(long value)
+        {
+            if (this.num.Value != value)
+            {
+                this.num.Value = value;
+                this.OnValueChanged();
+            }
+        }
+
+        public bool HasValue() => this.GetLongValor() != 0;
 
         public void Limpiar() => this.SetValor(0);
 
-        int valorAlEntrar;
+        long valorAlEntrar;
 
         private void Num_Enter(object sender, EventArgs e)
         {
-            this.valorAlEntrar = this.GetValor();
+            this.valorAlEntrar = this.GetLongValor();
             this.num.Select(0, this.num.ToString().Length);
         }
 
@@ -141,7 +152,8 @@
         {
             this.OnLeaveControl();
 
-            if (this.valorAlEntrar != this.GetValor()) this.OnValueChanged();
+            if (this.valorAlEntrar != this.GetLongValor())
+                this.OnValueChanged();
         }
     }
 }

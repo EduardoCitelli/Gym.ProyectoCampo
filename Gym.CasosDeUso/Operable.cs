@@ -48,9 +48,7 @@
             {
                 this.LogicaModificacion(entity, repository);
 
-                this.uow.Save();
-
-                this.uow.Dispose();
+                this.CerrarRepository();
             }
             catch (Exception ex)
             {

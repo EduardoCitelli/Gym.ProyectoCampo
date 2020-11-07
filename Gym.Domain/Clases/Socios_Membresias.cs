@@ -4,14 +4,14 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     
-    public class Socios_Membresias
+    public partial class Socios_Membresias
     {
         [Key]
         public int sms_Id { get; set; }
 
         public int sms_soc_Codigo { get; set; }
 
-        public int sms_mem_Id { get; set; }
+        public int sms_mem_Codigo { get; set; }
 
         public decimal sms_Precio { get; set; }
 
@@ -24,7 +24,7 @@
         [ForeignKey(nameof(sms_soc_Codigo))]
         public virtual Socios Socio { get; set; }
 
-        [ForeignKey(nameof(sms_mem_Id))]
+        [ForeignKey(nameof(sms_mem_Codigo))]
         public virtual Membresias Membresia { get; set; }
 
         [ForeignKey(nameof(sms_act_Codigo))]

@@ -38,7 +38,7 @@
 
             this.numDni.SetValor(this.Socio.soc_Dni);
 
-            this.numTelefono.SetValor((int)this.Socio.soc_Telefono);
+            this.numTelefono.SetValor(this.Socio.soc_Telefono);
 
             this.txtDomicilio.SetValor(this.Socio.soc_Domicilio);
 
@@ -61,7 +61,7 @@
 
                 this.Socio.soc_Dni = this.numDni.GetValor();
 
-                this.Socio.soc_Telefono = this.numTelefono.GetValor();
+                this.Socio.soc_Telefono = this.numTelefono.GetLongValor();
 
                 this.Socio.soc_Domicilio = this.txtDomicilio.GetValor();
 
@@ -79,7 +79,7 @@
                     soc_Nombre = this.txtNombre.GetValor(),
                     soc_Apellido = this.txtApellido.GetValor(),
                     soc_Dni = this.numDni.GetValor(),
-                    soc_Telefono = this.numTelefono.GetValor(),
+                    soc_Telefono = this.numTelefono.GetLongValor(),
                     soc_Domicilio = this.txtDomicilio.GetValor(),
                     soc_FechaNacimiento = this.dtNacimiento.GetValor().Value,
                     soc_Mail = this.txtEmail.GetValor(),

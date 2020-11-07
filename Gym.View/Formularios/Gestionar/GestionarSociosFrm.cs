@@ -4,13 +4,8 @@
     using Gym.Domain;
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.Data;
-    using System.Drawing;
     using System.Linq;
-    using System.Security.Cryptography;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows.Forms;
 
     public partial class GestionarSociosFrm : FormGestionarBase
@@ -158,7 +153,8 @@
 
             var result = frm.ShowDialog();
 
-            if (result == DialogResult.OK) this.ArmarLista();
+            if (result == DialogResult.OK)
+                this.ArmarLista();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e) => this.ArmarLista();
@@ -170,9 +166,64 @@
         private void Filtrar()
         {
             this.grd.DataSource = null;
-            this.grd.DataSource = this.source.Where(x => x.soc_Nombre.Contains(this.txtFiltroNombre.Text)).ToList();
+            this.grd.DataSource = this.source.Where(x => x.soc_Nombre.ToLower().Contains(this.txtFiltroNombre.Text.ToLower())).ToList();
 
             this.InicializarColumnas();
+        }
+
+        private void btnVerClases_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidarSeleccion()) return;
+
+            var codigo = this.ObtenerCodigo(nameof(Socios.soc_Codigo));
+
+            var objeto = this.SociosController.ObtenerCompleto(codigo);
+
+            var frm = new ClasesSociosFrm(objeto);
+
+            var result = frm.ShowDialog();
+
+            if (result == DialogResult.OK)
+                this.ArmarLista();
+        }
+
+        private void btnProcesarPago_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidarModificar()) return;
+
+            var codigo = this.ObtenerCodigo(nameof(Socios.soc_Codigo));
+
+            var objeto = this.SociosController.ObtenerCompleto(codigo);
+
+            var frm = new ProcesarPagoFrm(objeto);
+
+            var result = frm.ShowDialog();
+
+            if (result == DialogResult.OK)
+                this.ArmarLista();
+        }
+
+        private void btnVerificarVenc_Click(object sender, EventArgs e)
+        {
+            var verificado = this.SociosController.VerificarMembresias();
+
+            if (verificado)
+                MessageBox.Show("Proceso Realizado Correctamente", "Verificar Vencimientos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.ArmarLista();
+        }
+
+        private bool ValidarSeleccion()
+        {
+            if (this.NoSelecciono())
+            {
+                var solucion = "Debe Seleccionar un elemento de la grilla para Ver sus Clases";
+                var caption = "Ver Clases";
+                MessageBox.Show(solucion, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
     }
 }

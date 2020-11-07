@@ -1,6 +1,7 @@
 ﻿namespace Gym.View
 {
     using System;
+    using System.ComponentModel;
     using System.Windows.Forms;
 
     public partial class MyGymControl : UserControl
@@ -10,10 +11,13 @@
             this.InitializeComponent();
         }
 
+        [Category("MyGym")]
         public event EventHandler ValueChanged;
 
+        [Category("MyGym")]
         public event EventHandler LeaveControl;
 
+        [Category("MyGym")]
         public event EventHandler PresionaEnter;
 
         protected virtual void OnValueChanged() => this.ValueChanged?.Invoke(this, EventArgs.Empty);

@@ -10,7 +10,7 @@
 
         public bool VerificarMembresia()
         {
-            return !this.soc_mem_Id.HasValue
+            return !this.soc_mem_Codigo.HasValue
                    ? false : !this.MembresiaMesVigente()
                    ? false : this.MembresiaClasesVigente();
         }

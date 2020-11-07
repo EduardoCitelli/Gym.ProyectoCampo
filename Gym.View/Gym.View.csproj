@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,10 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -61,6 +61,18 @@
     </Compile>
     <Compile Include="Controles\Combos\ComboActividad.Designer.cs">
       <DependentUpon>ComboActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboFormaPago.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboFormaPago.Designer.cs">
+      <DependentUpon>ComboFormaPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboMembresias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Combos\ComboMembresias.Designer.cs">
+      <DependentUpon>ComboMembresias.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\Combos\ComboProfesor.cs">
       <SubType>UserControl</SubType>
@@ -182,11 +194,17 @@
     <Compile Include="Controles\Combos\ComboBase.Designer.cs">
       <DependentUpon>ComboBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\HorariosFrm.cs">
+    <Compile Include="Formularios\ClasesSociosFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\HorariosFrm.Designer.cs">
-      <DependentUpon>HorariosFrm.cs</DependentUpon>
+    <Compile Include="Formularios\ClasesSociosFrm.Designer.cs">
+      <DependentUpon>ClasesSociosFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\NavegableFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\NavegableFrm.Designer.cs">
+      <DependentUpon>NavegableFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Operaciones\AltaClasesFrm.cs">
       <SubType>Form</SubType>
@@ -322,6 +340,12 @@
     <Compile Include="Formularios\Operaciones\TipoMembresiasFrm.Designer.cs">
       <DependentUpon>TipoMembresiasFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Proceso\ProcesarPagoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proceso\ProcesarPagoFrm.Designer.cs">
+      <DependentUpon>ProcesarPagoFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Formularios\Operaciones\UsuarioFrm.cs">
@@ -370,8 +394,11 @@
     <EmbeddedResource Include="Controles\Combos\ComboBase.resx">
       <DependentUpon>ComboBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\HorariosFrm.resx">
-      <DependentUpon>HorariosFrm.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\ClasesSociosFrm.resx">
+      <DependentUpon>ClasesSociosFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\NavegableFrm.resx">
+      <DependentUpon>NavegableFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Operaciones\AltaClasesFrm.resx">
       <DependentUpon>AltaClasesFrm.cs</DependentUpon>
@@ -442,6 +469,9 @@
     <EmbeddedResource Include="Formularios\Operaciones\TipoMembresiasFrm.resx">
       <DependentUpon>TipoMembresiasFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proceso\ProcesarPagoFrm.resx">
+      <DependentUpon>ProcesarPagoFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -497,8 +527,8 @@
     <PropertyGroup>
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

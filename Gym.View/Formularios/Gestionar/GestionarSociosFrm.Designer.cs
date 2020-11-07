@@ -109,6 +109,7 @@
             this.btnVerClases.TabIndex = 5;
             this.btnVerClases.Text = "Ver Clases";
             this.btnVerClases.UseVisualStyleBackColor = false;
+            this.btnVerClases.Click += new System.EventHandler(this.btnVerClases_Click);
             // 
             // btnProcesarPago
             // 
@@ -121,6 +122,7 @@
             this.btnProcesarPago.TabIndex = 6;
             this.btnProcesarPago.Text = "Procesar Pago";
             this.btnProcesarPago.UseVisualStyleBackColor = false;
+            this.btnProcesarPago.Click += new System.EventHandler(this.btnProcesarPago_Click);
             // 
             // btnVerificarVenc
             // 
@@ -133,6 +135,7 @@
             this.btnVerificarVenc.TabIndex = 7;
             this.btnVerificarVenc.Text = "Verificar Vencimientos Membresías";
             this.btnVerificarVenc.UseVisualStyleBackColor = false;
+            this.btnVerificarVenc.Click += new System.EventHandler(this.btnVerificarVenc_Click);
             // 
             // myGymEntero1
             // 
