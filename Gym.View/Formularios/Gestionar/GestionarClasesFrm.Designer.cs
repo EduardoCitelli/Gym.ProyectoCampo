@@ -42,50 +42,60 @@
             // 
             // pnlBotones
             // 
+            this.pnlBotones.Controls.Add(this.btnAddAlumno);
             this.pnlBotones.Controls.Add(this.btnBajaClase);
             this.pnlBotones.Controls.Add(this.btnAlta);
-            this.pnlBotones.Controls.Add(this.btnAddAlumno);
             this.pnlBotones.Controls.SetChildIndex(this.pnlActualizar, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnAgregar, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnBorrar, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnModificar, 0);
-            this.pnlBotones.Controls.SetChildIndex(this.btnAddAlumno, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnAlta, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnBajaClase, 0);
+            this.pnlBotones.Controls.SetChildIndex(this.btnAddAlumno, 0);
             // 
             // btnModificar
             // 
+            this.btnModificar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.Location = new System.Drawing.Point(192, 15);
-            this.btnModificar.Size = new System.Drawing.Size(84, 39);
+            this.btnModificar.Location = new System.Drawing.Point(173, 5);
+            this.btnModificar.Size = new System.Drawing.Size(84, 52);
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBorrar
             // 
+            this.btnBorrar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnBorrar.FlatAppearance.BorderSize = 0;
-            this.btnBorrar.Location = new System.Drawing.Point(102, 15);
-            this.btnBorrar.Size = new System.Drawing.Size(84, 39);
+            this.btnBorrar.Location = new System.Drawing.Point(89, 5);
+            this.btnBorrar.Size = new System.Drawing.Size(84, 52);
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 15);
-            this.btnAgregar.Size = new System.Drawing.Size(84, 39);
+            this.btnAgregar.Location = new System.Drawing.Point(5, 5);
+            this.btnAgregar.Size = new System.Drawing.Size(84, 52);
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // pnlActualizar
+            // 
+            this.pnlActualizar.Location = new System.Drawing.Point(617, 5);
+            this.pnlActualizar.Size = new System.Drawing.Size(170, 52);
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.Location = new System.Drawing.Point(93, 10);
-            this.btnCerrar.Size = new System.Drawing.Size(84, 39);
+            this.btnCerrar.Location = new System.Drawing.Point(86, 0);
+            this.btnCerrar.Size = new System.Drawing.Size(84, 52);
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnActualizar
             // 
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.Location = new System.Drawing.Point(3, 10);
-            this.btnActualizar.Size = new System.Drawing.Size(84, 39);
+            this.btnActualizar.Location = new System.Drawing.Point(0, 0);
+            this.btnActualizar.Size = new System.Drawing.Size(86, 52);
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // gbFiltros
@@ -117,11 +127,12 @@
             // 
             this.btnAddAlumno.BackColor = System.Drawing.Color.Transparent;
             this.btnAddAlumno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAlumno.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAddAlumno.FlatAppearance.BorderSize = 0;
             this.btnAddAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAlumno.Location = new System.Drawing.Point(477, 15);
+            this.btnAddAlumno.Location = new System.Drawing.Point(425, 5);
             this.btnAddAlumno.Name = "btnAddAlumno";
-            this.btnAddAlumno.Size = new System.Drawing.Size(96, 39);
+            this.btnAddAlumno.Size = new System.Drawing.Size(96, 52);
             this.btnAddAlumno.TabIndex = 5;
             this.btnAddAlumno.Text = "Agregar/Eliminar Alumnos";
             this.btnAddAlumno.UseVisualStyleBackColor = false;
@@ -131,11 +142,12 @@
             // 
             this.btnAlta.BackColor = System.Drawing.Color.Transparent;
             this.btnAlta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlta.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAlta.FlatAppearance.BorderSize = 0;
             this.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlta.Location = new System.Drawing.Point(297, 15);
+            this.btnAlta.Location = new System.Drawing.Point(257, 5);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(84, 39);
+            this.btnAlta.Size = new System.Drawing.Size(84, 52);
             this.btnAlta.TabIndex = 7;
             this.btnAlta.Text = "Alta Clase";
             this.btnAlta.UseVisualStyleBackColor = false;
@@ -169,11 +181,12 @@
             // 
             this.btnBajaClase.BackColor = System.Drawing.Color.Transparent;
             this.btnBajaClase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBajaClase.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnBajaClase.FlatAppearance.BorderSize = 0;
             this.btnBajaClase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBajaClase.Location = new System.Drawing.Point(387, 15);
+            this.btnBajaClase.Location = new System.Drawing.Point(341, 5);
             this.btnBajaClase.Name = "btnBajaClase";
-            this.btnBajaClase.Size = new System.Drawing.Size(84, 39);
+            this.btnBajaClase.Size = new System.Drawing.Size(84, 52);
             this.btnBajaClase.TabIndex = 8;
             this.btnBajaClase.Text = "Baja Clase";
             this.btnBajaClase.UseVisualStyleBackColor = false;

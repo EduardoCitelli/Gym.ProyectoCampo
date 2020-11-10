@@ -15,7 +15,7 @@
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            var lgb = new LinearGradientBrush(this.ClientRectangle, this.ColorArriba, this.ColorAbajo, 90F);
+            var lgb = new LinearGradientBrush(this.ClientRectangle, this.ColorArriba, this.ColorAbajo, LinearGradientMode.ForwardDiagonal);
 
             var g = e.Graphics;
 

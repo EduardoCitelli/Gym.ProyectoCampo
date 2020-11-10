@@ -9,17 +9,13 @@
     {
         private readonly GestionarSocios gestionarSocios;
         private readonly OperacionesSocios operacionesSocios;
-        private readonly OperacionesSocios_Membresias operacionesHistorico;
         private readonly GestionarComprobantesEmitidos gestionarComprobantesEmitidos;
-        private readonly OperacionesComprobantesEmitidos operacionesComprobantesEmitidos;
 
         public SociosController()
         {
             this.gestionarSocios = new GestionarSocios();
             this.operacionesSocios = new OperacionesSocios();
-            this.operacionesHistorico = new OperacionesSocios_Membresias();
             this.gestionarComprobantesEmitidos = new GestionarComprobantesEmitidos();
-            this.operacionesComprobantesEmitidos = new OperacionesComprobantesEmitidos();
         }
 
         public void Eliminar(int idEntity) => this.operacionesSocios.Eliminar(idEntity);
@@ -43,7 +39,7 @@
             {
                 this.VerificarSociosPorClases();
 
-                this.VerificarSociosMensuales();
+                this.VerificarSociosMensuales();                
             }
             catch (Exception ex)
             {
@@ -148,10 +144,12 @@
             socio.soc_FechaVtoMembresia = DateTime.Today.AddMonths(membresia.Tipo.tmm_CantidadMeses);
 
             if (actividad != null)
-            {
                 socio.soc_act_Codigo = actividad.act_Codigo;
+
+            if (!membresia.Tipo.tmm_EsMensual)
                 socio.soc_CantidadClasesDisponibles = membresia.Tipo.tmm_CantidadClases;
-            }
+
+            socio.soc_Activo = true;
 
             return socio;
         }
@@ -164,9 +162,10 @@
             if (socio.ActividadInscripta != null)
             {
                 socio.ActividadInscripta = null;
-                socio.soc_act_Codigo = null;
-                socio.soc_CantidadClasesDisponibles = null;
+                socio.soc_act_Codigo = null;                
             }
+
+            socio.soc_CantidadClasesDisponibles = null;
         }
 
         private void VerificarSociosMensuales()

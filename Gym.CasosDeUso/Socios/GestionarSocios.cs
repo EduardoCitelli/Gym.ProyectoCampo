@@ -73,7 +73,10 @@
                                    .Include(x => x.Membresia)
                                    .Include(x => x.Membresia.Tipo)
                                    .Include(x => x.HistoricoMembresias)
+                                   .Include(x => x.HistoricoMembresias.Select(y => y.Membresia))
+                                   .Include(x => x.HistoricoMembresias.Select(y => y.Membresia.Tipo))
                                    .Include(x => x.ClasesInscriptas)
+                                   .Include(x => x.ActividadInscripta)
                                    .FirstOrDefault();
 
             this.CerrarRepository();

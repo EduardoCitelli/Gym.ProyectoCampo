@@ -98,6 +98,7 @@
             this.num.Enter += new System.EventHandler(this.Num_Enter);
             this.num.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             this.num.Leave += new System.EventHandler(this.num_Leave);
+            this.num.TextChanged += this.CambioElValor;
             // 
             // NumTextBox
             // 

@@ -95,10 +95,12 @@
             {
                 MessageBox.Show(ex.Message, "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
+            }           
 
             this.DialogResult = DialogResult.OK;
         }
+
+        public int GetCodigoSocio() => this.Socio.soc_Codigo;
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

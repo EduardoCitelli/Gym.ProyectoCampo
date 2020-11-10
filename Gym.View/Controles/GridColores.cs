@@ -17,8 +17,8 @@
         {
             base.PaintBackground(graphics, clipBounds, gridBounds);
 
-            var lgb = new LinearGradientBrush(clipBounds, this.ColorArriba, this.ColorAbajo, 90F);
-            var lgb2 = new LinearGradientBrush(gridBounds, this.ColorArriba, this.ColorAbajo, 90F);
+            var lgb = new LinearGradientBrush(clipBounds, this.ColorArriba, this.ColorAbajo, LinearGradientMode.ForwardDiagonal);
+            var lgb2 = new LinearGradientBrush(gridBounds, this.ColorArriba, this.ColorAbajo, LinearGradientMode.ForwardDiagonal);
 
             graphics.FillRectangle(lgb, clipBounds);
             graphics.FillRectangle(lgb2, gridBounds);

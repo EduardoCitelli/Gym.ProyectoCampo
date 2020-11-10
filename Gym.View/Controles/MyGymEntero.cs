@@ -11,8 +11,10 @@
 
         public MyGymEntero()
         {
-            this.InitializeComponent();            
+            this.InitializeComponent();
         }
+
+        private void CambioElValor(object sender, EventArgs e) => this.OnValueChanged();
 
         [Category("MyGym")]
         public Font FontLabel
@@ -136,9 +138,9 @@
             }
         }
 
-        public bool HasValue() => this.GetLongValor() != 0;
+        public bool HasValue() => !string.IsNullOrEmpty(this.num.Text);
 
-        public void Limpiar() => this.SetValor(0);
+        public void Limpiar() => this.num.ResetText();
 
         long valorAlEntrar;
 

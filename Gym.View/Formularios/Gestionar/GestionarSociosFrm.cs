@@ -18,6 +18,7 @@
             this.InitializeComponent();
 
             this.SociosController = new SociosController();
+            this.numCodigoSocio.Limpiar();
 
             this.ArmarLista();
         }
@@ -30,6 +31,7 @@
             this.grd.DataSource = this.source;
 
             this.InicializarColumnas();
+            this.Filtrar();
         }
 
         private void InicializarColumnas()
@@ -112,7 +114,25 @@
 
             var result = frm.ShowDialog();
 
-            if (result == DialogResult.OK) this.ArmarLista();
+            if (result == DialogResult.OK) 
+            {
+                var pregunta = MessageBox.Show("¿Desea Realizar un Pago?", "Nuevo Socio", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (pregunta == DialogResult.Yes)
+                {
+                    var codigoSocio = frm.GetCodigoSocio();
+                    var socio = this.SociosController.ObtenerCompleto(codigoSocio);
+
+                    var frmPago = new ProcesarPagoFrm(socio);
+
+                    var resultPago = frmPago.ShowDialog();
+
+                    if (resultPago == DialogResult.OK)
+                        this.ArmarLista();
+                }
+                else
+                    this.ArmarLista();
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -166,7 +186,19 @@
         private void Filtrar()
         {
             this.grd.DataSource = null;
-            this.grd.DataSource = this.source.Where(x => x.soc_Nombre.ToLower().Contains(this.txtFiltroNombre.Text.ToLower())).ToList();
+
+            var lista = this.source;
+
+            if (!string.IsNullOrEmpty(this.txtFiltroNombre.Text))
+                lista = lista.Where(x => x.soc_Nombre.ToLower().Contains(this.txtFiltroNombre.Text.ToLower())).ToList();
+
+            if (this.numCodigoSocio.HasValue())
+                lista = lista.Where(x => x.soc_Codigo.ToString().Contains(this.numCodigoSocio.GetValor().ToString())).ToList();
+
+            if (this.chkActivos.GetValor())
+                lista = lista.Where(x => x.soc_Activo).ToList();
+
+            this.grd.DataSource = lista;
 
             this.InicializarColumnas();
         }
@@ -225,5 +257,7 @@
 
             return true;
         }
+
+        private void chkActivos_ValueChanged(object sender, EventArgs e) => this.Filtrar();
     }
 }
