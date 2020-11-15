@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuFrm));
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.pnlContenedor = new Gym.View.PanelColores();
             this.pnlFormularios = new Gym.View.PanelColores();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -38,7 +39,6 @@
             this.lblGrupo = new Gym.View.TituloLabel();
             this.lblUsuario = new Gym.View.TituloLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClases = new System.Windows.Forms.Button();
             this.btnProfesores = new System.Windows.Forms.Button();
@@ -51,6 +51,8 @@
             this.toolUsuarios = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnGrupo = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.dropDownNavegables = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnHorariosSemana = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContenedor.SuspendLayout();
             this.pnlFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -58,6 +60,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPanel)).BeginInit();
             this.toolConfiguracion.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnLogOut, "btnLogOut");
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
+            this.btnLogOut.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pnlContenedor
             // 
@@ -159,20 +175,6 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Name = "label2";
             // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            resources.ApplyResources(this.btnLogOut, "btnLogOut");
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
-            this.btnLogOut.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -232,7 +234,8 @@
             this.toolConfiguracion.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolConfiguracion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dropDownMembresias,
-            this.toolUsuarios});
+            this.toolUsuarios,
+            this.dropDownNavegables});
             this.toolConfiguracion.Name = "toolConfiguracion";
             this.toolConfiguracion.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolConfiguracion.TabStop = true;
@@ -281,6 +284,22 @@
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // dropDownNavegables
+            // 
+            this.dropDownNavegables.AutoToolTip = false;
+            this.dropDownNavegables.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnHorariosSemana});
+            resources.ApplyResources(this.dropDownNavegables, "dropDownNavegables");
+            this.dropDownNavegables.Name = "dropDownNavegables";
+            this.dropDownNavegables.ShowDropDownArrow = false;
+            // 
+            // btnHorariosSemana
+            // 
+            this.btnHorariosSemana.Image = global::Gym.View.Properties.Resources.calendar_week;
+            this.btnHorariosSemana.Name = "btnHorariosSemana";
+            resources.ApplyResources(this.btnHorariosSemana, "btnHorariosSemana");
+            this.btnHorariosSemana.Click += new System.EventHandler(this.BtnHorariosSemana_Click);
+            // 
             // MenuFrm
             // 
             resources.ApplyResources(this, "$this");
@@ -328,5 +347,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnGrupo;
         private System.Windows.Forms.ToolStripMenuItem btnUsuarios;
         private System.Windows.Forms.Button btnSalones;
+        private System.Windows.Forms.ToolStripDropDownButton dropDownNavegables;
+        private System.Windows.Forms.ToolStripMenuItem btnHorariosSemana;
     }
 }

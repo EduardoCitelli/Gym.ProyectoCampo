@@ -110,5 +110,10 @@
                     break;
             }
         }
+
+        private void BtnHorariosSemana_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

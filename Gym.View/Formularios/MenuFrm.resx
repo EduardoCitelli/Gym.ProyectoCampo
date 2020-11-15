@@ -118,10 +118,73 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLogOut.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="btnLogOut.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLogOut.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="btnLogOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAC0AAAAgCAYAAACGhPFEAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAAHCAAABwgAc0Pm54AAAJcSURBVFhH1Zg/aBRBFMZX1Ozs
+        qtgLASGkN2KhIMGgvYJoFbCISkALSxGFw52Nf0BQG7E3CmkEi8RCCEhuZwyxFAsRIaRQsDDEP6jh1u/t
+        vj1y3Itznp5kfvDd3r3defNx+2ZndoI8z71T59xf2KoSc0il5rRK7ZUozW5H2l6MdHYiTs3e4MbcDr7y
+        j5BMueRE6fqw0vZhpM0npU3+G32HHkQT9QPctCMkUy6tS5jYwTC1j9eY+gbjT3C8rJJsrE/bo/jnz6jE
+        TuD4CPH31bWhNi87NS+ZckkEt/04Ov/MJpZhYjyozW7n0zK1V30om1GUzzy3+xHq7DyfXRfJlEttoLNL
+        UKPs2D6N9Hw/n+oYtD0FfS1yJGaSxgOfakMy5VILdNtLs2aZBhyHu2JbWt+jdPaW8qGs7nC4DcmUS01Q
+        EgfRAQ2mhkqzwxz+K+La3C7k+1AYT81JDrcgmXKpZGpqMxK/puTQPY7+E1DnI8i5Cq2oa2Y3h5tIplwq
+        QOKzbPidc8B1AZ7lF5D7Z6xf7ONQE8mUS9RqExIuQigLO1Km6gG12S38rQXJlEtUy/v5X37Gef4rkimX
+        aBK5SaZxPMd5ekZ8NRsKri/s5J8FkimX6DH3vDRdH+A8PYHqme/oEp7dRzgsmnKJJoI3lIxmNM7TE+Ik
+        O8amSQ3MsreCu9OhZMolMr0CfeTcIsXKDtfQoqlbof0XqDJdaUYy5ZK3pj0sDx8HopePPC8nF3z6N40T
+        /i2YCB+XpoR/LwGMd69bFejErxfbCu+2ECq826xZi1fbYm1spA1IKbixlQe/AMNd3vhVqvQGAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="btnLogOut.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnLogOut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLogOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 675</value>
+  </data>
+  <data name="btnLogOut.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnLogOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 40</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLogOut.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnLogOut.Text" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="btnLogOut.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnLogOut.Name" xml:space="preserve">
+    <value>btnLogOut</value>
+  </data>
+  <data name="&gt;&gt;btnLogOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLogOut.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnLogOut.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="picLogo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAuIAAAITCAYAAABCLXmDAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
@@ -12559,7 +12622,6 @@
   <data name="picLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="picLogo.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
@@ -12582,7 +12644,7 @@
     <value>211, 32</value>
   </data>
   <data name="pnlFormularios.Size" type="System.Drawing.Size, System.Drawing">
-    <value>730, 459</value>
+    <value>1195, 719</value>
   </data>
   <data name="pnlFormularios.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -12808,68 +12870,6 @@
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="btnLogOut.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="btnLogOut.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnLogOut.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="btnLogOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAC0AAAAgCAYAAACGhPFEAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAAHCAAABwgAc0Pm54AAAJcSURBVFhH1Zg/aBRBFMZX1Ozs
-        qtgLASGkN2KhIMGgvYJoFbCISkALSxGFw52Nf0BQG7E3CmkEi8RCCEhuZwyxFAsRIaRQsDDEP6jh1u/t
-        vj1y3Itznp5kfvDd3r3defNx+2ZndoI8z71T59xf2KoSc0il5rRK7ZUozW5H2l6MdHYiTs3e4MbcDr7y
-        j5BMueRE6fqw0vZhpM0npU3+G32HHkQT9QPctCMkUy6tS5jYwTC1j9eY+gbjT3C8rJJsrE/bo/jnz6jE
-        TuD4CPH31bWhNi87NS+ZckkEt/04Ov/MJpZhYjyozW7n0zK1V30om1GUzzy3+xHq7DyfXRfJlEttoLNL
-        UKPs2D6N9Hw/n+oYtD0FfS1yJGaSxgOfakMy5VILdNtLs2aZBhyHu2JbWt+jdPaW8qGs7nC4DcmUS01Q
-        EgfRAQ2mhkqzwxz+K+La3C7k+1AYT81JDrcgmXKpZGpqMxK/puTQPY7+E1DnI8i5Cq2oa2Y3h5tIplwq
-        QOKzbPidc8B1AZ7lF5D7Z6xf7ONQE8mUS9RqExIuQigLO1Km6gG12S38rQXJlEtUy/v5X37Gef4rkimX
-        aBK5SaZxPMd5ekZ8NRsKri/s5J8FkimX6DH3vDRdH+A8PYHqme/oEp7dRzgsmnKJJoI3lIxmNM7TE+Ik
-        O8amSQ3MsreCu9OhZMolMr0CfeTcIsXKDtfQoqlbof0XqDJdaUYy5ZK3pj0sDx8HopePPC8nF3z6N40T
-        /i2YCB+XpoR/LwGMd69bFejErxfbCu+2ECq826xZi1fbYm1spA1IKbixlQe/AMNd3vhVqvQGAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
-  <data name="btnLogOut.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnLogOut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnLogOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 415</value>
-  </data>
-  <data name="btnLogOut.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btnLogOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 40</value>
-  </data>
-  <data name="btnLogOut.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="btnLogOut.Text" xml:space="preserve">
-    <value>Log Out</value>
-  </data>
-  <data name="btnLogOut.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btnLogOut.Name" xml:space="preserve">
-    <value>btnLogOut</value>
-  </data>
-  <data name="&gt;&gt;btnLogOut.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLogOut.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;btnLogOut.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -13165,7 +13165,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="panelMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 459</value>
+    <value>211, 719</value>
   </data>
   <data name="panelMenu.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -13552,6 +13552,42 @@
   <data name="toolUsuarios.Text" xml:space="preserve">
     <value>Usuarios</value>
   </data>
+  <data name="btnHorariosSemana.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 30</value>
+  </data>
+  <data name="btnHorariosSemana.Text" xml:space="preserve">
+    <value>Horarios Semana</value>
+  </data>
+  <data name="dropDownNavegables.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAA3xJREFUOE9lk3tQ1FUUx/cvZvwjTARrIGObCjYkEInhkamhIKPxWIaNYg1xBGxD
+        3rFUM7qwSwHRAi20BKIoCigO4PJweQ24auNIINKwG9sk0h8ZGo3jolJMO59+S/yR+Z05M3fuOZ97zj3n
+        XtH/Jcnv8fUuMlZ5awbNEs2gzUvVb/NS9phfVZyrekV+3Gc17Gn5yNqdvD/r1QdVGe3JZ7upvnQe/bWb
+        lJqs7D1mIljThVfGebtYfqzWR6ZyWsX+lQP2UnYPHTzVSO+knsZJKwOzd+kTrOPWAkeMBpStSsq6CgjO
+        TWGjtHroiUOE8vRbyzupGB7mtPk2p+Ye0DH/iME78wzPWlhafkz3DR3Vw7FkNQcSmqnAfbdatwJ7vl8v
+        keR02PO7fuDM9DxLf9uxPFxm9i87E3fnGJxuY9TawvGruRw1hFPeo+DNgs24Rynt6yNVEpFY3lAZ9Gkn
+        CU1jFI7O0verjYsLS1z44z4jP41gmpvEaL3J+O3v6Rw/wYLtHge0qWyMjsRtV3GlSPzet+a4MjXRdd9x
+        qO9HGiy/86dQxa1740zMXaBn6nO0Q9mYrJc5OdqCT2oEG2JCWBPmi1uE2ix6UVq9eECfRIzustD1X9BP
+        3qFu6meh7GbqTAeFe8uov6Lk8fIjthYeYrNiDy7bM1njt4P1UV8sijz2lC7mtEaRUtvLdu0oEY3XiWqb
+        omnCQoHhLM3Xajk31kT3uIGdn8TjGafAOSSbZ15/F8/EhkXRc0IZSd+8JTTmI17L6cRf1c+WshH2t9zg
+        wdIyJZ21RJa8w5mRdjbtS8Jlm5K1gWmsfSOVgOwBs8gtorjaLy1BcJYTfLiNWE0/+3WXiNL08nL6SYpO
+        60mvyeHEQCviWBnPBisEOA1PWQ1xNdcrV8botrPILswVccyXvBBXiUeclueF9Ya9pXjGJ5Go/pDfFu7j
+        I/2AdaEZeMRUsEN9xZ7XPyNZeQsvyZv0rrtLcN32Ma5hWbiEHGZdWLYQLFhIJuEpZWyJP4pfgoYgRRtv
+        q6+Sa7TqV2CHZKppp4CsgSH36HKcA5Nx9kvE2T8J54B9uIaksytNi0fsV/hnGpHWjJF3cWZI1T795H9w
+        bEh1Y/rQwkH7puR6wlMriM6qRV7cQUKpaQXMMJjtjsxPwf9V/oDFV8jwdYbBYhYAmwAINmPOM1qrHL7V
+        sFWJRP8AmAMc3aOIWG0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="dropDownNavegables.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="dropDownNavegables.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 29</value>
+  </data>
+  <data name="dropDownNavegables.Text" xml:space="preserve">
+    <value>Navegables</value>
+  </data>
   <data name="toolConfiguracion.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -13559,7 +13595,7 @@
     <value>Yes</value>
   </data>
   <data name="toolConfiguracion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>941, 32</value>
+    <value>1406, 32</value>
   </data>
   <data name="toolConfiguracion.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -13586,7 +13622,7 @@
     <value>0, 0</value>
   </data>
   <data name="pnlContenedor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>941, 491</value>
+    <value>1406, 751</value>
   </data>
   <data name="pnlContenedor.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -13613,7 +13649,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>941, 491</value>
+    <value>1406, 751</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -15863,6 +15899,18 @@
     <value>btnUsuarios</value>
   </data>
   <data name="&gt;&gt;btnUsuarios.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dropDownNavegables.Name" xml:space="preserve">
+    <value>dropDownNavegables</value>
+  </data>
+  <data name="&gt;&gt;dropDownNavegables.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnHorariosSemana.Name" xml:space="preserve">
+    <value>btnHorariosSemana</value>
+  </data>
+  <data name="&gt;&gt;btnHorariosSemana.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -83,6 +83,16 @@ namespace Gym.View.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_week {
+            get {
+                object obj = ResourceManager.GetObject("calendar-week", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Math_multiply_icon {
             get {
                 object obj = ResourceManager.GetObject("Math-multiply-icon", resourceCulture);
