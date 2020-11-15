@@ -1,6 +1,7 @@
 ﻿namespace Gym.CasosDeUso
 {
     using Gym.Domain;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
@@ -26,6 +27,25 @@
                                   .Include(x => x.Salon)
                                   .Include(x => x.SociosInscriptos)
                                   .ToList();
+
+            this.CerrarRepository();
+
+            return lista;
+        }
+
+        public ICollection<Clases> ListarCompletoFuturasClases()
+        {
+            var repository = this.CrearRepository();
+
+            var lista = repository.Query(x => x.cls_FechaInicio > DateTime.Today)
+                                   .AsQueryable()
+                                   .Include(x => x.Titular)
+                                   .Include(x => x.Auxiliar)
+                                   .Include(x => x.Actividad)
+                                   .Include(x => x.Salon)
+                                   .Include(x => x.SociosInscriptos)
+                                   .OrderBy(x => x.cls_FechaInicio)
+                                   .ToList();
 
             this.CerrarRepository();
 

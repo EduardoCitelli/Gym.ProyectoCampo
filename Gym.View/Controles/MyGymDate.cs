@@ -1,16 +1,8 @@
 ﻿namespace Gym.View
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Drawing;
-    using System.Data;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows.Forms;
-    using System.Runtime.CompilerServices;
-
+    
     public partial class MyGymDate : MyGymControl
     {
         public MyGymDate()
@@ -40,6 +32,14 @@
                 this.TabStop = value;
                 this.dte.TabStop = value;
             }
+        }
+
+        [Category("MyGym"), DefaultValue(false)]
+        public bool OcultarDia
+        {
+            get => this.splitContainer1.Panel2Collapsed;
+
+            set => this.splitContainer1.Panel2Collapsed = value;
         }
 
         public void Focalizar() => this.dte.Focus();

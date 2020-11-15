@@ -2,7 +2,8 @@
 {
     using Gym.Datos;
     using System;
-    
+    using System.Collections.Generic;
+
     public class Operable<T> : IOperable<T> where T : class
     {
         protected UnitOfWork uow;
@@ -39,6 +40,25 @@
             }
         }
 
+        public virtual bool AltaMasiva(List<T> entities)
+        {
+            var repository = this.CrearRepository();
+
+            try
+            {
+                foreach (var entity in entities)
+                {
+                    this.LogicaAlta(entity, repository);
+                }
+
+                this.CerrarRepository();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         public virtual void Modificar(T entity)
         {            

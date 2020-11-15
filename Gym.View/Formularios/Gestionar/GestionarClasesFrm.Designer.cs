@@ -33,6 +33,7 @@
             this.chkAlta = new Gym.View.MyGymChkBox();
             this.chkPendiente = new Gym.View.MyGymChkBox();
             this.btnBajaClase = new System.Windows.Forms.Button();
+            this.btnAgregarClaseRecurrente = new System.Windows.Forms.Button();
             this.pnlBotones.SuspendLayout();
             this.pnlActualizar.SuspendLayout();
             this.pnlContenedor.SuspendLayout();
@@ -42,9 +43,12 @@
             // 
             // pnlBotones
             // 
+            this.pnlBotones.Controls.Add(this.btnAgregarClaseRecurrente);
             this.pnlBotones.Controls.Add(this.btnAddAlumno);
             this.pnlBotones.Controls.Add(this.btnBajaClase);
             this.pnlBotones.Controls.Add(this.btnAlta);
+            this.pnlBotones.Location = new System.Drawing.Point(0, 598);
+            this.pnlBotones.Size = new System.Drawing.Size(1048, 66);
             this.pnlBotones.Controls.SetChildIndex(this.pnlActualizar, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnAgregar, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnBorrar, 0);
@@ -52,6 +56,7 @@
             this.pnlBotones.Controls.SetChildIndex(this.btnAlta, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnBajaClase, 0);
             this.pnlBotones.Controls.SetChildIndex(this.btnAddAlumno, 0);
+            this.pnlBotones.Controls.SetChildIndex(this.btnAgregarClaseRecurrente, 0);
             // 
             // btnModificar
             // 
@@ -79,7 +84,7 @@
             // 
             // pnlActualizar
             // 
-            this.pnlActualizar.Location = new System.Drawing.Point(617, 5);
+            this.pnlActualizar.Location = new System.Drawing.Point(869, 5);
             this.pnlActualizar.Size = new System.Drawing.Size(170, 52);
             // 
             // btnCerrar
@@ -98,14 +103,27 @@
             this.btnActualizar.Size = new System.Drawing.Size(86, 52);
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // pnlContenedor
+            // 
+            this.pnlContenedor.Size = new System.Drawing.Size(1052, 668);
+            // 
             // gbFiltros
             // 
             this.gbFiltros.Controls.Add(this.chkPendiente);
             this.gbFiltros.Controls.Add(this.chkAlta);
+            this.gbFiltros.Size = new System.Drawing.Size(1048, 65);
             this.gbFiltros.Controls.SetChildIndex(this.txtFiltroNombre, 0);
             this.gbFiltros.Controls.SetChildIndex(this.label1, 0);
             this.gbFiltros.Controls.SetChildIndex(this.chkAlta, 0);
             this.gbFiltros.Controls.SetChildIndex(this.chkPendiente, 0);
+            // 
+            // pnlGrd
+            // 
+            this.pnlGrd.Size = new System.Drawing.Size(1048, 507);
+            // 
+            // pnlEspacio
+            // 
+            this.pnlEspacio.Size = new System.Drawing.Size(1048, 15);
             // 
             // label1
             // 
@@ -121,6 +139,7 @@
             // 
             // lblTitulo
             // 
+            this.lblTitulo.Size = new System.Drawing.Size(1048, 26);
             this.lblTitulo.Titulo = "Clases";
             // 
             // btnAddAlumno
@@ -192,11 +211,26 @@
             this.btnBajaClase.UseVisualStyleBackColor = false;
             this.btnBajaClase.Click += new System.EventHandler(this.btnBajaClase_Click);
             // 
+            // btnAgregarClaseRecurrente
+            // 
+            this.btnAgregarClaseRecurrente.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarClaseRecurrente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarClaseRecurrente.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAgregarClaseRecurrente.FlatAppearance.BorderSize = 0;
+            this.btnAgregarClaseRecurrente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarClaseRecurrente.Location = new System.Drawing.Point(521, 5);
+            this.btnAgregarClaseRecurrente.Name = "btnAgregarClaseRecurrente";
+            this.btnAgregarClaseRecurrente.Size = new System.Drawing.Size(96, 52);
+            this.btnAgregarClaseRecurrente.TabIndex = 9;
+            this.btnAgregarClaseRecurrente.Text = "Agregar Clase Recurrente";
+            this.btnAgregarClaseRecurrente.UseVisualStyleBackColor = false;
+            this.btnAgregarClaseRecurrente.Click += new System.EventHandler(this.btnAgregarClaseRecurrente_Click);
+            // 
             // GestionarClasesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1052, 668);
             this.Name = "GestionarClasesFrm";
             this.Text = "GestionarClases";
             this.pnlBotones.ResumeLayout(false);
@@ -215,5 +249,6 @@
         private MyGymChkBox chkPendiente;
         private MyGymChkBox chkAlta;
         private System.Windows.Forms.Button btnBajaClase;
+        private System.Windows.Forms.Button btnAgregarClaseRecurrente;
     }
 }

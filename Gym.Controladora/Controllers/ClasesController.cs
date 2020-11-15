@@ -35,6 +35,8 @@
 
         public ICollection<Clases> ListarCompleto() => this.gestionarClases.ListarCompleto();
 
+        public ICollection<Clases> ListarCompletoFuturasClases() => this.gestionarClases.ListarCompletoFuturasClases();
+
         public void DarDeBajaClase(Clases clase)
         {
             this.operacionesClases_Socios.EliminarPorClase(clase.cls_Id);
@@ -43,5 +45,7 @@
 
             this.operacionesClases.Modificar(clase);
         }
+
+        public bool GuardarClasesRecurrente(List<Clases> clases) => this.operacionesClases.AltaMasiva(clases);
     }
 }

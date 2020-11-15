@@ -33,7 +33,21 @@
             }
         }
 
-        public void Focalizar() => this.myGymDate1.Focalizar();
+        [Category("MyGym"), DefaultValue(false)]
+        public bool MostrarSoloHora
+        {
+            get => this.myGymDate1.OcultarDia;
+
+            set => this.myGymDate1.OcultarDia = value;
+        }
+
+        public void Focalizar()
+        {
+            if (this.MostrarSoloHora)
+                this.numHora.Focus();
+            else
+                this.myGymDate1.Focalizar();
+        }
 
         public void SetValor(DateTime? value)
         {
@@ -76,6 +90,20 @@
                 var hora = Convert.ToInt32(this.numHora.Value);
 
                 var result = new DateTime(ano, mes, dia, hora, 0, 0);
+
+                return result;
+            }
+
+            return null;
+        }
+
+        public DateTime? GetHora()
+        {
+            if (!string.IsNullOrEmpty(this.numHora.Text))
+            {
+                var hora = Convert.ToInt32(this.numHora.Value);
+
+                var result = new DateTime(2020, 1, 1, hora, 0, 0);
 
                 return result;
             }

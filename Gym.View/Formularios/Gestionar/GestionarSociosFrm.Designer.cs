@@ -87,7 +87,7 @@
             // 
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.Location = new System.Drawing.Point(20, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(101, 0);
             this.btnCerrar.Size = new System.Drawing.Size(84, 52);
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -95,7 +95,7 @@
             // 
             this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.Location = new System.Drawing.Point(104, 0);
+            this.btnActualizar.Location = new System.Drawing.Point(20, 0);
             this.btnActualizar.Size = new System.Drawing.Size(81, 52);
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 

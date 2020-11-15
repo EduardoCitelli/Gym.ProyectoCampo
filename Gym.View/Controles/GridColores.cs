@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using System;
     using System.ComponentModel;
     using System.Drawing;
     using System.Drawing.Drawing2D;
@@ -17,11 +18,18 @@
         {
             base.PaintBackground(graphics, clipBounds, gridBounds);
 
-            var lgb = new LinearGradientBrush(clipBounds, this.ColorArriba, this.ColorAbajo, LinearGradientMode.ForwardDiagonal);
-            var lgb2 = new LinearGradientBrush(gridBounds, this.ColorArriba, this.ColorAbajo, LinearGradientMode.ForwardDiagonal);
+            using (var lgb = new LinearGradientBrush(clipBounds, this.ColorArriba, this.ColorAbajo, LinearGradientMode.ForwardDiagonal))
+            {
+                lgb.GammaCorrection = true;
+                graphics.FillRectangle(lgb, clipBounds);
+            }
 
-            graphics.FillRectangle(lgb, clipBounds);
-            graphics.FillRectangle(lgb2, gridBounds);
-        }        
+            using (var lgb2 = new LinearGradientBrush(gridBounds, this.ColorArriba, this.ColorAbajo, LinearGradientMode.ForwardDiagonal))
+            {
+                lgb2.GammaCorrection = true;
+
+                graphics.FillRectangle(lgb2, gridBounds);
+            }
+        }
     }
 }

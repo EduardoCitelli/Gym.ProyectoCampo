@@ -2,6 +2,7 @@
 {
     using Gym.Controladora;
     using Gym.Domain;
+    using Gym.View.Formularios;
     using System;
     using System.Collections.Generic;
     using System.Data;
@@ -16,17 +17,13 @@
         public GestionarClasesFrm()
         {
             this.InitializeComponent();
-
             this.clasesController = new ClasesController();
-
-            this.source = this.clasesController.ListarCompleto().ToList();
-
             this.ArmarLista();
         }
 
         private void ArmarLista()
         {
-            this.source = this.clasesController.ListarCompleto().ToList();
+            this.source = this.clasesController.ListarCompletoFuturasClases().ToList();
 
             this.Limpiar();            
 
@@ -115,6 +112,16 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK) this.ArmarLista();
+        }
+
+        private void btnAgregarClaseRecurrente_Click(object sender, EventArgs e)
+        {
+            var frm = new ClaseRecurrenteFrm(this.clasesController);
+
+            var result = frm.ShowDialog();
+
+            if (result == DialogResult.OK)
+                this.ArmarLista();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
