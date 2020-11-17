@@ -13,7 +13,16 @@
             var coleccion = repository.Query(x => x.css_cls_Id == idClase).ToList();
 
             foreach (var objeto in coleccion)
+            {
+                var repositorySocios = this.uow.GetRepository<Socios>();
+
+                var socio = repositorySocios.GetById(objeto.css_soc_Codigo);
+
+                if (!socio.Membresia.Tipo.tmm_EsMensual)
+                    socio.soc_CantidadClasesDisponibles += 1;
+
                 repository.Remove(objeto);
+            }
 
             this.CerrarRepository();
         }

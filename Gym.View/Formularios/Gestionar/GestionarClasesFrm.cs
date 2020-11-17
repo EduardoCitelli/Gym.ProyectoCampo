@@ -137,7 +137,7 @@
             if (result == DialogResult.Yes)
             {
                 try
-                {
+                {                    
                     this.clasesController.Eliminar(codigo);
                 }
                 catch (Exception ex)
