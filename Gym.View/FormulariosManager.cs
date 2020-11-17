@@ -6,7 +6,7 @@
 
     public class FormulariosManager
     {   
-        public void AbrirFormulario<MyForm>(PanelColores panel, MenuFrm menu, object btn) where MyForm : Form, new()
+        public void AbrirFormulario<MyForm>(PanelColores panel, MenuFrm menu, object btn, string url) where MyForm : Form, new()
         {
             Form formulario;
 
@@ -38,6 +38,9 @@
             }
             else
                 formulario.BringToFront();
+
+            if (formulario.GetType() == typeof(NavegableFrm))
+                ((NavegableFrm)formulario).Navigate(url);
         }
     }
 }

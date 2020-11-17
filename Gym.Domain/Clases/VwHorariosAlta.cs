@@ -1,9 +1,11 @@
 ﻿namespace Gym.Domain
 {
     using System;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public class VwHorariosAlta
     {
+        [Key]
         public int Id { get; set; }
 
         public string Actividad { get; set; }

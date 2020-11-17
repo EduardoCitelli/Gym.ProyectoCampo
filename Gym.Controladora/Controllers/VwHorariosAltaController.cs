@@ -1,13 +1,18 @@
 ﻿namespace Gym.Controladora
 {
-    using System;
+    using Gym.CasosDeUso;
+    using Gym.Domain;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
+    
     public class VwHorariosAltaController
     {
+        private readonly GestionarVwHorariosAlta gestionar;
 
+        public VwHorariosAltaController()
+        {
+            this.gestionar = new GestionarVwHorariosAlta();
+        }
+
+        public IEnumerable<VwHorariosAlta> ListarHorariosSemana() => this.gestionar.ListarClasesSemanales();
     }
 }

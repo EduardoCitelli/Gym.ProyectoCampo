@@ -28,6 +28,7 @@
         public virtual DbSet<Clases> Clases { get; set; }
         public virtual DbSet<Socios_Membresias> Socios_Membresias { get; set; }
         public virtual DbSet<ComprobanteEmitido> ComprobanteEmitido { get; set; }
+        public virtual DbSet<VwHorariosAlta> VwHorariosAlta { get; set; }
 
         #endregion
 
@@ -48,6 +49,8 @@
             modelBuilder.Entity<Clases_Socios>().HasKey(x => x.css_Id);
 
             modelBuilder.Entity<Clases>().HasKey(x => x.cls_Id);
+
+            modelBuilder.Entity<VwHorariosAlta>().HasKey(x => x.Id);
 
             modelBuilder.Entity<Profesores>()
                         .HasKey(x => x.pro_Codigo)

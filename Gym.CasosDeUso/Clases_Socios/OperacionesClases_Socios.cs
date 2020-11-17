@@ -31,7 +31,18 @@
                 clase.cls_Estado = "A";
 
                 repositoryClases.Edit(clase);
-            }                
+            }
+
+            var repositorySocios = this.uow.GetRepository<Socios>();
+
+            var socio = repositorySocios.GetById(entity.css_soc_Codigo);
+
+            if (!socio.Membresia.Tipo.tmm_EsMensual)
+            {
+                socio.soc_CantidadClasesDisponibles -= 1;
+
+                repositorySocios.Edit(socio);
+            }            
         }
     }
 }

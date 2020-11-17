@@ -122,6 +122,7 @@
     <Compile Include="TipoMembresias\OperacionesTipoMembresias.cs" />
     <Compile Include="Usuarios\GestionarUsuarios.cs" />
     <Compile Include="Usuarios\OperacionesUsuarios.cs" />
+    <Compile Include="VwHorariosAlta\GestionarVwHorariosAlta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

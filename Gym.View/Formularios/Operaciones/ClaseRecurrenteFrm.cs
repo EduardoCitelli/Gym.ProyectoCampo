@@ -39,10 +39,8 @@
         private void CargarListBox()
         {
             this.listBoxDias.DataSource = null;
-            this.listBoxDias.DataSource = this.GetWeeksDays().Where(x => x != DayOfWeek.Sunday).ToList();
+            this.listBoxDias.DataSource = DateTimeExtensionMethods.GetWeeksDays().Where(x => x != DayOfWeek.Sunday).ToList();
         }
-
-        private List<DayOfWeek> GetWeeksDays() => Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().ToList();
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -130,7 +128,7 @@
 
         private void CargarFechasMesDespuesDelSiguiente(List<DateTime> diasParaDarDeAlta, int anio, int mes, DayOfWeek day)
         {
-            var diasDelMes = DateTimeExtensionMethods.AllDatesInMonth(anio, mes);
+            var diasDelMes = DateTimeExtensionMethods.TodosLosDiasDelMes(anio, mes);
 
             diasDelMes = diasDelMes.Where(x => x.DayOfWeek == day && x > DateTime.Today).ToList();
 
@@ -139,7 +137,7 @@
 
         private void CargarFechasMesSiguiente(List<DateTime> diasParaDarDeAlta, int anio, int mes, DayOfWeek day)
         {
-            var diasDelMes = DateTimeExtensionMethods.AllDatesInMonth(anio, mes);
+            var diasDelMes = DateTimeExtensionMethods.TodosLosDiasDelMes(anio, mes);
 
             diasDelMes = diasDelMes.Where(x => x.DayOfWeek == day && x > DateTime.Today).ToList();
 
@@ -148,7 +146,7 @@
 
         private void CargarFechasMesActual(List<DateTime> diasParaDarDeAlta, DayOfWeek day)
         {
-            var diasDelMes = DateTimeExtensionMethods.AllDatesInMonth(DateTime.Today.Year, DateTime.Today.Month);
+            var diasDelMes = DateTimeExtensionMethods.TodosLosDiasDelMes(DateTime.Today.Year, DateTime.Today.Month);
 
             diasDelMes = diasDelMes.Where(x => x.DayOfWeek == day && x > DateTime.Today).ToList();
 

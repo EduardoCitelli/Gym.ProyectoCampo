@@ -63,31 +63,31 @@
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e) 
-            => this.Manager.AbrirFormulario<GestionarUsuariosFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarUsuariosFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnGrupos_Click(object sender, EventArgs e) 
-            => this.Manager.AbrirFormulario<GestionarGruposFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarGruposFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnTipoMembresias_Click(object sender, EventArgs e) 
-            => this.Manager.AbrirFormulario<GestionarTiposMembresiaFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarTiposMembresiaFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnMembresias_Click(object sender, EventArgs e) 
-            => this.Manager.AbrirFormulario<GestionarMembresiasFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarMembresiasFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnActividades_Click(object sender, EventArgs e) 
-            => this.Manager.AbrirFormulario<GestionarActividadesFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarActividadesFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnSalones_Click(object sender, EventArgs e) 
-            => this.Manager.AbrirFormulario<GestionarSalonesFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarSalonesFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnSocios_Click(object sender, EventArgs e)
-            => this.Manager.AbrirFormulario<GestionarSociosFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarSociosFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnProfesores_Click(object sender, EventArgs e) 
-            => this.Manager.AbrirFormulario<GestionarProfesoresFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarProfesoresFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnClases_Click(object sender, EventArgs e) 
-            => this.Manager.AbrirFormulario<GestionarClasesFrm>(this.pnlFormularios, this, sender);
+            => this.Manager.AbrirFormulario<GestionarClasesFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
@@ -113,6 +113,7 @@
 
         private void BtnHorariosSemana_Click(object sender, EventArgs e)
         {
+            this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlHorarios());
 
         }
     }

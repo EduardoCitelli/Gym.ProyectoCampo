@@ -40,7 +40,8 @@
             this.wb.Location = new System.Drawing.Point(0, 0);
             this.wb.MinimumSize = new System.Drawing.Size(20, 20);
             this.wb.Name = "wb";
-            this.wb.Size = new System.Drawing.Size(800, 450);
+            this.wb.ScriptErrorsSuppressed = true;
+            this.wb.Size = new System.Drawing.Size(800, 384);
             this.wb.TabIndex = 0;
             // 
             // pnlBotones
@@ -78,8 +79,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.wb);
+            this.Controls.Add(this.pnlBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NavegableFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
