@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -126,9 +127,15 @@
                 try
                 {
                     this.ProfesoresCotroller.Eliminar(codigo);
+
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionExitosa, string.Empty, this.Name);
                 }
                 catch (Exception ex)
                 {
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionFallida, ex.Message, this.Name);
+
                     MessageBox.Show(ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }

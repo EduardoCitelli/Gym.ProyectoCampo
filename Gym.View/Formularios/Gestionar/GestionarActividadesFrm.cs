@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -79,7 +80,13 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, string.Empty, frm.Name);
+
                 this.ArmarLista();
+            }
+                
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -109,6 +116,9 @@
                     return;
                 }
 
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.EliminacionExitosa, "Eliminación de Actividad", this.Name);
+
                 this.ArmarLista();
             }
         }
@@ -131,7 +141,13 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, "Modificación de Actividad", frm.Name);
+
                 this.ArmarLista();
+            }
+                
         }
 
         private void btnActualizar_Click(object sender, EventArgs e) => this.ArmarLista();

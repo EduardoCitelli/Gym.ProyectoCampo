@@ -1,10 +1,13 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using System;
     using System.Windows.Forms;
 
     public partial class FormGestionarBase : Form
     {
+        protected LogService log = LogService.GetInstancia();
+
         public FormGestionarBase()
         {
             this.InitializeComponent();

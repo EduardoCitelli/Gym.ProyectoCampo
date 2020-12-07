@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -76,7 +77,10 @@
             var resultado = frm.ShowDialog();
 
             if (resultado == DialogResult.OK)
+            {
+                this.log.Log(Eventos.GuardadoExitoso, "", frm.Name);
                 this.ArmarLista();
+            }                
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -98,9 +102,11 @@
                 try
                 {
                     this.TipoMembresiasController.EliminarTipoMembresia(id);
+                    this.log.Log(Eventos.EliminacionExitosa, "", this.Name);
                 }
                 catch (Exception ex)
                 {
+                    this.log.Log(Eventos.EliminacionFallida, ex.Message, this.Name);
                     MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
@@ -124,7 +130,10 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                this.log.Log(Eventos.GuardadoExitoso, "Modifiación", frm.Name);
                 this.ArmarLista();
+            }                
         }
 
         private void btnActualizar_Click(object sender, EventArgs e) => this.ArmarLista();

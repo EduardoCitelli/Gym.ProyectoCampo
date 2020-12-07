@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -58,7 +59,13 @@
             var resultado = frm.ShowDialog();
 
             if (resultado == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, "Alta de Grupo", frm.Name);
+
                 this.ArmarLista();
+            }
+                
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -77,7 +84,13 @@
             var resultado = frm.ShowDialog();
 
             if (resultado == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, "Modificación de Grupo", frm.Name);
+
                 this.ArmarLista();
+            }
+                
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -99,12 +112,19 @@
                 try
                 {
                     this.Controller.EliminarGrupo(id);
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionExitosa, "Eliminación de Grupo", this.Name);
                 }
                 catch (Exception ex)
                 {
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionFallida, ex.Message, this.Name);
+
                     MessageBox.Show(ex.Message, "Grupo Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                
 
                 this.ArmarLista();
             }            

@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -73,6 +74,7 @@
             }
             catch (Exception ex)
             {
+                this.log.Log(Eventos.GuardadoFallido, ex.Message, this.Name);
                 MessageBox.Show(ex.Message, "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }

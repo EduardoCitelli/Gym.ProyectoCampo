@@ -29,6 +29,7 @@
         public virtual DbSet<Socios_Membresias> Socios_Membresias { get; set; }
         public virtual DbSet<ComprobanteEmitido> ComprobanteEmitido { get; set; }
         public virtual DbSet<VwHorariosAlta> VwHorariosAlta { get; set; }
+        public virtual DbSet<Log> Log { get; set; }
 
         #endregion
 

@@ -1,11 +1,14 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using System;
     using System.Runtime.InteropServices;
     using System.Windows.Forms;
 
     public partial class FormABMBase : Form
     {
+        protected LogService log = LogService.GetInstancia();
+
         public FormABMBase()
         {
             this.InitializeComponent();

@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -51,8 +52,16 @@
                 if (this.numCantClases.Value != 0)
                     this.nuevoTipo.tmm_CantidadClases = (int)this.numCantClases.Value;
             }
-
-            this.ControllerTipoMembresia.GuardarTipoMembresia(this.nuevoTipo, this.esModificacion);
+            try
+            {
+                this.ControllerTipoMembresia.GuardarTipoMembresia(this.nuevoTipo, this.esModificacion);
+            }
+            catch (Exception ex)
+            {
+                this.log.Log(Eventos.GuardadoFallido, ex.Message, this.Name);
+                MessageBox.Show(ex.Message);
+                return;
+            }            
 
             this.DialogResult = DialogResult.OK;
         }

@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -91,7 +92,12 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, string.Empty, frm.Name);
+
                 this.ArmarLista();
+            }                
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -108,9 +114,15 @@
                 try
                 {
                     this.SalonesController.Eliminar(codigo);
+
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionExitosa, string.Empty, this.Name);
                 }
                 catch (Exception ex)
                 {
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionFallida, ex.Message, this.Name);
+
                     MessageBox.Show(ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -133,7 +145,12 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, "Modificación", frm.Name);
+
                 this.ArmarLista();
+            }                
         }
 
         private void btnActualizar_Click(object sender, EventArgs e) => this.ArmarLista();

@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using Gym.View.Formularios;
@@ -111,7 +112,13 @@
 
             var result = frm.ShowDialog();
 
-            if (result == DialogResult.OK) this.ArmarLista();
+            if (result == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, string.Empty, frm.Name);
+
+                this.ArmarLista();
+            }
         }
 
         private void btnAgregarClaseRecurrente_Click(object sender, EventArgs e)
@@ -121,7 +128,12 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, string.Empty, frm.Name);
+
                 this.ArmarLista();
+            }                
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -139,9 +151,15 @@
                 try
                 {                    
                     this.clasesController.Eliminar(codigo);
+
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionExitosa, string.Empty, this.Name);
                 }
                 catch (Exception ex)
                 {
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionFallida, ex.Message, this.Name);
+
                     MessageBox.Show(ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -161,7 +179,12 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, "Modifica", frm.Name);
+
                 this.ArmarLista();
+            }                
         }
 
         private Clases ObtenerClase()
@@ -257,7 +280,12 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, "Alta de clase", frm.Name);
+
                 this.ArmarLista();
+            }                
         }
 
         private void chkPendiente_ValueChanged(object sender, EventArgs e) => this.Filtrar();
@@ -278,10 +306,16 @@
             {
                 try
                 {
-                    this.clasesController.DarDeBajaClase(objeto);                    
+                    this.clasesController.DarDeBajaClase(objeto);
+
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionExitosa, "Baja de Clase", this.Name);
                 }
                 catch(Exception ex)
                 {
+                    var log = LogService.GetInstancia();
+                    log.Log(Eventos.EliminacionFallida, "Baja de Clase", this.Name);
+
                     MessageBox.Show(ex.Message, "Baja", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }

@@ -56,6 +56,7 @@
     <Compile Include="Clases\Clases_Socios.cs" />
     <Compile Include="Clases\ComprobanteEmitido.cs" />
     <Compile Include="Clases\GrupoUsuarios.cs" />
+    <Compile Include="Clases\Log.cs" />
     <Compile Include="Clases\Membresias.cs" />
     <Compile Include="Clases\Profesores.cs" />
     <Compile Include="Clases\Salones.cs" />

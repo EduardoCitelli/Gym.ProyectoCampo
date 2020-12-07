@@ -518,6 +518,10 @@
       <Project>{2ae48a72-7728-43a4-955b-4dd131c756af}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gym.Auditoria\Gym.Auditoria.csproj">
+      <Project>{2a2bb793-28fe-452f-91d1-accb5d13145e}</Project>
+      <Name>Gym.Auditoria</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gym.Controladora\Gym.Controladora.csproj">
       <Project>{c32b9b2c-887b-4690-95f3-6ff9110dcf3b}</Project>
       <Name>Gym.Controladora</Name>

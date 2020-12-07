@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -116,6 +117,9 @@
 
             if (result == DialogResult.OK) 
             {
+                var log = LogService.GetInstancia();
+                log.Log(Eventos.GuardadoExitoso, string.Empty, frm.Name);
+
                 var pregunta = MessageBox.Show("¿Desea Realizar un Pago?", "Nuevo Socio", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (pregunta == DialogResult.Yes)
@@ -128,7 +132,11 @@
                     var resultPago = frmPago.ShowDialog();
 
                     if (resultPago == DialogResult.OK)
+                    {                        
+                        log.Log(Eventos.GuardadoExitoso, "Pago Generado", frm.Name);
+
                         this.ArmarLista();
+                    }                        
                 }
                 else
                     this.ArmarLista();
@@ -150,9 +158,13 @@
                 try
                 {
                     this.SociosController.Eliminar(codigo);
+
+                    this.log.Log(Eventos.EliminacionExitosa, string.Empty, this.Name);
                 }
                 catch (Exception ex)
                 {
+                    this.log.Log(Eventos.EliminacionFallida, ex.Message, this.Name);
+
                     MessageBox.Show(ex.Message, "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -174,7 +186,10 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                this.log.Log(Eventos.GuardadoExitoso, "Modifiación", frm.Name);
                 this.ArmarLista();
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e) => this.ArmarLista();
@@ -232,7 +247,10 @@
             var result = frm.ShowDialog();
 
             if (result == DialogResult.OK)
+            {
+                this.log.Log(Eventos.GuardadoExitoso, "Procesar Pago", frm.Name);
                 this.ArmarLista();
+            }                
         }
 
         private void btnVerificarVenc_Click(object sender, EventArgs e)
@@ -240,7 +258,11 @@
             var verificado = this.SociosController.VerificarMembresias();
 
             if (verificado)
+            {
+                this.log.Log("Verificación de Membresías Exitoso", "", this.Name);
+
                 MessageBox.Show("Proceso Realizado Correctamente", "Verificar Vencimientos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }               
 
             this.ArmarLista();
         }

@@ -1,5 +1,6 @@
 ﻿namespace Gym.View
 {
+    using Gym.Auditoria;
     using Gym.Controladora;
     using Gym.Domain;
     using System;
@@ -43,9 +44,17 @@
                     usu_Password = this.txtPass.GetValor(),
                     usu_gus_Id = this.cboGrupo.GetValor().gus_Id
                 };
-            }            
-
-            this.Controller.Guardar(this.NuevoUsuario, this.EsModificacion);
+            }
+            try
+            {
+                this.Controller.Guardar(this.NuevoUsuario, this.EsModificacion);
+            }
+            catch (Exception ex)
+            {
+                this.log.Log(Eventos.GuardadoFallido, ex.Message, this.Name);
+                MessageBox.Show(ex.Message);
+                return;
+            }
 
             this.DialogResult = DialogResult.OK;
         }

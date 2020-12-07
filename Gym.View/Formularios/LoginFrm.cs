@@ -7,6 +7,7 @@
     using Gym.Controladora;
     using Common.Cache;
     using Gym.Domain;
+    using Gym.Auditoria;
 
     public partial class LoginFrm : Form
     {
@@ -90,6 +91,9 @@
             {
                 this.InicializarUsuario(usuario);
 
+                var log = LogService.InicializarLog(usuario.usu_Id, usuario.usu_Nombre);
+                log.Log(Eventos.LoginExitoso, string.Empty, this.Name);
+
                 var form = new MenuFrm();
 
                 form.Show();
@@ -99,7 +103,12 @@
                 this.Hide();
             }
             else
+            {
+                var log = LogService.InicializarLog(0, string.Empty);
+                log.Log(Eventos.LoginFallido, string.Empty, this.Name);
+
                 MessageBox.Show("Usuario Incorrecto", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LogOut(object sender, FormClosedEventArgs e)
@@ -114,6 +123,7 @@
 
         private void InicializarUsuario(Users usuario)
         {
+            UserLogeado.IdUser = usuario.usu_Id;
             UserLogeado.UserName = usuario.usu_LoginName;
             UserLogeado.Nombre = usuario.usu_Nombre;
             UserLogeado.Apellido = usuario.usu_Apellido;
