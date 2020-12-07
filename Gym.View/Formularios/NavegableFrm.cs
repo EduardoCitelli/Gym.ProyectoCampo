@@ -1,5 +1,7 @@
 ﻿namespace Gym.View
 {
+    using CefSharp.WinForms;
+    using CefSharp;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -19,7 +21,7 @@
 
         public void Navigate(string url)
         {
-            this.wb.Navigate(url);
+            this.wb.Load(url);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e) => this.Close();

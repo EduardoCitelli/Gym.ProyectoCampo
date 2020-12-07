@@ -1,4 +1,7 @@
-﻿namespace Gym.View
+﻿using CefSharp;
+using CefSharp.WinForms;
+
+namespace Gym.View
 {
     partial class NavegableFrm
     {
@@ -28,21 +31,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.wb = new System.Windows.Forms.WebBrowser();
             this.pnlBotones = new Gym.View.PanelColores();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.wb = new CefSharp.WinForms.ChromiumWebBrowser();
             this.pnlBotones.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // wb
-            // 
-            this.wb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wb.Location = new System.Drawing.Point(0, 0);
-            this.wb.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wb.Name = "wb";
-            this.wb.ScriptErrorsSuppressed = true;
-            this.wb.Size = new System.Drawing.Size(800, 384);
-            this.wb.TabIndex = 0;
             // 
             // pnlBotones
             // 
@@ -74,6 +67,15 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // wb
+            // 
+            this.wb.ActivateBrowserOnCreation = false;
+            this.wb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wb.Location = new System.Drawing.Point(0, 0);
+            this.wb.Name = "wb";
+            this.wb.Size = new System.Drawing.Size(800, 384);
+            this.wb.TabIndex = 3;
+            // 
             // NavegableFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,9 +94,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.WebBrowser wb;
         protected PanelColores pnlBotones;
         protected System.Windows.Forms.Button btnCerrar;
+        private CefSharp.WinForms.ChromiumWebBrowser wb;
     }
 }

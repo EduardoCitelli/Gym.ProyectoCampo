@@ -37,7 +37,10 @@
                 this.operacionesClases_Socios.EliminarPorClase(clase.cls_Id);
 
                 foreach (var objeto in objetos)
-                    this.operacionesClases_Socios.Alta(objeto);  
+                {
+                    this.operacionesClases_Socios.Alta(objeto);
+                }
+
             }
             catch (Exception ex)
             {

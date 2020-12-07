@@ -1,10 +1,18 @@
 ﻿@model Gym.MVC.Models.HorariosClasesModel
-    
+
+@{
+    ViewBag.Title = "Horarios";
+}
+
+<div class="row text-center">
+    <div class="col-md-12 text-center">
+        <h2 class="text-center">Horarios</h2>
+    </div>
+</div>
 
 <div class="col-md-12 ">
-    <table class="table table-active table-bordered table-hover table-dark">
+    <table class="table table-dark table-bordered table-hover table-striped">
         <thead>
-
             <tr>
                 <td></td>
                 <td>Lunes</td>
@@ -63,3 +71,73 @@
     </table>
 
 </div>
+
+@*<div class="grupo">
+    <div><h3><a class="titulo-toggle-tabla" href="#"><span class="noprint chevron small glyphicon glyphicon-chevron-down grupoComisiones"></span> @Model.Grupo</a></h3></div>
+    @foreach (var porObjetivo in Model.ComisionesPorObjetivo)
+    {
+        Html.RenderPartial("ComisionesPorObjetivos", porObjetivo);
+    }
+</div>*@
+
+
+@*<script>
+$(document).ready(function () {
+        $("#procesarRefrescar").click(function () {
+            var $ListaRepresentantes = $('#ListaRepresentantes');
+            var $ListaMonedas = $('#ListaMonedas');
+            var $ListaPeriodos = $('#ListaPeriodos');
+
+            datosRepresentantes = $ListaRepresentantes.selectpicker().val();
+            datosMonedas = $ListaMonedas.selectpicker().val();
+            datosPeriodos = $ListaPeriodos.selectpicker().val();
+
+            $.ajax({
+                type: "Post",
+                url: '@Url.Action("Tablas", "ComisionesPorMargen")',
+                data: { clcRepresentantes: JSON.stringify(datosRepresentantes), idsMonedas: JSON.stringify(datosMonedas), idsPeriodos: JSON.stringify(datosPeriodos)},
+                cache: false,
+                datatype: "json",
+                success: function (result) {
+                $('#tablas').html(result);
+                inicializarDataTables();
+                }
+                });
+                })
+
+                $(".btn-quitar").click(function () {
+                $(this).closest(".grupo").fadeout();
+                return false;
+                });
+
+                });
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        $(".titulo-toggle-tabla").click(function () {
+            if ($(this).closest(".grupo").find(".detalle-toggle").is(":visible")) {
+                $(this).find(".chevron").removeClass("glyphicon-chevron-down");
+                $(this).find(".chevron").addClass("glyphicon-chevron-right");
+
+                $(this).closest(".grupo").find(".detalle-toggle").fadeOut();
+
+                $(this).closest(".grupo").find(".grupo").fadeOut();
+            } else {
+                $(this).find(".chevron").removeClass("glyphicon-chevron-right");
+                $(this).find(".chevron").addClass("glyphicon-chevron-down");
+
+                $(this).closest(".grupo").find(".detalle-toggle").fadeIn();
+
+                $(this).closest(".grupo").find(".grupo").fadeIn();
+            }
+            return false;
+        });
+
+        $(".btn-quitar").click(function () {
+            $(this).closest(".grupo").fadeOut();
+            return false;
+        });
+    });
+</script>*@

@@ -9,34 +9,43 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body style="background-color:springgreen">
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
+<body style="background-image: linear-gradient(to bottom right, darkseagreen, darkgreen); background-color:darkseagreen">
+
+    <div class="navbar navbar-dark navbar-collapse navbar-nav navbar-expand-xl fixed-top" style="background-image: linear-gradient(to bottom right, darkgreen, darkseagreen)">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
+                <a class="navbar-brand" href="#">My Gym</a>
             </div>
         </div>
-    </div>*@
+    </div>
 
     <div class="container body-content">
         @RenderBody()
         <hr />
     </div>
 
+    <div id="div_carga" hidden>
+        <div class="overlay">
+            <div class="overlayContent" style="width: 382px">
+                <img src="~/Imagenes/wait.gif" alt="Loading" border="1" /><h2 class="text-center">Procesando Solicitud...</h2>
+            </div>
+        </div>
+    </div>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            inicializarDataTables();
+        }).ajaxStart(function () {
+            $('#div_carga').removeAttr('hidden');
+            $('#div_carga').show();
+        }).ajaxStop(function () {
+            $('#div_carga').hide();
+            $('.selectpicker').selectpicker('refresh');
+        })
+    </script>
 </body>
 </html>
