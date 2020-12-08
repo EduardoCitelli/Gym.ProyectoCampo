@@ -53,6 +53,7 @@
             this.btnUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.dropDownNavegables = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnHorariosSemana = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBackup = new System.Windows.Forms.Button();
             this.pnlContenedor.SuspendLayout();
             this.pnlFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -107,6 +108,7 @@
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMenu.ColorAbajo = System.Drawing.Color.DarkSeaGreen;
             this.panelMenu.ColorArriba = System.Drawing.Color.MediumSeaGreen;
+            this.panelMenu.Controls.Add(this.btnBackup);
             this.panelMenu.Controls.Add(this.btnSalones);
             this.panelMenu.Controls.Add(this.btnActividades);
             this.panelMenu.Controls.Add(this.lblGrupo);
@@ -300,6 +302,19 @@
             resources.ApplyResources(this.btnHorariosSemana, "btnHorariosSemana");
             this.btnHorariosSemana.Click += new System.EventHandler(this.BtnHorariosSemana_Click);
             // 
+            // btnBackup
+            // 
+            this.btnBackup.BackColor = System.Drawing.Color.Transparent;
+            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnBackup, "btnBackup");
+            this.btnBackup.FlatAppearance.BorderSize = 0;
+            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
+            this.btnBackup.ForeColor = System.Drawing.Color.Black;
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
             // MenuFrm
             // 
             resources.ApplyResources(this, "$this");
@@ -349,5 +364,6 @@
         private System.Windows.Forms.Button btnSalones;
         private System.Windows.Forms.ToolStripDropDownButton dropDownNavegables;
         private System.Windows.Forms.ToolStripMenuItem btnHorariosSemana;
+        private System.Windows.Forms.Button btnBackup;
     }
 }
