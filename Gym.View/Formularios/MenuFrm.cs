@@ -114,5 +114,7 @@
         private void BtnHorariosSemana_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlHorarios());
 
         private void btnBackup_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<DbBackupFrm>(this.pnlFormularios, this, sender, string.Empty);
+
+        private void LOGSToolStripMenuItem_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlLogs());
     }
 }

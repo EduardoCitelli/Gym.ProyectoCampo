@@ -30,6 +30,7 @@
         public virtual DbSet<ComprobanteEmitido> ComprobanteEmitido { get; set; }
         public virtual DbSet<VwHorariosAlta> VwHorariosAlta { get; set; }
         public virtual DbSet<Log> Log { get; set; }
+        public virtual DbSet<vwLog> VwLog { get; set; }
 
         #endregion
 

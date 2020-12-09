@@ -19,7 +19,8 @@
             this.EsModificacion = esModificacion;
             this.cboTipoMembresia.Refrescar();
 
-            if (this.EsModificacion) this.InicializarModificacion(membresia);
+            if (this.EsModificacion) 
+                this.InicializarModificacion(membresia);
         }
 
         private void InicializarModificacion(Membresias membresia)

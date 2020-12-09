@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Gym.MVC.Models.LogModel>
+
+@{
+    ViewBag.Title = "Logs";
+}
+
+<div class="row text-center">
+    <div class="col-md-12 text-center">
+        <h2 class="text-center">LOGS</h2>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <table class="table table-info table-bordered table-hover table-striped">
+        <thead class="text-center">
+            <tr>
+                <td>ID</td>
+                <td>Usuario</td>
+                <td>PC</td>
+                <td>Evento</td>
+                <td>Fecha</td>
+                <td>Observaciones</td>
+            </tr>
+        </thead>
+
+        <tbody class="text-center">
+            @foreach(var log in Model)
+            {
+                <tr>
+                    <td>@log.Id</td>
+                    <td>@log.Usuario</td>
+                    <td>@log.PC</td>
+                    <td>@log.Evento</td>
+                    <td>@log.Fecha</td>
+                    <td>@log.Observaciones</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

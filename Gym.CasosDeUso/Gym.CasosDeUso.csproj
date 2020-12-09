@@ -123,6 +123,7 @@
     <Compile Include="Usuarios\GestionarUsuarios.cs" />
     <Compile Include="Usuarios\OperacionesUsuarios.cs" />
     <Compile Include="VwHorariosAlta\GestionarVwHorariosAlta.cs" />
+    <Compile Include="VwLog\GestionarVwLogs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

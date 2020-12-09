@@ -34,6 +34,7 @@
             this.pnlFormularios = new Gym.View.PanelColores();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelMenu = new Gym.View.PanelColores();
+            this.btnBackup = new System.Windows.Forms.Button();
             this.btnSalones = new System.Windows.Forms.Button();
             this.btnActividades = new System.Windows.Forms.Button();
             this.lblGrupo = new Gym.View.TituloLabel();
@@ -53,7 +54,7 @@
             this.btnUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.dropDownNavegables = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnHorariosSemana = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnBackup = new System.Windows.Forms.Button();
+            this.lOGSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContenedor.SuspendLayout();
             this.pnlFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -122,6 +123,19 @@
             this.panelMenu.Controls.Add(this.pbPanel);
             resources.ApplyResources(this.panelMenu, "panelMenu");
             this.panelMenu.Name = "panelMenu";
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.BackColor = System.Drawing.Color.Transparent;
+            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnBackup, "btnBackup");
+            this.btnBackup.FlatAppearance.BorderSize = 0;
+            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
+            this.btnBackup.ForeColor = System.Drawing.Color.Black;
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // btnSalones
             // 
@@ -290,7 +304,8 @@
             // 
             this.dropDownNavegables.AutoToolTip = false;
             this.dropDownNavegables.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnHorariosSemana});
+            this.btnHorariosSemana,
+            this.lOGSToolStripMenuItem});
             resources.ApplyResources(this.dropDownNavegables, "dropDownNavegables");
             this.dropDownNavegables.Name = "dropDownNavegables";
             this.dropDownNavegables.ShowDropDownArrow = false;
@@ -302,18 +317,11 @@
             resources.ApplyResources(this.btnHorariosSemana, "btnHorariosSemana");
             this.btnHorariosSemana.Click += new System.EventHandler(this.BtnHorariosSemana_Click);
             // 
-            // btnBackup
+            // lOGSToolStripMenuItem
             // 
-            this.btnBackup.BackColor = System.Drawing.Color.Transparent;
-            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnBackup, "btnBackup");
-            this.btnBackup.FlatAppearance.BorderSize = 0;
-            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
-            this.btnBackup.ForeColor = System.Drawing.Color.Black;
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.UseVisualStyleBackColor = false;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            resources.ApplyResources(this.lOGSToolStripMenuItem, "lOGSToolStripMenuItem");
+            this.lOGSToolStripMenuItem.Name = "lOGSToolStripMenuItem";
+            this.lOGSToolStripMenuItem.Click += new System.EventHandler(this.LOGSToolStripMenuItem_Click);
             // 
             // MenuFrm
             // 
@@ -365,5 +373,6 @@
         private System.Windows.Forms.ToolStripDropDownButton dropDownNavegables;
         private System.Windows.Forms.ToolStripMenuItem btnHorariosSemana;
         private System.Windows.Forms.Button btnBackup;
+        private System.Windows.Forms.ToolStripMenuItem lOGSToolStripMenuItem;
     }
 }
