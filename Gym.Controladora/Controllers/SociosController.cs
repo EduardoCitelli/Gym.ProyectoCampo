@@ -129,7 +129,8 @@
                 sms_mem_Codigo = membresia.mem_Codigo,
                 sms_FechaAlta = DateTime.Now,
                 sms_FormaPago = formaPago.ToString(),
-                sms_Precio = membresia.mem_Precio
+                sms_Precio = membresia.mem_Precio,
+                sms_act_Codigo = socio.soc_act_Codigo.HasValue ? socio.soc_act_Codigo : null
             };
 
             return historico;

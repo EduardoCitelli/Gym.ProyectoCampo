@@ -1,4 +1,5 @@
 ﻿@model Gym.MVC.Models.HorariosClasesModel
+@using Gym.MVC.Extensions;
 
 @{
     ViewBag.Title = "Horarios";
@@ -6,138 +7,589 @@
 
 <div class="row text-center">
     <div class="col-md-12 text-center">
-        <h2 class="text-center">Horarios</h2>
+        <h2 class="text-center"><span class="badge badge-light">Horarios</span></h2>
     </div>
 </div>
 
-<div class="col-md-12 ">
-    <table class="table table-dark table-bordered table-hover table-striped">
-        <thead>
-            <tr>
-                <td></td>
-                <td>Lunes</td>
-                <td>Martes</td>
-                <td>Miercoles</td>
-                <td>Jueves</td>
-                <td>Viernes</td>
-                <td>Sabado</td>
-            </tr>
-        </thead>
-        <tbody>
-            @for (int hora = 8; hora <= 23; hora++)
-            {
+@using (Html.BeginForm("Index", "HorariosClases", FormMethod.Post, new { @class = "form-horizontal noprint" }))
+{
+    <div class="row offset-3 col-md-6 text-center" style="margin-bottom:10px; margin-top:10px">
+        <form class="noprint form-control" role="form" style="border:double">
+            <div class="form-group form-inline col-md-12">
+
+                <div class="input-group">
+                    <div class="col-md-4 input-group-prepend">
+                        <span class="input-group-text bg-secondary text-white">
+                            @Html.LabelFor(x => x.Salones, new { @class = "control-label" })
+                        </span>
+                    </div>
+
+                    <div class="col-md-8 form-group">
+                        @Html.DropDownListFor(x => x.SalonSeleccionado, Model.Salones, new { @class = "form-control btn-dark" })
+                    </div>
+                </div>
+            </div>
+
+            <input id="procesarRefrescar" type="submit" class="col-md-12 btn btn-success" value="Procesar/Refrescar" />
+        </form>
+    </div>
+}
+
+@if (Model.filtrado)
+{
+    <div class="col-md-12" id="tabla">
+        <table class="table table-dark table-bordered table-hover table-striped">
+            <thead>
                 <tr>
-                    <td>@hora HS</td>
-                    <td>
-                        @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Monday).FirstOrDefault() != null)
-                        {
-                            @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Monday).FirstOrDefault().Actividad
-                        }
-                    </td>
-                    <td>
-                        @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Tuesday).FirstOrDefault() != null)
-                        {
-                            @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Tuesday).FirstOrDefault().Actividad
-                        }
-                    </td>
-                    <td>
-                        @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Wednesday).FirstOrDefault() != null)
-                        {
-                            @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Wednesday).FirstOrDefault().Actividad
-                        }
-                    </td>
-                    <td>
-                        @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Thursday).FirstOrDefault() != null)
-                        {
-                            @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Thursday).FirstOrDefault().Actividad
-                        }
-                    </td>
-                    <td>
-                        @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Friday).FirstOrDefault() != null)
-                        {
-                            @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Friday).FirstOrDefault().Actividad
-                        }
-                    </td>
-                    <td>
-                        @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Saturday).FirstOrDefault() != null)
-                        {
-                            @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Saturday).FirstOrDefault().Actividad
-                        }
-                    </td>
+                    <td></td>
+                    <td>Lunes</td>
+                    <td>Martes</td>
+                    <td>Miercoles</td>
+                    <td>Jueves</td>
+                    <td>Viernes</td>
+                    <td>Sabado</td>
                 </tr>
-            }
-        </tbody>
+            </thead>
+            <tbody>
+                @for (int hora = 8; hora <= 23; hora++)
+                {
+                    <tr>
+                        <td>@hora HS</td>
+                        <td>
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Monday).FirstOrDefault() != null)
+                            {
+                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Monday).FirstOrDefault().Actividad
+                            }
+                        </td>
+                        <td>
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Tuesday).FirstOrDefault() != null)
+                            {
+                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Tuesday).FirstOrDefault().Actividad
+                            }
+                        </td>
+                        <td>
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Wednesday).FirstOrDefault() != null)
+                            {
+                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Wednesday).FirstOrDefault().Actividad
+                            }
+                        </td>
+                        <td>
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Thursday).FirstOrDefault() != null)
+                            {
+                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Thursday).FirstOrDefault().Actividad
+                            }
+                        </td>
+                        <td>
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Friday).FirstOrDefault() != null)
+                            {
+                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Friday).FirstOrDefault().Actividad
+                            }
+                        </td>
+                        <td>
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Saturday).FirstOrDefault() != null)
+                            {
+                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Saturday).FirstOrDefault().Actividad
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
 
-    </table>
+        </table>
 
-</div>
+    </div>
+}
+
 
 @*<div class="grupo">
-    <div><h3><a class="titulo-toggle-tabla" href="#"><span class="noprint chevron small glyphicon glyphicon-chevron-down grupoComisiones"></span> @Model.Grupo</a></h3></div>
-    @foreach (var porObjetivo in Model.ComisionesPorObjetivo)
-    {
-        Html.RenderPartial("ComisionesPorObjetivos", porObjetivo);
-    }
-</div>*@
+        <div><h3><a class="titulo-toggle-tabla" href="#"><span class="noprint chevron small glyphicon glyphicon-chevron-down grupoComisiones"></span> @Model.Grupo</a></h3></div>
+        @foreach (var porObjetivo in Model.ComisionesPorObjetivo)
+        {
+            Html.RenderPartial("ComisionesPorObjetivos", porObjetivo);
+        }
+    </div>*@
 
 
 @*<script>
-$(document).ready(function () {
-        $("#procesarRefrescar").click(function () {
-            var $ListaRepresentantes = $('#ListaRepresentantes');
-            var $ListaMonedas = $('#ListaMonedas');
-            var $ListaPeriodos = $('#ListaPeriodos');
+    $(document).ready(function () {
+            $("#procesarRefrescar").click(function () {
+                var $ListaRepresentantes = $('#ListaRepresentantes');
+                var $ListaMonedas = $('#ListaMonedas');
+                var $ListaPeriodos = $('#ListaPeriodos');
 
-            datosRepresentantes = $ListaRepresentantes.selectpicker().val();
-            datosMonedas = $ListaMonedas.selectpicker().val();
-            datosPeriodos = $ListaPeriodos.selectpicker().val();
+                datosRepresentantes = $ListaRepresentantes.selectpicker().val();
+                datosMonedas = $ListaMonedas.selectpicker().val();
+                datosPeriodos = $ListaPeriodos.selectpicker().val();
+
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("Tablas", "ComisionesPorMargen")',
+                    data: { clcRepresentantes: JSON.stringify(datosRepresentantes), idsMonedas: JSON.stringify(datosMonedas), idsPeriodos: JSON.stringify(datosPeriodos)},
+                    cache: false,
+                    datatype: "json",
+                    success: function (result) {
+                    $('#tablas').html(result);
+                    inicializarDataTables();
+                    }
+                    });
+                    })
+
+                    $(".btn-quitar").click(function () {
+                    $(this).closest(".grupo").fadeout();
+                    return false;
+                    });
+
+                    });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".titulo-toggle-tabla").click(function () {
+                if ($(this).closest(".grupo").find(".detalle-toggle").is(":visible")) {
+                    $(this).find(".chevron").removeClass("glyphicon-chevron-down");
+                    $(this).find(".chevron").addClass("glyphicon-chevron-right");
+
+                    $(this).closest(".grupo").find(".detalle-toggle").fadeOut();
+
+                    $(this).closest(".grupo").find(".grupo").fadeOut();
+                } else {
+                    $(this).find(".chevron").removeClass("glyphicon-chevron-right");
+                    $(this).find(".chevron").addClass("glyphicon-chevron-down");
+
+                    $(this).closest(".grupo").find(".detalle-toggle").fadeIn();
+
+                    $(this).closest(".grupo").find(".grupo").fadeIn();
+                }
+                return false;
+            });
+
+            $(".btn-quitar").click(function () {
+                $(this).closest(".grupo").fadeOut();
+                return false;
+            });
+        });
+    </script>*@
+
+@*@using (Html.BeginForm("Index", "EstadoCanjes", FormMethod.Post, new { @id = "myForm", @class = "form-horizontal noprint" }))
+    {
+        <div class="row">
+            <form class="form-horizontal noprint" role="form">
+                <fieldset class="grupo">
+                    <legend><a class="titulo-toggle" href="#"><span class="chevron glyphicon glyphicon-chevron-down small"></span></a> Parámetros</legend>
+                    <div class="detalle-toggle">
+
+                        <div class="panel panel-default col-xs-12">
+                            <div class="panel-body">
+
+                                <div class="panel panel-default col-xs-12">
+                                    <div class="panel-body">
+                                        <div class="form-group radio col-xs-6">
+                                            <div class="col-xs-offset-6">
+                                                <label>
+                                                    @Html.RadioButton("tipoCanje", "Productores", true, new { id = "Productores" })
+                                                    Canjes con Productores
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group radio col-xs-6">
+                                            <div class="col-xs-offset-6">
+                                                <label>
+                                                    @Html.RadioButton("tipoCanje", "Proveedores", new { id = "Proveedores" })
+                                                    Canjes con Proveedores
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ListaRepresentantes" class="control-label col-md-3">Representantes :</label>
+                                    <div class="col-md-6">
+                                        @Html.ComboMultiple(Model.Filtros.ListaRepresentantes, "ListaRepresentantes")
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ListaClientes" class="control-label col-md-3">Clientes / Proveedores :</label>
+                                    <div class="col-md-6">
+                                        @Html.ComboMultiple(Model.Filtros.ListaClientes, "ListaClientes")
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ListaProductos" class="control-label col-md-3">Productos :</label>
+                                    <div class="col-md-6">
+                                        @Html.ComboMultiple(Model.Filtros.ListaProductos, "ListaProductos", true)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ListaMonedas" class="control-label col-md-3">Monedas :</label>
+                                    <div class="col-md-6">
+                                        @Html.ComboMultiple(Model.Filtros.ListaMonedas, "ListaMonedas")
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ListaEstadosCereal" class="control-label col-md-3">Estado Cereal :</label>
+                                    <div class="col-md-6">
+                                        @Html.Combo(Model.Filtros.ListaEstadosCereal, "ListaEstadosCereal")
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ListaEstadosInsumos" class="control-label col-md-3">Estado Insumos :</label>
+                                    <div class="col-md-6">
+                                        @Html.Combo(Model.Filtros.ListaEstadosInsumos, "ListaEstadosInsumos")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <input id="procesarRefrescar" class="col-xs-12 btn btn-primary" value="Procesar / Refrescar" />
+            </form>
+        </div>
+    }
+    <br />
+
+    <div class="col-md-12" id="tablas">
+    </div>
+
+    <td class="text-center grafico noprint"><a href="#" onclick="dibujarGrafico(@Model.id, arr1=[@Convert.ToInt32(Model.InsumosPactados), @Convert.ToInt32(Model.InsumosFacturados)], arr2=[@Model.KgPactados, @Convert.ToInt32(Model.KgEntregados), @Model.KgLiquidados] ); return false;"><span class="glyphicon glyphicon-stats"></span></a></td>
+
+    <tr class="small" id="@string.Format("trgrafo{0}", Model.id)" style="display:none">
+
+        <td colspan="6">
+            <div id="@string.Format("grafoIns{0}", Model.id)" class="jqplot-target"></div>
+        </td>
+        <td colspan="2"></td>
+
+        <td colspan="6">
+            <div id="@string.Format("grafoMerc{0}", Model.id)" class="jqplot-target"></div>
+        </td>
+        <td></td>
+    </tr>
+
+    <script>
+        $(document).ready(function () {
+            $("#procesarRefrescar").click(function () {
+                var tipoCanje = $("input[name=tipoCanje]:checked").val();
+                var $ListaRepresentantes = $('#ListaRepresentantes');
+                var $ListaClientes = $('#ListaClientes');
+                var $ListaProductos = $('#ListaProductos');
+                var $ListaMonedas = $('#ListaMonedas');
+
+                datosRepresentantes = $ListaRepresentantes.selectpicker().val();
+                datosClientes = $ListaClientes.selectpicker().val();
+                datosProductos = $ListaProductos.selectpicker().val();
+                datosMonedas = $ListaMonedas.selectpicker().val();
+                datoEstadoCereal = $('#ListaEstadosCereal').val();
+                datoEstadoInsumos = $('#ListaEstadosInsumos').val();
+
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("Tablas","EstadoCanjes")',
+                    data: { tipoCanje: tipoCanje, clcsRepresentantes: JSON.stringify(datosRepresentantes), clcsClientes: JSON.stringify(datosClientes), idsProductos: JSON.stringify(datosProductos), idsMonedas: JSON.stringify(datosMonedas), estadoCereal: datoEstadoCereal, estadoInsumos: datoEstadoInsumos },
+                    cache: false,
+                    datatype: "json",
+                    success: function (result) {
+                        $('#tablas').html(result);
+                        inicializarDataTables();
+                    }
+                });
+            })
+
+            $(".btn-quitar").click(function () {
+                $(this).closest(".grupo").fadeout();
+                return false;
+            });
+        });
+
+        function dibujarGrafico(idlinea, arr1, arr2 ) {
+
+                if ($("#trgrafo" + idlinea).is(":visible")) {
+                    $("#trgrafo" + idlinea).fadeOut();
+                }
+                else {
+                    $("#trgrafo" + idlinea).fadeIn();
+                    crearGrafico(idlinea, arr1,arr2);
+                }
+        }
+
+        function crearGrafico(idlinea, arr1, arr2) {
+
+            insumos = $.jqplot('grafoIns' + idlinea, [[[arr1[1] , 1]] , [[arr1[0] , 1]]], {
+
+                height: 200,
+
+                title: 'Insumos',
+
+                seriesDefaults: {
+                    renderer:$.jqplot.BarRenderer,
+                    pointLabels: { show: true, location: 'e', edgeTolerance: -15 },
+                    shadowAngle: 135,
+                    rendererOptions: {
+                        barDirection: 'horizontal',
+                        barPadding: 50
+                    }
+                },
+
+                legend: {
+                    show: true,
+                    location: 'e',
+                    placement: 'outside'
+                 },
+
+                series: [{ label: 'Ins. Facturados' }, { label: 'Ins. Pactados' }],
+
+                axes: {
+                    yaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer
+                    }
+                }
+                });
+
+            mercaderia = $.jqplot('grafoMerc'+ idlinea, [[[ arr2[2], 1]], [[arr2[1], 1]], [[arr2[0], 1]]], {
+
+                height: 200,
+
+                title: 'Cereal',
+
+                seriesDefaults: {
+                    renderer:$.jqplot.BarRenderer,
+                    pointLabels: { show: true, location: 'e', edgeTolerance: -15 },
+                    shadowAngle: 135,
+                    rendererOptions: {
+                        barDirection: 'horizontal',
+                        barPadding: 16
+                    }
+                },
+
+                legend: {
+                    show: true,
+                    renderer: $.jqplot.EnhancedLegendRenderer,
+                    location: 'e',
+                    placement: 'outside'
+                },
+
+                series: [
+                {
+                    label: 'Kg Liquidados'
+                },
+                {
+                    label: 'Kg Entregados'
+                },
+                {
+                    label: 'Kg Pactados'
+                }],
+
+                axes: {
+                    yaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer
+                    }
+                }
+            });
+        }
+    </script>
+
+    <div class="modal modalBonus fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:beige">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="text-center"><strong style="color:darkblue">@Model.Descripcion</strong></h2>
+                </div>
+                <div class="modal-body">
+                    <div>@Html.Partial("~/Views/ExportarTablasModalBonus.cshtml")</div>
+                    <div class="panel-body">
+
+                        <table class="table-modal-bonus">
+                            <tr>
+                                <td class="text-center hidden" colspan="5" style="background-color:lightblue">@Model.Descripcion</td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-striped table-hover table-bordered table-condensed table-modal-bonus">
+                            <thead style="background-color:#E7EFEF">
+                                <tr>
+                                    <th class="text-center">IMPORTE BONUS</th>
+                                    <th class="text-center">PORCENTAJE BONUS</th>
+                                    <th class="text-center">INDICE REPRESENTANTE</th>
+                                    <th class="text-center">CANT. DE REPRESENTANTES</th>
+                                    <th class="text-center">COMISION POR BONUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">@Html.GetImporteFormateadoSinSigno(Model.ValorBonus)</td>
+                                    <td class="text-center">@Html.GetPorcentaje2Formateado(Model.PorcentajeRepresentante)</td>
+                                    <td class="text-center">@Html.GetPorcentaje2Formateado(Model.IndiceRepresentante)</td>
+                                    <td class="text-center">@Html.GetCantidadFormateada(Model.CantidadRepresentantes)</td>
+                                    <td class="text-center">@Html.GetImporteFormateadoSinSigno(Model.Importe)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".modalBonus").modal("show");
+        });
+    </script>
+
+    <td class="text-center text-nowrap">@Html.ActionLink(Model.Comprobante, "Detail", "Comprobantes", new { cemId = Model.CemId }, null)</td>
+
+    <script>
+        $(document).ready(function () {
+            $("#procesarRefrescar").click(function () {
+                var $ListaRepresentantes = $('#ListaRepresentantes');
+                var $ListaMonedas = $('#ListaMonedas');
+                var $ListaPeriodos = $('#ListaPeriodos');
+
+                datosRepresentantes = $ListaRepresentantes.selectpicker().val();
+                datosMonedas = $ListaMonedas.selectpicker().val();
+                datosPeriodos = $ListaPeriodos.selectpicker().val();
+
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("Tablas","ComisionesPorMargen")',
+                    data: { clcRepresentantes: JSON.stringify(datosRepresentantes), idsMonedas: JSON.stringify(datosMonedas), idsPeriodos: JSON.stringify(datosPeriodos)},
+                    cache: false,
+                    datatype: "json",
+                    success: function (result) {
+                        $('#tablas').html(result);
+                        inicializarDataTables();
+                    }
+                });
+            })
+
+            $(".btn-quitar").click(function () {
+                $(this).closest(".grupo").fadeout();
+                return false;
+            });
+
+        });
+
+        function mostrarComisiones(objId, codigoMonedaComprobante, modalId) {
+            if (objId > 0) {
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Detalle", "ComisionesPorMargen")',
+                    data: { obj_Id: objId, codigoMonedaComprobante: codigoMonedaComprobante},
+                    cache: false,
+                    datatype: "json",
+                    success: function (result) {
+                        $("#" + modalId).html(result);
+                    }
+                });
+            }
+
+            return false;
+        };
+
+        function mostrarBonus(descripcion, importe, porcentaje, indice, cantidadRepr, comision, modalId) {
 
             $.ajax({
-                type: "Post",
-                url: '@Url.Action("Tablas", "ComisionesPorMargen")',
-                data: { clcRepresentantes: JSON.stringify(datosRepresentantes), idsMonedas: JSON.stringify(datosMonedas), idsPeriodos: JSON.stringify(datosPeriodos)},
+                type: "POST",
+                url: '@Url.Action("ModalBonus", "ComisionesPorMargen")',
+                data: { descripcion: descripcion, importe: importe, porcentaje: porcentaje, indice: indice, cantidadRepr: cantidadRepr, comision: comision},
                 cache: false,
                 datatype: "json",
                 success: function (result) {
-                $('#tablas').html(result);
-                inicializarDataTables();
+                    $("#" + modalId).html(result);
+                }
+            });
+
+            return false;
+        };
+
+        function dibujarGrafico(idlinea, arr1) {
+
+                if ($("#trgrafo" + idlinea).is(":visible")) {
+                    $("#trgrafo" + idlinea).fadeOut();
+                }
+                else {
+                    $("#trgrafo" + idlinea).fadeIn();
+                    crearGrafico(idlinea, arr1);
+                }
+        }
+
+        function crearGrafico(idlinea, arr1) {
+
+            var ticks = [0,10,20,30,40,50,60,70,80,90,100];
+
+            progreso = $.jqplot('grafo' + idlinea, [[[arr1[1] , 1]] , [[arr1[0] , 1]]], {
+
+                height: 200,
+                animate: !$.jqplot.use_excanvas,
+                title: 'Progreso',
+
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+
+                    pointLabels: {
+                        show: true,
+                        location: 'w',
+                        edgeTolerance: -15,
+                        formatString: function () { return '%s%'; }()
+                    },
+
+                    shadowAngle: 135,
+
+                    rendererOptions: {
+                        barDirection: 'horizontal',
+                        barPadding: 50,
+                        dataLabels: ['value', 'percent']
+                    }
+                },
+
+                legend: {
+                    show: true,
+                    location: 'e',
+                    placement: 'outside'
+                 },
+
+                series: [{ label: 'Objetivo' }, { label: 'Tiempo' }],
+
+                axesDefaults: {
+                    tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                    tickOptions: {
+                        markSize: 4
+                    }
+                },
+
+                axes: {
+
+                    xaxis: {
+                        ticks: ticks
+                    },
+
+                    yaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        pad: 1.05,
+
+                        tickOptions: {
+                            formatString: '%d',
+                        }
+                    }
                 }
                 });
-                })
+        }
+    </script>
 
-                $(".btn-quitar").click(function () {
-                $(this).closest(".grupo").fadeout();
-                return false;
-                });
+    <div id="modalComisiones"></div>
 
-                });
-</script>
-
-<script>
-    $(document).ready(function () {
-
-        $(".titulo-toggle-tabla").click(function () {
-            if ($(this).closest(".grupo").find(".detalle-toggle").is(":visible")) {
-                $(this).find(".chevron").removeClass("glyphicon-chevron-down");
-                $(this).find(".chevron").addClass("glyphicon-chevron-right");
-
-                $(this).closest(".grupo").find(".detalle-toggle").fadeOut();
-
-                $(this).closest(".grupo").find(".grupo").fadeOut();
-            } else {
-                $(this).find(".chevron").removeClass("glyphicon-chevron-right");
-                $(this).find(".chevron").addClass("glyphicon-chevron-down");
-
-                $(this).closest(".grupo").find(".detalle-toggle").fadeIn();
-
-                $(this).closest(".grupo").find(".grupo").fadeIn();
-            }
-            return false;
-        });
-
-        $(".btn-quitar").click(function () {
-            $(this).closest(".grupo").fadeOut();
-            return false;
-        });
-    });
-</script>*@
+    <div id="modalBonus"></div>*@

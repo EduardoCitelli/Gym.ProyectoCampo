@@ -45,7 +45,7 @@
 
         private Expression<Func<Clases, bool>> QueryDistintoId(int idClase) => x => x.cls_Id != idClase;
 
-        private Expression<Func<Clases, bool>> QueryHorarioOcupado(DateTime horarioInicio, DateTime horarioFinal) => x => x.cls_FechaInicio <= horarioInicio && x.cls_FechaFinal >= horarioInicio
-                                                                                                                       || x.cls_FechaInicio <= horarioFinal && x.cls_FechaFinal >= horarioFinal;
+        private Expression<Func<Clases, bool>> QueryHorarioOcupado(DateTime horarioInicio, DateTime horarioFinal) => x => x.cls_FechaInicio <= horarioInicio && x.cls_FechaFinal > horarioInicio
+                                                                                                                       || x.cls_FechaInicio < horarioFinal && x.cls_FechaFinal >= horarioFinal;
     }
 }

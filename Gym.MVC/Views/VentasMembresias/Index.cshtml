@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Gym.MVC.Models.VentaMembresiaModel>
+
+@{
+    this.ViewBag.Title = "Membresias";
+}
+
+<div class="col-md-12" id="Tabla">
+    <table class="table table-success table-bordered table-hover table-striped">
+        <thead class="text-center">
+            <tr>
+                <td>Fecha Pago</td>
+                <td>Socio</td>
+                <td>Membresia</td>
+                <td>Tipo</td>
+                <td>Actividad</td>
+                <td>Precio Facturado</td>
+                <td>Forma de Pago</td>
+            </tr>
+        </thead>
+
+        <tbody class="text-center">
+            @foreach (var registro in Model)
+            {
+                <tr>
+                    <td>@registro.FechaPago.ToShortDateString()</td>
+                    <td>@registro.Socio</td>
+                    <td>@registro.Membresia</td>
+                    <td>@registro.TipoMembresias</td>
+                    <td>@registro.Actividad</td>
+                    <td>@registro.PrecioFacturado</td>
+                    <td>@registro.FormaPago</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

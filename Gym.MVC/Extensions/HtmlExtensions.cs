@@ -1,4 +1,4 @@
-﻿namespace Gym.MVC
+﻿namespace Gym.MVC.Extensions
 {
     using System;
     using System.Collections.Generic;

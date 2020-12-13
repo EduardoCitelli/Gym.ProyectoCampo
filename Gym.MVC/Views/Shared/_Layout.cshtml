@@ -8,6 +8,8 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/initDataTables.js"></script>
+    <script src="~/Scripts/toggles.js"></script>
 </head>
 <body style="background-image: linear-gradient(to bottom right, darkseagreen, darkgreen); background-color:darkseagreen">
 
@@ -17,6 +19,50 @@
                 <a class="navbar-brand" href="#">My Gym</a>
             </div>
         </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide w-100" style="max-height:800px; top" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner w-100" style="max-height:800px" role="listbox">
+
+            <div class="carousel-item active" style="max-height:800px">
+                <img class="d-flex align-items-center justify-content-center w-100" style="max-height:500px" src="~/Imagenes/1.jpg">
+                <div class="carousel-caption">
+                    <h3>Tu Gimnasio</h3>
+                </div>
+            </div>
+
+            <div class="carousel-item " style="max-height:800px">
+                <img class="d-flex align-items-center justify-content-center w-100" style="max-height:500px" src="~/Imagenes/2.jpeg">
+                <div class="carousel-caption">
+                    <h3>Tu lugar</h3>
+                </div>
+            </div>
+
+            <div class="carousel-item" style="max-height:800px">
+                <img class="d-flex align-items-center justify-content-center w-100" style="max-height:500px" src="~/Imagenes/3.jpg">
+                <div class="carousel-caption">
+                    <h3>Tu Espacio</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previus</span>
+        </a>
+
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 
     <div class="container body-content">

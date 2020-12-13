@@ -65,6 +65,7 @@
     <Compile Include="Clases\TipoMembresias.cs" />
     <Compile Include="Clases\VwHorariosAlta.cs" />
     <Compile Include="Clases\vwLog.cs" />
+    <Compile Include="Clases\VwMembresias.cs" />
     <Compile Include="Extensiones\Actividades.cs" />
     <Compile Include="Extensiones\Clases.cs" />
     <Compile Include="Extensiones\Clases_Socios.cs" />
