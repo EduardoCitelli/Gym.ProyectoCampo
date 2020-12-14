@@ -26,5 +26,7 @@
         public int CodigoSalon { get; set; }
 
         public string Salon { get; set; }
+
+        public int Duracion => this.Final.Hour - this.Inicio.Hour;
     }
 }

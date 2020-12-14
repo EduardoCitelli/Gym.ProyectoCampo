@@ -55,6 +55,7 @@
             this.dropDownNavegables = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnHorariosSemana = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContenedor.SuspendLayout();
             this.pnlFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -305,7 +306,8 @@
             this.dropDownNavegables.AutoToolTip = false;
             this.dropDownNavegables.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnHorariosSemana,
-            this.lOGSToolStripMenuItem});
+            this.lOGSToolStripMenuItem,
+            this.ventasToolStripMenuItem});
             resources.ApplyResources(this.dropDownNavegables, "dropDownNavegables");
             this.dropDownNavegables.Name = "dropDownNavegables";
             this.dropDownNavegables.ShowDropDownArrow = false;
@@ -322,6 +324,12 @@
             resources.ApplyResources(this.lOGSToolStripMenuItem, "lOGSToolStripMenuItem");
             this.lOGSToolStripMenuItem.Name = "lOGSToolStripMenuItem";
             this.lOGSToolStripMenuItem.Click += new System.EventHandler(this.LOGSToolStripMenuItem_Click);
+            // 
+            // ventasToolStripMenuItem
+            // 
+            resources.ApplyResources(this.ventasToolStripMenuItem, "ventasToolStripMenuItem");
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.VentasToolStripMenuItem_Click);
             // 
             // MenuFrm
             // 
@@ -374,5 +382,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnHorariosSemana;
         private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.ToolStripMenuItem lOGSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
     }
 }

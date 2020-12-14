@@ -35,7 +35,9 @@
         {
             var lista = this.controladora.ListarHorariosSemanaPorSalon(post.SalonSeleccionado);
 
-            var salones = this.controladora.GetListaSalones().Select(x => new SelectListItem() { Text = x.sal_Descripcion, Value = x.sal_Codigo.ToString() }).ToList();
+            var salones = this.controladora.GetListaSalones()
+                                           .Select(x => new SelectListItem() { Text = x.sal_Descripcion, Value = x.sal_Codigo.ToString() })
+                                           .ToList();
 
             var model = new HorariosClasesModel(lista, salones)
             {

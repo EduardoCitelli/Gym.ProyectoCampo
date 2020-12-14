@@ -102,11 +102,17 @@
             {
                 case (int)EnumTipoUsuarios.EmpAdministrativo:
                     this.toolConfiguracion.Visible = false;
+                    this.toolUsuarios.Visible = false;
+                    this.lOGSToolStripMenuItem.Visible = false;
                     this.btnProfesores.Visible = false;
+                    this.btnBackup.Visible = false;
+                    this.btnSalones.Visible = false;
                     break;
 
                 case (int)EnumTipoUsuarios.DueñoGimnasio:
                     this.toolConfiguracion.Visible = false;
+                    this.toolUsuarios.Visible = false;
+                    this.lOGSToolStripMenuItem.Visible = false;
                     break;
             }
         }
@@ -116,5 +122,7 @@
         private void btnBackup_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<DbBackupFrm>(this.pnlFormularios, this, sender, string.Empty);
 
         private void LOGSToolStripMenuItem_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlLogs());
+
+        private void VentasToolStripMenuItem_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlVentas());
     }
 }

@@ -56,39 +56,39 @@
                     <tr>
                         <td>@hora HS</td>
                         <td>
-                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Monday).FirstOrDefault() != null)
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Monday).FirstOrDefault() != null)
                             {
-                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Monday).FirstOrDefault().Actividad
+                                @Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Monday).FirstOrDefault().Actividad
+                            }
+                        </td>
+                        <td> 
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Tuesday).FirstOrDefault() != null)
+                            {
+                                @Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Tuesday).FirstOrDefault().Actividad
                             }
                         </td>
                         <td>
-                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Tuesday).FirstOrDefault() != null)
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Wednesday).FirstOrDefault() != null)
                             {
-                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Tuesday).FirstOrDefault().Actividad
+                                @Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Wednesday).FirstOrDefault().Actividad
                             }
                         </td>
                         <td>
-                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Wednesday).FirstOrDefault() != null)
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Thursday).FirstOrDefault() != null)
                             {
-                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Wednesday).FirstOrDefault().Actividad
+                                @Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Thursday).FirstOrDefault().Actividad
                             }
                         </td>
                         <td>
-                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Thursday).FirstOrDefault() != null)
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Friday).FirstOrDefault() != null)
                             {
-                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Thursday).FirstOrDefault().Actividad
+                                @Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Friday).FirstOrDefault().Actividad
                             }
                         </td>
                         <td>
-                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Friday).FirstOrDefault() != null)
+                            @if (@Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Saturday).FirstOrDefault() != null)
                             {
-                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Friday).FirstOrDefault().Actividad
-                            }
-                        </td>
-                        <td>
-                            @if (@Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Saturday).FirstOrDefault() != null)
-                            {
-                                @Model.Horarios.Where(x => x.Inicio.Hour == hora && x.Inicio.DayOfWeek == DayOfWeek.Saturday).FirstOrDefault().Actividad
+                                @Model.Horarios.Where(x => x.Inicio.Hour <= hora && x.Final.Hour > hora && x.Inicio.DayOfWeek == DayOfWeek.Saturday).FirstOrDefault().Actividad
                             }
                         </td>
                     </tr>
