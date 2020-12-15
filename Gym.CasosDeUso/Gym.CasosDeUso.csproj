@@ -122,9 +122,13 @@
     <Compile Include="TipoMembresias\OperacionesTipoMembresias.cs" />
     <Compile Include="Usuarios\GestionarUsuarios.cs" />
     <Compile Include="Usuarios\OperacionesUsuarios.cs" />
+    <Compile Include="VistasNavegables\GestionarVwAlumnosPorClase.cs" />
+    <Compile Include="VistasNavegables\GestionarVwFormasPago.cs" />
     <Compile Include="VistasNavegables\GestionarVwHorariosAlta.cs" />
+    <Compile Include="VistasNavegables\GestionarVwIngresosPorMembresias.cs" />
     <Compile Include="VistasNavegables\GestionarVwLogs.cs" />
     <Compile Include="VistasNavegables\GestionarVwMembresias.cs" />
+    <Compile Include="VistasNavegables\GestionarVwMembresiasActivas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

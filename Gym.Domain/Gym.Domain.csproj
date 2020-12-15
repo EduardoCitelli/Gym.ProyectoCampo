@@ -63,9 +63,13 @@
     <Compile Include="Clases\Socios.cs" />
     <Compile Include="Clases\Socios_Membresias.cs" />
     <Compile Include="Clases\TipoMembresias.cs" />
+    <Compile Include="Clases\VwAlumnosPorClase.cs" />
+    <Compile Include="Clases\VwFormasPago.cs" />
     <Compile Include="Clases\VwHorariosAlta.cs" />
+    <Compile Include="Clases\VwIngresosPorMembresias.cs" />
     <Compile Include="Clases\vwLog.cs" />
     <Compile Include="Clases\VwMembresias.cs" />
+    <Compile Include="Clases\VwMembresiasActivas.cs" />
     <Compile Include="Extensiones\Actividades.cs" />
     <Compile Include="Extensiones\Clases.cs" />
     <Compile Include="Extensiones\Clases_Socios.cs" />

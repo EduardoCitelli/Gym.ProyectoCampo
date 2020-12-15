@@ -1,0 +1,336 @@
+﻿@model Gym.MVC.Models.DatosInteresModel
+
+@{
+    this.ViewBag.Title = "Datos de interes";
+}
+
+<div class="col-md-12">
+    <div class="row text-center">
+        <div class="col-md-12 text-center">
+            <h2 class="text-center"><span class="badge badge-light">Membresias Activas</span></h2>
+        </div>
+    </div>
+
+    <table class="table table-success table-bordered table-hover table-striped text-center">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Membresias</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var membresia in Model.MembresiasActivas)
+            {
+                <tr>
+                    <td>@membresia.Codigo</td>
+                    <td>@membresia.Membresia</td>
+                    <td>@membresia.Cantidad</td>
+                </tr>
+            }
+
+            <tr>
+                <td class="text-center grafico noprint" colspan="3">
+                    <button class="btn btn-lg btn-secondary" id="botonMem">
+                        Ver Grafico
+                    </button>
+                </td>
+            </tr>
+
+            <tr class="small" id="trgrafo1" style="display:none">
+                <td colspan="3">
+                    <div id="grafoMembresias" class="jqplot-target">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="col-md-12">
+
+    <div class="row text-center">
+        <div class="col-md-12 text-center">
+            <h2 class="text-center"><span class="badge badge-light">Ingresos por Membresías</span></h2>
+        </div>
+    </div>
+
+    <table class="table table-success table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Membresia</th>
+                <th>Tipo</th>
+                <th>Ingresos</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var ingreso in Model.IngresosPorMembresias)
+            {
+                <tr>
+                    <td>@ingreso.Codigo</td>
+                    <td>@ingreso.Membresia</td>
+                    <td>@ingreso.Tipo</td>
+                    <td>$ @ingreso.Ingresos</td>
+                </tr>
+            }
+
+            <tr>
+                <td class="text-center grafico noprint" colspan="4">
+                    <button class="btn btn-lg btn-secondary" id="botonIng">
+                        Ver Grafico
+                    </button>
+                </td>
+            </tr>
+
+            <tr class="small" id="trgrafo2" style="display:none">
+                <td colspan="4">
+                    <div id="grafoIngresos" class="jqplot-target">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-md-12">
+
+    <div class="row text-center">
+        <div class="col-md-12 text-center">
+            <h2 class="text-center"><span class="badge badge-light">Alumnos por Actividad</span></h2>
+        </div>
+    </div>
+
+    <table class="table table-success table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Actividad</th>
+                <th>Cantidad de Alumnos</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var actividad in Model.AlumnosPorClases)
+            {
+                <tr>
+                    <td>@actividad.Codigo</td>
+                    <td>@actividad.Actividad</td>
+                    <td>@actividad.CantidadDeAlumnos</td>
+                </tr>
+            }
+
+            <tr>
+                <td class="text-center grafico noprint" colspan="3">
+                    <button class="btn btn-lg btn-secondary" id="botonAlumnos">
+                        Ver Grafico
+                    </button>
+                </td>
+            </tr>
+
+            <tr class="small" id="trgrafo3" style="display:none">
+                <td colspan="3">
+                    <div id="grafoAlumnos" class="jqplot-target">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-md-12">
+
+    <div class="row text-center">
+        <div class="col-md-12 text-center">
+            <h2 class="text-center"><span class="badge badge-light">Formas de Pago</span></h2>
+        </div>
+    </div>
+
+    <table class="table table-success table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Forma de Pago</th>
+                <th>Cantidad de Veces Efectuadas</th>
+                <th>Valor Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forma in Model.FormasPago)
+            {
+                <tr>
+                    <td>@forma.FormaPago</td>
+                    <td>@forma.Cantidad</td>
+                    <td>$ @forma.ValorTotal</td>
+                </tr>
+            }
+
+            <tr>
+                <td class="text-center grafico noprint" colspan="3">
+                    <button class="btn btn-lg btn-secondary" id="botonFormaPago">
+                        Ver Grafico
+                    </button>
+                </td>
+            </tr>
+
+            <tr class="small" id="trgrafo4" style="display:none">
+                <td colspan="3">
+                    <div id="grafoFormaPago" class="jqplot-target">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#botonMem").click(function () {
+
+            if ($("#trgrafo1").is(":visible")) {
+                $("#trgrafo1").fadeOut();
+            }
+            else {
+                $("#trgrafo1").fadeIn();
+                crearGraficoMembresiasActivas();
+            }
+        });
+
+        $("#botonIng").click(function () {
+
+            if ($("#trgrafo2").is(":visible")) {
+                $("#trgrafo2").fadeOut();
+            }
+            else {
+                $("#trgrafo2").fadeIn();
+                crearGraficoIngresos();
+            }
+        });
+
+        $("#botonAlumnos").click(function () {
+
+            if ($("#trgrafo3").is(":visible")) {
+                $("#trgrafo3").fadeOut();
+            }
+            else {
+                $("#trgrafo3").fadeIn();
+                crearGraficoAlumnos();
+            }
+        });
+
+        $("#botonFormaPago").click(function () {
+
+            if ($("#trgrafo4").is(":visible")) {
+                $("#trgrafo4").fadeOut();
+            }
+            else {
+                $("#trgrafo4").fadeIn();
+                crearGraficoFormaPago();
+            }
+        });
+
+        function crearGraficoMembresiasActivas() {
+
+            var aData = @Html.Raw(Json.Encode(Model.MembresiasActivas));
+
+            var dataArray = [];
+
+            $.each(aData, function (i, item) {
+                dataArray.push([item.Membresia, item.Cantidad]);
+            });
+
+            plot1 = jQuery.jqplot('grafoMembresias', [dataArray],
+                {
+                    title: 'Membresias Activas',
+                    seriesDefaults: {
+                        shadow: true, renderer: jQuery.jqplot.PieRenderer, rendererOptions: {
+                            sliceMargin: 4,
+                            showDataLabels: true
+                        }
+                    },
+                    legend: { show: true , position: 'e'}
+                }
+            );
+        }
+
+        function crearGraficoIngresos() {
+
+            var aData = @Html.Raw(Json.Encode(Model.IngresosPorMembresias));
+
+            var dataArray = [];
+
+            $.each(aData, function (i, item) {
+                dataArray.push([item.Membresia, item.Ingresos]);
+            });
+
+            plot2 = jQuery.jqplot('grafoIngresos', [dataArray],
+                {
+                    title: 'Ingresos por Membresias',
+                    seriesDefaults: {
+                        shadow: true, renderer: jQuery.jqplot.PieRenderer, rendererOptions: {
+                            sliceMargin: 4,
+                            showDataLabels: true
+                        }
+                    },
+                    legend: { show: true , position: 'e'}
+                }
+            );
+        }
+
+        function crearGraficoAlumnos() {
+
+            var aData = @Html.Raw(Json.Encode(Model.AlumnosPorClases));
+
+            var dataArray = [];
+
+            $.each(aData, function (i, item) {
+                dataArray.push([item.Actividad, item.CantidadDeAlumnos]);
+            });
+
+            plot3 = jQuery.jqplot('grafoAlumnos', [dataArray],
+                {
+                    title: 'Alumnos por Actividades',
+                    seriesDefaults: {
+                        shadow: true, renderer: jQuery.jqplot.PieRenderer, rendererOptions: {
+                            sliceMargin: 4,
+                            showDataLabels: true
+                        }
+                    },
+                    legend: { show: true , position: 'e'}
+                }
+            );
+        }        
+
+        function crearGraficoFormaPago() {
+
+            var aData = @Html.Raw(Json.Encode(Model.FormasPago));
+
+            var dataArray = [];
+
+            $.each(aData, function (i, item) {
+                dataArray.push([item.FormaPago, item.Cantidad]);
+            });
+
+            plot3 = jQuery.jqplot('grafoFormaPago', [dataArray],
+                {
+                    title: 'Formas de Pago Elegidas',
+                    seriesDefaults: {
+                        shadow: true, renderer: jQuery.jqplot.PieRenderer, rendererOptions: {
+                            sliceMargin: 4,
+                            showDataLabels: true
+                        }
+                    },
+                    legend: { show: true , position: 'e'}
+                }
+            );
+        }
+    });
+</script>

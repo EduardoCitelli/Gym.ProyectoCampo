@@ -32,6 +32,10 @@
         public virtual DbSet<Log> Log { get; set; }
         public virtual DbSet<vwLog> VwLog { get; set; }
         public virtual DbSet<VwMembresias> VwMembresias { get; set; }
+        public virtual DbSet<VwMembresiasActivas> VwMembresiasActivas { get; set; }
+        public virtual DbSet<VwIngresosPorMembresias> VwIngresosPorMembresias { get; set; }
+        public virtual DbSet<VwAlumnosPorClase> VwAlumnosPorClase { get; set; }
+        public virtual DbSet<VwFormasPago> VwFormasPago { get; set; }
 
         #endregion
 

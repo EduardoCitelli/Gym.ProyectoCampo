@@ -1,6 +1,8 @@
-﻿$(document).ready(function () {
-    inicializarToggles();
-});
+﻿//<script src="~/Scripts/jquery-3.5.1.js"></script>
+
+//$(document).ready(function () {
+//    inicializarToggles();
+//});
 
 function inicializarToggles()
 {

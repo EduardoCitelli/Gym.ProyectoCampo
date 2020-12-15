@@ -9,7 +9,12 @@ namespace Gym.MVC
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js"
+                        //"~/Scripts/jqPlot/jquery.js",
+                        //"~/Scripts/jqPlot/jquery.min.js",
+                        //"~/Scripts/jqPlot/jquery.jqplot.js",
+                        //"~/Scripts/jqPlot/plugins/jqplot.pieRenderer.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -24,7 +29,10 @@ namespace Gym.MVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css"
+                      //,
+                      //"~/Scripts/jqPlot/jquery.jqplot.css"
+                      ));
         }
     }
 }

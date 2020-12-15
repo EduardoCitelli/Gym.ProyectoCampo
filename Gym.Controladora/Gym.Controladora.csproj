@@ -58,8 +58,12 @@
     <Compile Include="Controllers\MembresiasController.cs" />
     <Compile Include="Controllers\ProfesoresController.cs" />
     <Compile Include="Controllers\Socios_MembresiasController.cs" />
+    <Compile Include="Controllers\VwAlumnosPorClaseController.cs" />
+    <Compile Include="Controllers\VwFormasPagoController.cs" />
     <Compile Include="Controllers\VwHorariosAltaController.cs" />
+    <Compile Include="Controllers\VwIngresosPorMembresiasController.cs" />
     <Compile Include="Controllers\VwLogsController.cs" />
+    <Compile Include="Controllers\VwMembresiasActivasController.cs" />
     <Compile Include="Controllers\VwMembresiasController.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
