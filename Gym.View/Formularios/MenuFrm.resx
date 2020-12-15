@@ -13683,6 +13683,54 @@
   <data name="ventasToolStripMenuItem.Text" xml:space="preserve">
     <value>Ventas</value>
   </data>
+  <data name="reportesVariosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="reportesVariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 30</value>
+  </data>
+  <data name="reportesVariosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reportes Varios</value>
+  </data>
   <data name="dropDownNavegables.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -16048,6 +16096,12 @@
     <value>ventasToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;ventasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reportesVariosToolStripMenuItem.Name" xml:space="preserve">
+    <value>reportesVariosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reportesVariosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

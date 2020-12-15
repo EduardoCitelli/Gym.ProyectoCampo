@@ -56,6 +56,7 @@
             this.btnHorariosSemana = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesVariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContenedor.SuspendLayout();
             this.pnlFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -308,7 +309,8 @@
             this.dropDownNavegables.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnHorariosSemana,
             this.lOGSToolStripMenuItem,
-            this.ventasToolStripMenuItem});
+            this.ventasToolStripMenuItem,
+            this.reportesVariosToolStripMenuItem});
             resources.ApplyResources(this.dropDownNavegables, "dropDownNavegables");
             this.dropDownNavegables.Name = "dropDownNavegables";
             this.dropDownNavegables.ShowDropDownArrow = false;
@@ -331,6 +333,12 @@
             resources.ApplyResources(this.ventasToolStripMenuItem, "ventasToolStripMenuItem");
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.VentasToolStripMenuItem_Click);
+            // 
+            // reportesVariosToolStripMenuItem
+            // 
+            resources.ApplyResources(this.reportesVariosToolStripMenuItem, "reportesVariosToolStripMenuItem");
+            this.reportesVariosToolStripMenuItem.Name = "reportesVariosToolStripMenuItem";
+            this.reportesVariosToolStripMenuItem.Click += new System.EventHandler(this.ReportesVariosToolStripMenuItem_Click);
             // 
             // MenuFrm
             // 
@@ -384,5 +392,6 @@
         private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.ToolStripMenuItem lOGSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesVariosToolStripMenuItem;
     }
 }

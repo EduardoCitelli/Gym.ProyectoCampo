@@ -60,6 +60,9 @@
 
             if (Application.OpenForms[nameof(GestionarClasesFrm)] == null)
                 this.btnClases.BackColor = Color.Transparent;
+
+            if (Application.OpenForms[nameof(DbBackupFrm)] == null)
+                this.btnBackup.BackColor = Color.Transparent;
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e) 
@@ -125,10 +128,14 @@
 
         private void VentasToolStripMenuItem_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlVentas());
 
+        private void ReportesVariosToolStripMenuItem_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlDatos());
+
         private void pbPanel_DoubleClick(object sender, EventArgs e)
         {
             var frm = new CambiarPassFrm();
             frm.ShowDialog();
         }
+
+        
     }
 }

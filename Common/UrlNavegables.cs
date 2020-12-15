@@ -7,5 +7,7 @@
         public static string GetUrlLogs() => "https://localhost:44359/Logs";
 
         public static string GetUrlVentas() => "https://localhost:44359/VentasMembresias";
+
+        public static string GetUrlDatos() => "https://localhost:44359/DatosInteres";
     }
 }
