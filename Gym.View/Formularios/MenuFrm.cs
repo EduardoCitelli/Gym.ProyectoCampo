@@ -104,16 +104,18 @@
             switch (UserLogeado.NumeroTipoUsuario)
             {
                 case (int)EnumTipoUsuarios.EmpAdministrativo:
-                    this.toolConfiguracion.Visible = false;
+                    this.dropDownMembresias.Visible = false;
                     this.toolUsuarios.Visible = false;
                     this.lOGSToolStripMenuItem.Visible = false;
                     this.btnProfesores.Visible = false;
                     this.btnBackup.Visible = false;
                     this.btnSalones.Visible = false;
+                    this.reportesVariosToolStripMenuItem.Visible = false;
+                    this.ventasToolStripMenuItem.Visible = false;
                     break;
 
                 case (int)EnumTipoUsuarios.DueñoGimnasio:
-                    this.toolConfiguracion.Visible = false;
+                    this.dropDownMembresias.Visible = false;
                     this.toolUsuarios.Visible = false;
                     this.lOGSToolStripMenuItem.Visible = false;
                     break;
