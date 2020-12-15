@@ -7,7 +7,7 @@
 <div class="col-md-12">
     <div class="row text-center">
         <div class="col-md-12 text-center">
-            <h2 class="text-center"><span class="badge badge-light">Membresias Activas</span></h2>
+            <h2 class="text-center"><span class="badge badge-secondary">Membresias Activas</span></h2>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
 
             <tr>
                 <td class="text-center grafico noprint" colspan="3">
-                    <button class="btn btn-lg btn-secondary" id="botonMem">
+                    <button class="btn btn-lg btn-outline-info" id="botonMem">
                         Ver Grafico
                     </button>
                 </td>
@@ -55,7 +55,7 @@
 
     <div class="row text-center">
         <div class="col-md-12 text-center">
-            <h2 class="text-center"><span class="badge badge-light">Ingresos por Membresías</span></h2>
+            <h2 class="text-center"><span class="badge badge-secondary">Ingresos por Membresías</span></h2>
         </div>
     </div>
 
@@ -82,7 +82,7 @@
 
             <tr>
                 <td class="text-center grafico noprint" colspan="4">
-                    <button class="btn btn-lg btn-secondary" id="botonIng">
+                    <button class="btn btn-lg btn-outline-info" id="botonIng">
                         Ver Grafico
                     </button>
                 </td>
@@ -103,7 +103,7 @@
 
     <div class="row text-center">
         <div class="col-md-12 text-center">
-            <h2 class="text-center"><span class="badge badge-light">Alumnos por Actividad</span></h2>
+            <h2 class="text-center"><span class="badge badge-secondary">Alumnos por Actividad</span></h2>
         </div>
     </div>
 
@@ -127,7 +127,7 @@
 
             <tr>
                 <td class="text-center grafico noprint" colspan="3">
-                    <button class="btn btn-lg btn-secondary" id="botonAlumnos">
+                    <button class="btn btn-lg btn-outline-info" id="botonAlumnos">
                         Ver Grafico
                     </button>
                 </td>
@@ -148,7 +148,7 @@
 
     <div class="row text-center">
         <div class="col-md-12 text-center">
-            <h2 class="text-center"><span class="badge badge-light">Formas de Pago</span></h2>
+            <h2 class="text-center"><span class="badge badge-secondary">Formas de Pago</span></h2>
         </div>
     </div>
 
@@ -172,7 +172,7 @@
 
             <tr>
                 <td class="text-center grafico noprint" colspan="3">
-                    <button class="btn btn-lg btn-secondary" id="botonFormaPago">
+                    <button class="btn btn-lg btn-outline-info" id="botonFormaPago">
                         Ver Grafico
                     </button>
                 </td>
@@ -241,46 +241,66 @@
 
             var aData = @Html.Raw(Json.Encode(Model.MembresiasActivas));
 
+            var valueArray = [];
             var dataArray = [];
 
             $.each(aData, function (i, item) {
-                dataArray.push([item.Membresia, item.Cantidad]);
+                dataArray.push([item.Membresia]);
             });
 
-            plot1 = jQuery.jqplot('grafoMembresias', [dataArray],
-                {
-                    title: 'Membresias Activas',
-                    seriesDefaults: {
-                        shadow: true, renderer: jQuery.jqplot.PieRenderer, rendererOptions: {
-                            sliceMargin: 4,
-                            showDataLabels: true
-                        }
-                    },
-                    legend: { show: true , position: 'e'}
-                }
-            );
+            $.each(aData, function (i, item) {
+                valueArray.push(item.Cantidad);
+            });
+
+            plot1 = $.jqplot('grafoMembresias', [valueArray], {
+                animate: !$.jqplot.use_excanvas,
+                title: 'Membresias Activas',
+                seriesDefaults: {
+                    renderer: $.jqplot.BarRenderer,
+                    pointLabels: { show: true }
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: dataArray
+                    }
+                },
+
+                highlighter: { show: false }
+            });
         }
 
         function crearGraficoIngresos() {
 
             var aData = @Html.Raw(Json.Encode(Model.IngresosPorMembresias));
 
+            var valueArray = [];
             var dataArray = [];
 
             $.each(aData, function (i, item) {
-                dataArray.push([item.Membresia, item.Ingresos]);
+                valueArray.push(item.Ingresos);
             });
 
-            plot2 = jQuery.jqplot('grafoIngresos', [dataArray],
+            $.each(aData, function (i, item) {
+                dataArray.push([item.Membresia]);
+            });
+
+            plot2 = jQuery.jqplot('grafoIngresos', [valueArray],
                 {
                     title: 'Ingresos por Membresias',
+                    animate: !$.jqplot.use_excanvas,
                     seriesDefaults: {
-                        shadow: true, renderer: jQuery.jqplot.PieRenderer, rendererOptions: {
-                            sliceMargin: 4,
-                            showDataLabels: true
+                        renderer: $.jqplot.BarRenderer,
+                        pointLabels: { show: true }
+                    },
+                    axes: {
+                        xaxis: {
+                            renderer: $.jqplot.CategoryAxisRenderer,
+                            ticks: dataArray
                         }
                     },
-                    legend: { show: true , position: 'e'}
+
+                    highlighter: { show: false }
                 }
             );
         }
@@ -332,5 +352,6 @@
                 }
             );
         }
+            
     });
 </script>
