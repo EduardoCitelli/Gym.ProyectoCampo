@@ -199,6 +199,12 @@
     <Compile Include="Controles\Combos\ComboBase.Designer.cs">
       <DependentUpon>ComboBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\CambiarPassFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CambiarPassFrm.Designer.cs">
+      <DependentUpon>CambiarPassFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ClasesSociosFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +369,12 @@
     <Compile Include="Formularios\Proceso\ProcesarPagoFrm.Designer.cs">
       <DependentUpon>ProcesarPagoFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RecuperarPassFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RecuperarPassFrm.Designer.cs">
+      <DependentUpon>RecuperarPassFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Formularios\Operaciones\UsuarioFrm.cs">
@@ -410,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\Combos\ComboBase.resx">
       <DependentUpon>ComboBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CambiarPassFrm.resx">
+      <DependentUpon>CambiarPassFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ClasesSociosFrm.resx">
       <DependentUpon>ClasesSociosFrm.cs</DependentUpon>
@@ -494,6 +509,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proceso\ProcesarPagoFrm.resx">
       <DependentUpon>ProcesarPagoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RecuperarPassFrm.resx">
+      <DependentUpon>RecuperarPassFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

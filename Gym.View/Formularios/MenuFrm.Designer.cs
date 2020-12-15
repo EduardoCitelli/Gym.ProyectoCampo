@@ -243,6 +243,7 @@
             resources.ApplyResources(this.pbPanel, "pbPanel");
             this.pbPanel.Name = "pbPanel";
             this.pbPanel.TabStop = false;
+            this.pbPanel.DoubleClick += new System.EventHandler(this.pbPanel_DoubleClick);
             // 
             // toolConfiguracion
             // 

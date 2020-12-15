@@ -131,5 +131,11 @@
             UserLogeado.TipoUsuario = usuario.Grupo != null ? usuario.Grupo.gus_Descripcion : string.Empty;
             UserLogeado.NumeroTipoUsuario = usuario.Grupo.gus_Id;
         }
+
+        private void lnkRecuperarPass_Click(object sender, EventArgs e)
+        {
+            var frm = new RecuperarPassFrm();
+            frm.ShowDialog();
+        }
     }
 }

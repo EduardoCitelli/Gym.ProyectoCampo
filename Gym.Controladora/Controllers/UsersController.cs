@@ -33,5 +33,7 @@
         public Users ObtenerUsuario(string usuario, string pass) => this.gestionarUsuarios.Obtener(usuario, pass);
 
         public ICollection<Users> ObtenerUsuarios(string nombre) => this.gestionarUsuarios.Listar(nombre);
+
+        public Users ObtenerPorMail(string mail) => this.gestionarUsuarios.ObtenerPorMail(mail);
     }
 }

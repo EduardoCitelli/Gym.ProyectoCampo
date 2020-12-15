@@ -124,5 +124,11 @@
         private void LOGSToolStripMenuItem_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlLogs());
 
         private void VentasToolStripMenuItem_Click(object sender, EventArgs e) => this.Manager.AbrirFormulario<NavegableFrm>(this.pnlFormularios, this, sender, UrlNavegables.GetUrlVentas());
+
+        private void pbPanel_DoubleClick(object sender, EventArgs e)
+        {
+            var frm = new CambiarPassFrm();
+            frm.ShowDialog();
+        }
     }
 }

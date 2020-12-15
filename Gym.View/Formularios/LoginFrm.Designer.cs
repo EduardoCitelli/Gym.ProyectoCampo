@@ -133,6 +133,7 @@
             this.lnkRecuperarPass.TabIndex = 3;
             this.lnkRecuperarPass.TabStop = true;
             this.lnkRecuperarPass.Text = "¿Se ha olvidado la contraseña?";
+            this.lnkRecuperarPass.Click += new System.EventHandler(this.lnkRecuperarPass_Click);
             // 
             // btnCerrar
             // 

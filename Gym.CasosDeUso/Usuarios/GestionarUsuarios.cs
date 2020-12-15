@@ -51,6 +51,17 @@
             return user;
         }
 
+        public Users ObtenerPorMail(string mail)
+        {
+            var repository = this.CrearRepository();
+
+            var user = repository.Query(x => x.usu_Email == mail).FirstOrDefault();
+
+            this.CerrarRepository();
+
+            return user;
+        }
+
         public ICollection<Users> Listar(string nombre)
         {
             this.uow = new UnitOfWork();
