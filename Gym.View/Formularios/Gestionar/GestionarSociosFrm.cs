@@ -242,6 +242,9 @@
 
             var objeto = this.SociosController.ObtenerCompleto(codigo);
 
+            if (!this.ConsultarMembresia(objeto))
+                return;
+
             var frm = new ProcesarPagoFrm(objeto);
 
             var result = frm.ShowDialog();
@@ -251,6 +254,20 @@
                 this.log.Log(Eventos.GuardadoExitoso, "Procesar Pago", frm.Name);
                 this.ArmarLista();
             }                
+        }
+
+        private bool ConsultarMembresia(Socios socio) =>  this.VerificarMembresiaExistente(socio);
+
+        private bool VerificarMembresiaExistente(Socios socio)
+        {
+            if (socio.VerificarMembresia())
+            {
+                var result = MessageBox.Show($"El socio {socio.soc_Nombre} ya tiene una membresía vigente{Environment.NewLine} Desea realizar el pago de todas formas?", "Procesar Pago", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                return result == DialogResult.Yes;
+            }
+
+            return true;
         }
 
         private void btnVerificarVenc_Click(object sender, EventArgs e)

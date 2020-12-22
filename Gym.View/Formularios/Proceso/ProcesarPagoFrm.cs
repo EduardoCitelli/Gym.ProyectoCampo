@@ -25,16 +25,10 @@
 
             this.ArmarGrilla();
 
-            this.ConsultarMembresia();
+            
         }
 
-        private void ConsultarMembresia()
-        {
-            var verificar = this.VerificarMembresiaExistente();
-
-            if (!verificar)
-                this.Close();
-        }
+        
 
         private void ArmarTitulos()
         {
@@ -138,18 +132,6 @@
             }
 
             this.DialogResult = DialogResult.OK;
-        }
-
-        private bool VerificarMembresiaExistente()
-        {
-            if (this.socio.VerificarMembresia())
-            {
-                var result = MessageBox.Show($"El socio {this.socio.soc_Nombre} ya tiene una membresía vigente{Environment.NewLine} Desea realizar el pago de todas formas?", "Procesar Pago", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                return result == DialogResult.Yes;
-            }
-
-            return true;
-        }
+        }        
     }
 }
